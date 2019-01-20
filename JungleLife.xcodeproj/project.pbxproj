@@ -7,14 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1128A7821E8F1DC00BCB3E7 /* Story1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */; };
+		A1128A7921E8F1DC00BCB3E7 /* Story2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */; };
+		A1128A7A21E8F1DC00BCB3E7 /* Story3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */; };
+		A17ABBC321F37578003A0C05 /* JungleLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC121F37578003A0C05 /* JungleLife.xcdatamodeld */; };
+		A17ABBC621F375CD003A0C05 /* MyScore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC421F375CD003A0C05 /* MyScore+CoreDataClass.swift */; };
+		A17ABBC721F375CD003A0C05 /* MyScore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC521F375CD003A0C05 /* MyScore+CoreDataProperties.swift */; };
+		A17ABBC921F39B9C003A0C05 /* TabScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC821F39B9C003A0C05 /* TabScoreViewController.swift */; };
+		A17ABBCB21F39E3F003A0C05 /* Ranking2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBCA21F39E3F003A0C05 /* Ranking2ViewController.swift */; };
+		A17ABBCD21F39E54003A0C05 /* Ranking3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBCC21F39E54003A0C05 /* Ranking3ViewController.swift */; };
+		A17ABBD221F39F98003A0C05 /* MyScore3+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBCE21F39F98003A0C05 /* MyScore3+CoreDataClass.swift */; };
+		A17ABBD321F39F98003A0C05 /* MyScore3+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBCF21F39F98003A0C05 /* MyScore3+CoreDataProperties.swift */; };
+		A17ABBD421F39F98003A0C05 /* MyScore2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBD021F39F98003A0C05 /* MyScore2+CoreDataClass.swift */; };
+		A17ABBD521F39F98003A0C05 /* MyScore2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBD121F39F98003A0C05 /* MyScore2+CoreDataProperties.swift */; };
+		A1B768A221F4C6B100074A04 /* mainM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768A121F4C6B100074A04 /* mainM.mp3 */; };
+		A1B768A421F4C94300074A04 /* homeM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768A321F4C94300074A04 /* homeM.mp3 */; };
+		A1B768A821F4C9E100074A04 /* game1M.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768A521F4C9E000074A04 /* game1M.mp3 */; };
+		A1B768A921F4C9E100074A04 /* game2M.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768A621F4C9E000074A04 /* game2M.mp3 */; };
+		A1B768AA21F4C9E100074A04 /* game3M.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768A721F4C9E100074A04 /* game3M.mp3 */; };
+		A1B768AC21F4CB7300074A04 /* gameNow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AB21F4CB7300074A04 /* gameNow.mp3 */; };
+		A1B768AE21F4CC4000074A04 /* winM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AD21F4CC3F00074A04 /* winM.mp3 */; };
+		A1B768B121F4CE4B00074A04 /* hunterOh.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AF21F4CE4A00074A04 /* hunterOh.wav */; };
+		A1B768B221F4CE4B00074A04 /* boyOh.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1B768B021F4CE4A00074A04 /* boyOh.wav */; };
+		A1E4B8F721F23FFD004C3E24 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4B8F621F23FFD004C3E24 /* RankingViewController.swift */; };
+		A1E4F28021E4F5EB002461C8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4F27F21E4F5EB002461C8 /* WebViewController.swift */; };
+		A1E4F28321E4F661002461C8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E4F28221E4F661002461C8 /* WebKit.framework */; };
+		A1E5769C21F0CB7B00216231 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E5769B21F0CB7B00216231 /* WinViewController.swift */; };
+		A1E5769E21F0E7E900216231 /* HowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E5769D21F0E7E900216231 /* HowViewController.swift */; };
+		A1E576A021F0E9C500216231 /* MyTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E5769F21F0E9C500216231 /* MyTabViewController.swift */; };
+		A1E576A221F0EAA100216231 /* How2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E576A121F0EAA100216231 /* How2ViewController.swift */; };
+		A1E576A421F0EAB200216231 /* How3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E576A321F0EAB200216231 /* How3ViewController.swift */; };
+		A1E576A621F0EAC600216231 /* How4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E576A521F0EAC600216231 /* How4ViewController.swift */; };
+		A1E66C9C21EDF9B2002CB888 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E66C9B21EDF9B2002CB888 /* WordViewController.swift */; };
+		A1E77E9021E64DA100D27662 /* G2MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E77E8F21E64DA100D27662 /* G2MenuViewController.swift */; };
+		A1E77E9221E65E6900D27662 /* G3MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E77E9121E65E6900D27662 /* G3MenuViewController.swift */; };
+		A1E94EAC21ECDAA7007E659E /* Game1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E94EAB21ECDAA7007E659E /* Game1ViewController.swift */; };
 		A1EAA6CE21DBB1B700BB1129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA6CD21DBB1B700BB1129 /* AppDelegate.swift */; };
 		A1EAA6D021DBB1B700BB1129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA6CF21DBB1B700BB1129 /* ViewController.swift */; };
 		A1EAA6D321DBB1B700BB1129 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EAA6D121DBB1B700BB1129 /* Main.storyboard */; };
-		A1EAA6D621DBB1B700BB1129 /* JungleLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA6D421DBB1B700BB1129 /* JungleLife.xcdatamodeld */; };
 		A1EAA6D821DBB1B800BB1129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EAA6D721DBB1B800BB1129 /* Assets.xcassets */; };
 		A1EAA6DB21DBB1B800BB1129 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EAA6D921DBB1B800BB1129 /* LaunchScreen.storyboard */; };
-		A1EAA6E621DBB1B900BB1129 /* JungleLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA6E521DBB1B900BB1129 /* JungleLifeTests.swift */; };
-		A1EAA6F121DBB1B900BB1129 /* JungleLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA6F021DBB1B900BB1129 /* JungleLifeUITests.swift */; };
+		A1EAA6FF21DBD0BA00BB1129 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA6FE21DBD0BA00BB1129 /* MenuViewController.swift */; };
+		A1EC4F8221E26484000BE4A6 /* G1MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC4F8121E26484000BE4A6 /* G1MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +69,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story1.mp4; path = "../../JFImages/森林app/Story1.mp4"; sourceTree = "<group>"; };
+		A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story2.mp4; path = "../../JFImages/森林app/Story2.mp4"; sourceTree = "<group>"; };
+		A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story3.mp4; path = "../../JFImages/森林app/Story3.mp4"; sourceTree = "<group>"; };
+		A17ABBC221F37578003A0C05 /* JungleLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JungleLife.xcdatamodel; sourceTree = "<group>"; };
+		A17ABBC421F375CD003A0C05 /* MyScore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A17ABBC521F375CD003A0C05 /* MyScore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A17ABBC821F39B9C003A0C05 /* TabScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScoreViewController.swift; sourceTree = "<group>"; };
+		A17ABBCA21F39E3F003A0C05 /* Ranking2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking2ViewController.swift; sourceTree = "<group>"; };
+		A17ABBCC21F39E54003A0C05 /* Ranking3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking3ViewController.swift; sourceTree = "<group>"; };
+		A17ABBCE21F39F98003A0C05 /* MyScore3+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore3+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A17ABBCF21F39F98003A0C05 /* MyScore3+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore3+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A17ABBD021F39F98003A0C05 /* MyScore2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore2+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A17ABBD121F39F98003A0C05 /* MyScore2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore2+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1B768A121F4C6B100074A04 /* mainM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mainM.mp3; path = ../../JFImages/jfMusic/mainM.mp3; sourceTree = "<group>"; };
+		A1B768A321F4C94300074A04 /* homeM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = homeM.mp3; path = ../../JFImages/jfMusic/homeM.mp3; sourceTree = "<group>"; };
+		A1B768A521F4C9E000074A04 /* game1M.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game1M.mp3; path = ../../JFImages/jfMusic/game1M.mp3; sourceTree = "<group>"; };
+		A1B768A621F4C9E000074A04 /* game2M.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game2M.mp3; path = ../../JFImages/jfMusic/game2M.mp3; sourceTree = "<group>"; };
+		A1B768A721F4C9E100074A04 /* game3M.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game3M.mp3; path = ../../JFImages/jfMusic/game3M.mp3; sourceTree = "<group>"; };
+		A1B768AB21F4CB7300074A04 /* gameNow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gameNow.mp3; path = ../../JFImages/jfMusic/gameNow.mp3; sourceTree = "<group>"; };
+		A1B768AD21F4CC3F00074A04 /* winM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = winM.mp3; path = ../../JFImages/jfMusic/winM.mp3; sourceTree = "<group>"; };
+		A1B768AF21F4CE4A00074A04 /* hunterOh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hunterOh.wav; path = ../../JFImages/jfMusic/hunterOh.wav; sourceTree = "<group>"; };
+		A1B768B021F4CE4A00074A04 /* boyOh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = boyOh.wav; path = ../../JFImages/jfMusic/boyOh.wav; sourceTree = "<group>"; };
+		A1E4B8F621F23FFD004C3E24 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		A1E4F27F21E4F5EB002461C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A1E4F28221E4F661002461C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A1E5769B21F0CB7B00216231 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
+		A1E5769D21F0E7E900216231 /* HowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowViewController.swift; sourceTree = "<group>"; };
+		A1E5769F21F0E9C500216231 /* MyTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabViewController.swift; sourceTree = "<group>"; };
+		A1E576A121F0EAA100216231 /* How2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How2ViewController.swift; sourceTree = "<group>"; };
+		A1E576A321F0EAB200216231 /* How3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How3ViewController.swift; sourceTree = "<group>"; };
+		A1E576A521F0EAC600216231 /* How4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How4ViewController.swift; sourceTree = "<group>"; };
+		A1E66C9B21EDF9B2002CB888 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		A1E77E8F21E64DA100D27662 /* G2MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G2MenuViewController.swift; sourceTree = "<group>"; };
+		A1E77E9121E65E6900D27662 /* G3MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G3MenuViewController.swift; sourceTree = "<group>"; };
+		A1E94EAB21ECDAA7007E659E /* Game1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game1ViewController.swift; sourceTree = "<group>"; };
 		A1EAA6CA21DBB1B700BB1129 /* JungleLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JungleLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EAA6CD21DBB1B700BB1129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1EAA6CF21DBB1B700BB1129 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1EAA6D221DBB1B700BB1129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A1EAA6D521DBB1B700BB1129 /* JungleLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JungleLife.xcdatamodel; sourceTree = "<group>"; };
 		A1EAA6D721DBB1B800BB1129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1EAA6DA21DBB1B800BB1129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1EAA6DC21DBB1B800BB1129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1EAA6E121DBB1B900BB1129 /* JungleLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JungleLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1EAA6E521DBB1B900BB1129 /* JungleLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JungleLifeTests.swift; sourceTree = "<group>"; };
-		A1EAA6E721DBB1B900BB1129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1EAA6EC21DBB1B900BB1129 /* JungleLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JungleLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1EAA6F021DBB1B900BB1129 /* JungleLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JungleLifeUITests.swift; sourceTree = "<group>"; };
-		A1EAA6F221DBB1B900BB1129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1EAA6FE21DBD0BA00BB1129 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A1EC4F8121E26484000BE4A6 /* G1MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G1MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E4F28321E4F661002461C8 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +143,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1E4F28121E4F660002461C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1E4F28221E4F661002461C8 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A1EAA6C121DBB1B700BB1129 = {
 			isa = PBXGroup;
 			children = (
+				A17ABBCE21F39F98003A0C05 /* MyScore3+CoreDataClass.swift */,
+				A17ABBCF21F39F98003A0C05 /* MyScore3+CoreDataProperties.swift */,
+				A17ABBD021F39F98003A0C05 /* MyScore2+CoreDataClass.swift */,
+				A17ABBD121F39F98003A0C05 /* MyScore2+CoreDataProperties.swift */,
+				A17ABBC421F375CD003A0C05 /* MyScore+CoreDataClass.swift */,
+				A17ABBC521F375CD003A0C05 /* MyScore+CoreDataProperties.swift */,
 				A1EAA6CC21DBB1B700BB1129 /* JungleLife */,
-				A1EAA6E421DBB1B900BB1129 /* JungleLifeTests */,
-				A1EAA6EF21DBB1B900BB1129 /* JungleLifeUITests */,
 				A1EAA6CB21DBB1B700BB1129 /* Products */,
+				A1E4F28121E4F660002461C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,33 +179,44 @@
 		A1EAA6CC21DBB1B700BB1129 /* JungleLife */ = {
 			isa = PBXGroup;
 			children = (
+				A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */,
+				A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */,
+				A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */,
+				A1B768AB21F4CB7300074A04 /* gameNow.mp3 */,
+				A1B768B021F4CE4A00074A04 /* boyOh.wav */,
+				A1B768AF21F4CE4A00074A04 /* hunterOh.wav */,
+				A1B768A521F4C9E000074A04 /* game1M.mp3 */,
+				A1B768AD21F4CC3F00074A04 /* winM.mp3 */,
+				A1B768A621F4C9E000074A04 /* game2M.mp3 */,
+				A1B768A721F4C9E100074A04 /* game3M.mp3 */,
+				A1B768A321F4C94300074A04 /* homeM.mp3 */,
+				A1B768A121F4C6B100074A04 /* mainM.mp3 */,
 				A1EAA6CD21DBB1B700BB1129 /* AppDelegate.swift */,
 				A1EAA6CF21DBB1B700BB1129 /* ViewController.swift */,
 				A1EAA6D121DBB1B700BB1129 /* Main.storyboard */,
 				A1EAA6D721DBB1B800BB1129 /* Assets.xcassets */,
 				A1EAA6D921DBB1B800BB1129 /* LaunchScreen.storyboard */,
 				A1EAA6DC21DBB1B800BB1129 /* Info.plist */,
-				A1EAA6D421DBB1B700BB1129 /* JungleLife.xcdatamodeld */,
+				A17ABBC121F37578003A0C05 /* JungleLife.xcdatamodeld */,
+				A1EAA6FE21DBD0BA00BB1129 /* MenuViewController.swift */,
+				A1EC4F8121E26484000BE4A6 /* G1MenuViewController.swift */,
+				A1E4F27F21E4F5EB002461C8 /* WebViewController.swift */,
+				A1E77E8F21E64DA100D27662 /* G2MenuViewController.swift */,
+				A1E77E9121E65E6900D27662 /* G3MenuViewController.swift */,
+				A1E94EAB21ECDAA7007E659E /* Game1ViewController.swift */,
+				A1E66C9B21EDF9B2002CB888 /* WordViewController.swift */,
+				A1E5769B21F0CB7B00216231 /* WinViewController.swift */,
+				A1E5769D21F0E7E900216231 /* HowViewController.swift */,
+				A1E5769F21F0E9C500216231 /* MyTabViewController.swift */,
+				A1E576A121F0EAA100216231 /* How2ViewController.swift */,
+				A1E576A321F0EAB200216231 /* How3ViewController.swift */,
+				A1E576A521F0EAC600216231 /* How4ViewController.swift */,
+				A1E4B8F621F23FFD004C3E24 /* RankingViewController.swift */,
+				A17ABBC821F39B9C003A0C05 /* TabScoreViewController.swift */,
+				A17ABBCA21F39E3F003A0C05 /* Ranking2ViewController.swift */,
+				A17ABBCC21F39E54003A0C05 /* Ranking3ViewController.swift */,
 			);
 			path = JungleLife;
-			sourceTree = "<group>";
-		};
-		A1EAA6E421DBB1B900BB1129 /* JungleLifeTests */ = {
-			isa = PBXGroup;
-			children = (
-				A1EAA6E521DBB1B900BB1129 /* JungleLifeTests.swift */,
-				A1EAA6E721DBB1B900BB1129 /* Info.plist */,
-			);
-			path = JungleLifeTests;
-			sourceTree = "<group>";
-		};
-		A1EAA6EF21DBB1B900BB1129 /* JungleLifeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A1EAA6F021DBB1B900BB1129 /* JungleLifeUITests.swift */,
-				A1EAA6F221DBB1B900BB1129 /* Info.plist */,
-			);
-			path = JungleLifeUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +323,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B768A821F4C9E100074A04 /* game1M.mp3 in Resources */,
+				A1B768B121F4CE4B00074A04 /* hunterOh.wav in Resources */,
 				A1EAA6DB21DBB1B800BB1129 /* LaunchScreen.storyboard in Resources */,
 				A1EAA6D821DBB1B800BB1129 /* Assets.xcassets in Resources */,
+				A1128A7921E8F1DC00BCB3E7 /* Story2.mp4 in Resources */,
+				A1128A7A21E8F1DC00BCB3E7 /* Story3.mp4 in Resources */,
+				A1B768A221F4C6B100074A04 /* mainM.mp3 in Resources */,
+				A1B768AE21F4CC4000074A04 /* winM.mp3 in Resources */,
+				A1B768A421F4C94300074A04 /* homeM.mp3 in Resources */,
+				A1B768A921F4C9E100074A04 /* game2M.mp3 in Resources */,
 				A1EAA6D321DBB1B700BB1129 /* Main.storyboard in Resources */,
+				A1B768B221F4CE4B00074A04 /* boyOh.wav in Resources */,
+				A1B768AA21F4C9E100074A04 /* game3M.mp3 in Resources */,
+				A1128A7821E8F1DC00BCB3E7 /* Story1.mp4 in Resources */,
+				A1B768AC21F4CB7300074A04 /* gameNow.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +362,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17ABBC621F375CD003A0C05 /* MyScore+CoreDataClass.swift in Sources */,
+				A1E77E9021E64DA100D27662 /* G2MenuViewController.swift in Sources */,
 				A1EAA6D021DBB1B700BB1129 /* ViewController.swift in Sources */,
+				A1E66C9C21EDF9B2002CB888 /* WordViewController.swift in Sources */,
+				A17ABBD321F39F98003A0C05 /* MyScore3+CoreDataProperties.swift in Sources */,
+				A1E576A421F0EAB200216231 /* How3ViewController.swift in Sources */,
+				A1E576A621F0EAC600216231 /* How4ViewController.swift in Sources */,
+				A17ABBCB21F39E3F003A0C05 /* Ranking2ViewController.swift in Sources */,
+				A17ABBCD21F39E54003A0C05 /* Ranking3ViewController.swift in Sources */,
+				A17ABBD421F39F98003A0C05 /* MyScore2+CoreDataClass.swift in Sources */,
+				A17ABBC321F37578003A0C05 /* JungleLife.xcdatamodeld in Sources */,
+				A17ABBD221F39F98003A0C05 /* MyScore3+CoreDataClass.swift in Sources */,
+				A1E4F28021E4F5EB002461C8 /* WebViewController.swift in Sources */,
+				A17ABBD521F39F98003A0C05 /* MyScore2+CoreDataProperties.swift in Sources */,
+				A1E77E9221E65E6900D27662 /* G3MenuViewController.swift in Sources */,
 				A1EAA6CE21DBB1B700BB1129 /* AppDelegate.swift in Sources */,
-				A1EAA6D621DBB1B700BB1129 /* JungleLife.xcdatamodeld in Sources */,
+				A1E576A021F0E9C500216231 /* MyTabViewController.swift in Sources */,
+				A1EC4F8221E26484000BE4A6 /* G1MenuViewController.swift in Sources */,
+				A1E4B8F721F23FFD004C3E24 /* RankingViewController.swift in Sources */,
+				A1E94EAC21ECDAA7007E659E /* Game1ViewController.swift in Sources */,
+				A17ABBC721F375CD003A0C05 /* MyScore+CoreDataProperties.swift in Sources */,
+				A1E576A221F0EAA100216231 /* How2ViewController.swift in Sources */,
+				A1EAA6FF21DBD0BA00BB1129 /* MenuViewController.swift in Sources */,
+				A17ABBC921F39B9C003A0C05 /* TabScoreViewController.swift in Sources */,
+				A1E5769C21F0CB7B00216231 /* WinViewController.swift in Sources */,
+				A1E5769E21F0E7E900216231 /* HowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1EAA6E621DBB1B900BB1129 /* JungleLifeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1EAA6F121DBB1B900BB1129 /* JungleLifeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +567,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = scott.JungleLife;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scott.JungleLife;
+				PRODUCT_MODULE_NAME = MyJungleLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,7 +586,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = scott.JungleLife;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scott.JungleLife;
+				PRODUCT_MODULE_NAME = MyJungleLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -592,12 +718,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A1EAA6D421DBB1B700BB1129 /* JungleLife.xcdatamodeld */ = {
+		A17ABBC121F37578003A0C05 /* JungleLife.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A1EAA6D521DBB1B700BB1129 /* JungleLife.xcdatamodel */,
+				A17ABBC221F37578003A0C05 /* JungleLife.xcdatamodel */,
 			);
-			currentVersion = A1EAA6D521DBB1B700BB1129 /* JungleLife.xcdatamodel */;
+			currentVersion = A17ABBC221F37578003A0C05 /* JungleLife.xcdatamodel */;
 			path = JungleLife.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
