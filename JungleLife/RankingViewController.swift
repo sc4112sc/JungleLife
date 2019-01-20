@@ -38,6 +38,7 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.textLabel?.text = "Number \(indexPath.row+1).   " + valueA[indexPath.row]
         cell.detailTextLabel?.text = "Score:  " + keyA[indexPath.row]
         cell.backgroundColor = #colorLiteral(red: 0.6688833237, green: 0.4199428558, blue: 0.2589688897, alpha: 1)
+        cell.imageView?.image = UIImage(named:  "Apple1")
         return cell
     }
     

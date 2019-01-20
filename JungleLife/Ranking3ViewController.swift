@@ -39,6 +39,7 @@ class Ranking3ViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.textLabel?.text = "Number \(indexPath.row+1).   " + valueA[indexPath.row]
         cell.detailTextLabel?.text = "Score:  " + keyA[indexPath.row]
         cell.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        cell.imageView?.image = UIImage(named: "Lion1")
         return cell
     }
     
