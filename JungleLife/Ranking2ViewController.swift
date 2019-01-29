@@ -15,34 +15,74 @@ class Ranking2ViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var appDel = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext!
     
-    var myData:[String:String] = [:]
+    var myData:[(name:String,score:String,level:String)] = []
+    var myData1:[(name:String,score:String,level:String)] = []
+    var myData2:[(name:String,score:String,level:String)] = []
+    var myData3:[(name:String,score:String,level:String)] = []
     
-    
-    var keyA = [String]()
-    var valueA = [String]()
-    var intA = [Int]()
+
+    @IBOutlet weak var bg2: UIView!
+    @IBOutlet weak var noText: UILabel!
     
     @IBOutlet weak var myTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if keyA.count >= 10{
-            return 10
-        }else{
-            return keyA.count
+        if section == 0 {
+            if myData1.count >= 10{
+                return 10
+            }else{
+                return myData1.count
+            }
+        } else if section == 1 {
+            if myData2.count >= 10{
+                return 10
+            }else{
+                return myData2.count
+            }
+        } else {
+            if myData3.count >= 10{
+                return 10
+            }else{
+                return myData3.count
+            }
         }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Number \(indexPath.row+1).   " + valueA[indexPath.row]
-        cell.detailTextLabel?.text = "Score:  " + keyA[indexPath.row]
-        cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
-        cell.imageView?.image = UIImage(named: "Palette1")
+        
+        if indexPath.section == 0 {
+            cell.textLabel?.text = "Number \(indexPath.row+1).   " + myData1[indexPath.row].name
+            cell.detailTextLabel?.text = "Score:  " + myData1[indexPath.row].score
+            cell.backgroundColor = #colorLiteral(red: 0.6688833237, green: 0.4199428558, blue: 0.2589688897, alpha: 1)
+            cell.imageView?.image = UIImage(named:  "Palette1")
+        } else if indexPath.section == 1 {
+            cell.textLabel?.text = "Number \(indexPath.row+1).   " + myData2[indexPath.row].name
+            cell.detailTextLabel?.text = "Score:  " + myData2[indexPath.row].score
+            cell.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            cell.imageView?.image = UIImage(named:  "Towel1")
+        } else {
+            cell.textLabel?.text = "Number \(indexPath.row+1).   " + myData3[indexPath.row].name
+            cell.detailTextLabel?.text = "Score:  " + myData3[indexPath.row].score
+            cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+            cell.imageView?.image = UIImage(named:  "Computer1")
+        }
         return cell
     }
     
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Easy"
+        } else if section == 1 {
+            return "Medium"
+        } else {
+            return "Hard"
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,7 +92,10 @@ class Ranking2ViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidAppear(_ animated: Bool) {
         //先清空 否則會堆疊
-        myData = [:]
+        myData = []
+        myData1 = []
+        myData2 = []
+        myData3 = []
         
         context = appDel.persistentContainer.viewContext
         
@@ -61,33 +104,45 @@ class Ranking2ViewController: UIViewController,UITableViewDelegate,UITableViewDa
         for item in allItems as! [MyScore2]
         {
             
-            myData[item.score!] = item.name!
+             myData.append((item.name!,item.score!,item.level!))
             
         }
         
         
-        keyA = Array(myData.keys)
-        intA = keyA.map {Int($0)!}
-        intA.sort(by: {$0 > $1})
-        keyA = intA.map {String($0)}
+  
+        myData1 = myData.filter({ (arg0) -> Bool in
+            
+            let (_, _, level) = arg0
+            return level == "Easy"
+        })
         
-        if keyA.count == 0 {
+        myData2 = myData.filter({ (arg0) -> Bool in
             
-            keyA.append("0")
-            valueA.append("No data yet")
-            
-        } else {
-            
-            for i in 0...(keyA.count-1) {
-                
-                valueA.append(myData[keyA[i]]!)
-            }
-        }
+            let (_, _, level) = arg0
+            return level == "Medium"
+        })
         
+        myData3 = myData.filter({ (arg0) -> Bool in
+            
+            let (_, _, level) = arg0
+            return level == "Hard"
+        })
+        
+        myData1 = myData1.sorted(by: {$0.score > $1.score})
+        myData2 = myData2.sorted(by: {$0.score > $1.score})
+        myData3 = myData3.sorted(by: {$0.score > $1.score})
         
         
         //重新載入
         myTableView.reloadData()
+        
+        if myData.count == 0 {
+            bg2.isHidden = false
+            noText.isHidden = false
+        } else {
+            bg2.isHidden = true
+            noText.isHidden = true
+        }
     }
     
     @IBAction func calBack(_ sender: UIBarButtonItem) {

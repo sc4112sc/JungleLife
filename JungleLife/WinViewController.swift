@@ -12,13 +12,14 @@ import AVFoundation
 
 class WinViewController: UIViewController,UITextFieldDelegate {
 
+    
     //CoreData
     var context:NSManagedObjectContext!
     let appDel = UIApplication.shared.delegate as! AppDelegate
     
-    var myData:[String:String] = [:]
+    var myData:[(name:String,score:String,id:String)] = []
     
-    var keyA = [String]()
+    
     
     var audioPlayer: AVAudioPlayer!
     
@@ -30,7 +31,10 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     
     var myTime = 0
     var myCount = 0
-    var myScore = 0
+    var myId = ""
+    
+    var deleteId = ""
+    
     var reduceCount = 0
     var winOrNot = false
     @IBOutlet weak var winBg: UIImageView!
@@ -59,14 +63,14 @@ class WinViewController: UIViewController,UITextFieldDelegate {
         if winOrNot == true {
             winBg.image = UIImage(named: "winBg")
             timeLabel.text = String(myTime)
-            scoreLabel.text = String((myScore*1000)+((10-reduceCount)*1000)+(600-myTime))
+            scoreLabel.text = String((myCount*1000)+((10-reduceCount)*1000)+(600-myTime))
         } else {
             winBg.image = UIImage(named: "loseBg")
             timeLabel.text = String(myTime)
-            scoreLabel.text = String((myScore*1000)+((10-reduceCount)*1000)+(600-myTime))
+            scoreLabel.text = String((myCount*1000)+((10-reduceCount)*1000)+(600-myTime))
         }
         
-        
+        myId = String(arc4random_uniform(10000)) + scoreLabel.text!
         // Do any additional setup after loading the view.
     }
     
@@ -75,7 +79,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         //先清空 否則會堆疊
-        myData = [:]
+        myData = []
         
         switch gameName {
         case "Game1":
@@ -84,7 +88,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
             for item in allItems as! [MyScore]
             {
                 
-                myData[item.score!] = item.name!
+                myData.append((item.name!,item.score!,item.id!))
                 
             }
             
@@ -97,7 +101,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
             for item in allItems as! [MyScore2]
             {
                 
-                myData[item.score!] = item.name!
+                myData.append((item.name!,item.score!,item.id!))
                 
             }
             
@@ -109,7 +113,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
             for item in allItems as! [MyScore3]
             {
                 
-                myData[item.score!] = item.name!
+                myData.append((item.name!,item.score!,item.id!))
                 
             }
             
@@ -125,16 +129,17 @@ class WinViewController: UIViewController,UITextFieldDelegate {
         
         
         
-        keyA = Array(myData.keys).sorted(by: { (a, b) -> Bool in
-            a > b
-        })
+        myData = myData.sorted(by: {$0.score > $1.score})
         
-        if keyA.last == nil {
+        if myData.count == 0 {
             lastScore = "0"
+        } else if myData.count < 10{
+            lastScore = (myData.last?.score)!
         } else {
-            lastScore = keyA.last!
+            lastScore = myData[9].score
         }
         
+        print(lastScore)
         
         
     }
@@ -143,8 +148,9 @@ class WinViewController: UIViewController,UITextFieldDelegate {
         
         if winOrNot == true {
             
-            if keyA.count >= 10 {
-                if (myScore > Int(lastScore)!) {
+            if myData.count >= 10 {
+                if (Int(scoreLabel.text!)! > Int(lastScore)!) {
+                    
                     vEffect.frame = view.frame
                     view.addSubview(vEffect)
                     
@@ -184,49 +190,89 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func calSend(_ sender: UIButton) {
         myName = textField1.text!
-        
+        myId = String(arc4random_uniform(10000)) + scoreLabel.text!
         
         switch gameName {
         case "Game1":
+            
+            //先去除第十位
+            
+            if myData.count >= 10 {
+                deleteId = myData[9].id
+                let fetchRepuest:NSFetchRequest<MyScore>=MyScore.fetchRequest()
+                let predicate=NSPredicate(format: "id = '\(deleteId)'")
+                fetchRepuest.predicate=predicate
+                let allusers = try! context.fetch(fetchRepuest)
+                context.delete(allusers[0])
+                appDel.saveContext()
+            }
+            
             //CoreData取得表單列表
             let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore", into: context) as! MyScore
             
+            
+            
             if myName != ""
             {
-                user.name = myName + "     Level:  \(myLevel)"
+                user.name = "Challenger: " + myName
             }else{
-                user.name = "No name"
+                user.name = "Challenger: No name"
             }
             user.score = scoreLabel.text
-            
+            user.id = myId
+            user.level = myLevel
             appDel.saveContext()
             break
         case "Game2":
+            
+            //先去除第十位
+            if myData.count >= 10 {
+                deleteId = myData[9].id
+                let fetchRepuest:NSFetchRequest<MyScore2>=MyScore2.fetchRequest()
+                let predicate=NSPredicate(format: "id = '\(deleteId)'")
+                fetchRepuest.predicate=predicate
+                let allusers = try! context.fetch(fetchRepuest)
+                context.delete(allusers[0])
+                appDel.saveContext()
+            }
             //CoreData取得表單列表
             let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore2", into: context) as! MyScore2
             
             if myName != ""
             {
-                user.name = myName + "     Level:  \(myLevel)"
+                user.name = "Challenger: " + myName
             }else{
-                user.name = "No name"
+                user.name = "Challenger: No name"
             }
             user.score = scoreLabel.text
-            
+            user.id = myId
+            user.level = myLevel
             appDel.saveContext()
             break
         case "Game3":
+            
+            //先去除第十位
+            if myData.count >= 10 {
+                deleteId = myData[9].id
+                let fetchRepuest:NSFetchRequest<MyScore3>=MyScore3.fetchRequest()
+                let predicate=NSPredicate(format: "id = '\(deleteId)'")
+                fetchRepuest.predicate=predicate
+                let allusers = try! context.fetch(fetchRepuest)
+                context.delete(allusers[0])
+                appDel.saveContext()
+            }
             //CoreData取得表單列表
             let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore3", into: context) as! MyScore3
             
             if myName != ""
             {
-                user.name = myName + "     Level:  \(myLevel)"
+                user.name = "Challenger: " + myName
             }else{
-                user.name = "No name"
+                user.name = "Challenger: No name"
             }
             user.score = scoreLabel.text
-            
+            user.id = myId
+            user.level = myLevel
             appDel.saveContext()
             break
         default:
@@ -248,7 +294,15 @@ class WinViewController: UIViewController,UITextFieldDelegate {
         textField1.resignFirstResponder()
         return true
     }
-    
+    //限制長度為10
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentCharacterCount = textField.text?.characters.count ?? 0
+        if (range.length + range.location > currentCharacterCount){
+            return false
+        }
+        let newLength = currentCharacterCount + string.characters.count - range.length
+        return newLength <= 10
+    }
     /*
     // MARK: - Navigation
 

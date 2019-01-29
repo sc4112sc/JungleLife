@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     }
     
     @objc func onTimer(sender:AnyObject){
-        count = count + 0.1;
+        count = count + 0.2;
         progress.progress = count
         
         

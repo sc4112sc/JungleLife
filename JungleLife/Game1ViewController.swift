@@ -20,7 +20,7 @@ class Game1ViewController: UIViewController {
     var mytimer3:Timer!
     
     var myLevel = ""
-    
+    var winOrNot = false
     var boyCount = 0
     var hunterCount = 0
     //時間記數
@@ -282,32 +282,18 @@ class Game1ViewController: UIViewController {
         boyCount += 1
         if boyCount == 10 {
             boyCount = 9
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as! WinViewController
-            vc.myCount = boyCount
-            vc.reduceCount = hunterCount
-            vc.myTime = timeCount
-            vc.winOrNot = true
-            vc.gameName = naxtGameName
-            vc.myLevel = myLevel
-            present(vc, animated: true, completion: nil)
+            //延遲
+            winOrNot = true
+            perform(#selector(calWin), with: nil, afterDelay: 1)
         }
         boyBlood.image = boyBloodImgs[boyCount]
         
-        //4 叫聲
-        let url2 = Bundle.main.url(forResource: "hunterOh", withExtension: "wav")
-        do {
-            hunterAudioPlayer = try AVAudioPlayer(contentsOf: url2!)
-            hunterAudioPlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-        
-        hunterAudioPlayer.play()
+
         
         //延遲
-        perform(#selector(delayBtn), with: nil, afterDelay: 0.9)
+        perform(#selector(delayBtn1), with: nil, afterDelay: 0.9)
         
-        
+ 
         
         //3 換題目以及選項
 
@@ -335,36 +321,29 @@ class Game1ViewController: UIViewController {
         hunterCount += 1
         if hunterCount == 10 {
             hunterCount = 9
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as! WinViewController
-            vc.myCount = boyCount
-            vc.myTime = timeCount
-            vc.reduceCount = hunterCount
-            vc.winOrNot = false
-            vc.gameName = naxtGameName
-            vc.myLevel = myLevel
-            present(vc, animated: true, completion: nil)
+            winOrNot = false
+            //延遲
+            perform(#selector(calWin), with: nil, afterDelay: 1)
         }
         hunterBlood.image = hunterBloodImgs[hunterCount]
         
         
-        //4 叫聲
-        let url3 = Bundle.main.url(forResource: "boyOh", withExtension: "wav")
-        do {
-            boyAudioPlayer = try AVAudioPlayer(contentsOf: url3!)
-            boyAudioPlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-        
-        boyAudioPlayer.play()
-        
-        //延遲
-        perform(#selector(delayBtn), with: nil, afterDelay: 1)
-        
 
         
+        //延遲
+        perform(#selector(delayBtn2), with: nil, afterDelay: 1)
         
-        
+    }
+    
+    @objc func calWin() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as! WinViewController
+        vc.myCount = boyCount
+        vc.myTime = timeCount
+        vc.reduceCount = hunterCount
+        vc.winOrNot = winOrNot
+        vc.gameName = naxtGameName
+        vc.myLevel = myLevel
+        present(vc, animated: true, completion: nil)
     }
 
     @IBAction func calAns1(_ sender: UIButton) {
@@ -433,14 +412,42 @@ class Game1ViewController: UIViewController {
         
     }
     
-    @objc func delayBtn() {
+    @objc func delayBtn1() {
         ans1.isEnabled = true
         ans2.isEnabled = true
         ans3.isEnabled = true
         ans4.isEnabled = true
         ans5.isEnabled = true
         
+        //4 叫聲
+        let url2 = Bundle.main.url(forResource: "hunterOh", withExtension: "wav")
+        do {
+            hunterAudioPlayer = try AVAudioPlayer(contentsOf: url2!)
+            hunterAudioPlayer.prepareToPlay()
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
         
+        hunterAudioPlayer.play()
+    }
+    
+    @objc func delayBtn2() {
+        ans1.isEnabled = true
+        ans2.isEnabled = true
+        ans3.isEnabled = true
+        ans4.isEnabled = true
+        ans5.isEnabled = true
+        
+        //4 叫聲
+        let url3 = Bundle.main.url(forResource: "boyOh", withExtension: "wav")
+        do {
+            boyAudioPlayer = try AVAudioPlayer(contentsOf: url3!)
+            boyAudioPlayer.prepareToPlay()
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
+        
+        boyAudioPlayer.play()
     }
     
      @objc func calTime() {

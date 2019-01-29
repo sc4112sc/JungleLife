@@ -232,13 +232,29 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYX-XS-Tw5">
+                                <rect key="frame" x="0.0" y="32" width="667" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No challenger yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZ9-en-m7D">
+                                        <rect key="frame" x="141" y="129" width="385" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93241924047470093" green="0.81225365400314331" blue="0.65581667423248291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="EWj-dF-jkk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game1" image="tabIcon1" id="BRU-rd-h26"/>
                     <connections>
+                        <outlet property="bg2" destination="LYX-XS-Tw5" id="1kU-M8-VqF"/>
                         <outlet property="myTableView" destination="kLW-Wo-vsT" id="822-5E-txz"/>
+                        <outlet property="noText" destination="vZ9-en-m7D" id="Tew-4Z-lAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvh-sL-75e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -522,13 +538,29 @@ By email: sc4112sc@gmail.com</string>
                                     <outlet property="delegate" destination="7HI-E8-7XR" id="siB-2C-BG5"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eur-GQ-Njv">
+                                <rect key="frame" x="0.0" y="32" width="667" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No challenger yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfX-Dh-wsX">
+                                        <rect key="frame" x="141" y="129" width="385" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93241924047470093" green="0.81225365400314331" blue="0.65581667423248291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oOj-7u-KK5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game3" image="tabIcon1" id="Emi-ub-m80"/>
                     <connections>
+                        <outlet property="bg2" destination="eur-GQ-Njv" id="f70-os-RCq"/>
                         <outlet property="myTableView" destination="98t-NO-BIB" id="ElM-tr-ufb"/>
+                        <outlet property="noText" destination="RfX-Dh-wsX" id="4sT-Hi-8A6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6x-WJ-c3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -597,13 +629,29 @@ By email: sc4112sc@gmail.com</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrl-eR-Jay">
+                                <rect key="frame" x="0.0" y="32" width="667" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No challenger yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPt-5g-qnN">
+                                        <rect key="frame" x="141" y="129" width="385" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93241924047470093" green="0.81225365400314331" blue="0.65581667423248291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kqc-uM-NYU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game2" image="tabIcon1" id="YY7-Ek-SrQ"/>
                     <connections>
+                        <outlet property="bg2" destination="vrl-eR-Jay" id="Gwd-aM-sbk"/>
                         <outlet property="myTableView" destination="uy1-fH-Tao" id="AVL-3x-Noc"/>
+                        <outlet property="noText" destination="MPt-5g-qnN" id="mS6-Zv-jGR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGd-Jt-zGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
