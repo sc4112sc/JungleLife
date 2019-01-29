@@ -144,7 +144,7 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
             bg2.isHidden = true
             noText.isHidden = true
         }
-        
+        //
  
     }
     
