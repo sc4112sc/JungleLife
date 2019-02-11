@@ -38,6 +38,7 @@
 		A1E576A221F0EAA100216231 /* How2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E576A121F0EAA100216231 /* How2ViewController.swift */; };
 		A1E576A421F0EAB200216231 /* How3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E576A321F0EAB200216231 /* How3ViewController.swift */; };
 		A1E576A621F0EAC600216231 /* How4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E576A521F0EAC600216231 /* How4ViewController.swift */; };
+		A1E60F0E2211BEBC000B19CD /* ResultTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E60F0D2211BEBC000B19CD /* ResultTVC.swift */; };
 		A1E66C9C21EDF9B2002CB888 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E66C9B21EDF9B2002CB888 /* WordViewController.swift */; };
 		A1E77E9021E64DA100D27662 /* G2MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E77E8F21E64DA100D27662 /* G2MenuViewController.swift */; };
 		A1E77E9221E65E6900D27662 /* G3MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E77E9121E65E6900D27662 /* G3MenuViewController.swift */; };
@@ -100,6 +101,7 @@
 		A1E576A121F0EAA100216231 /* How2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How2ViewController.swift; sourceTree = "<group>"; };
 		A1E576A321F0EAB200216231 /* How3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How3ViewController.swift; sourceTree = "<group>"; };
 		A1E576A521F0EAC600216231 /* How4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How4ViewController.swift; sourceTree = "<group>"; };
+		A1E60F0D2211BEBC000B19CD /* ResultTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTVC.swift; sourceTree = "<group>"; };
 		A1E66C9B21EDF9B2002CB888 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		A1E77E8F21E64DA100D27662 /* G2MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G2MenuViewController.swift; sourceTree = "<group>"; };
 		A1E77E9121E65E6900D27662 /* G3MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G3MenuViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				A17ABBC821F39B9C003A0C05 /* TabScoreViewController.swift */,
 				A17ABBCA21F39E3F003A0C05 /* Ranking2ViewController.swift */,
 				A17ABBCC21F39E54003A0C05 /* Ranking3ViewController.swift */,
+				A1E60F0D2211BEBC000B19CD /* ResultTVC.swift */,
 			);
 			path = JungleLife;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				A17ABBC621F375CD003A0C05 /* MyScore+CoreDataClass.swift in Sources */,
 				A1E77E9021E64DA100D27662 /* G2MenuViewController.swift in Sources */,
 				A1EAA6D021DBB1B700BB1129 /* ViewController.swift in Sources */,
+				A1E60F0E2211BEBC000B19CD /* ResultTVC.swift in Sources */,
 				A1E66C9C21EDF9B2002CB888 /* WordViewController.swift in Sources */,
 				A17ABBD321F39F98003A0C05 /* MyScore3+CoreDataProperties.swift in Sources */,
 				A1E576A421F0EAB200216231 /* How3ViewController.swift in Sources */,

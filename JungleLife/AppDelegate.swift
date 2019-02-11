@@ -12,6 +12,13 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var list1 = ["Apple","Coffee","Tea","Cake","Banana","Lemon","Cookies","Orange","Milk","Chicken","Candy","Cherry","Pizza","Fish","Ice cream","Soup","Rice","Egg","Cheese","Tomato","Mango","Sandwich","Juice","Steak","Pineapple","Kiwi","Hot dog","Toast","Pear","French fries","Corn","Noodle","Donut","Strawberry","Chocolate","Grape","Pea","Bread","Fried rice","Hamburger","Mushroom","Muffins","Watermelon","Starfruit","Coconut","Cucumber","Meat bun","Potato","Dumplings","Pumpkin","Sugar cane","Broccoli","Guava","Peach","Papaya","Onion","Carrot","Peanut","Green paper","Eggpalant","Pencil","Paper","Brush","Palette","Knife","Chopping block","Kettle","Cup","Mop","Bucket","Broom","Dustpan","Needle","Thread","Pillow","Duvet","Toothbrush","Toothpaste","Towel","Soap","Table lamp","Book","Computer","Mouse","Radio","Recode","Scouring pad","Dish soap","Chopsticks","Bowl","Spatula","Pot","Wrench","Screwdriver","Saws","Ax","Sprinklers","Water pipe","Television","Remote control","Jump rope","Dumbbell","Iron","Ironing board","Clothes","Washboard","Comb","Mirror","Detergent","Scrub brushes","Eagle","Rabbit","Fox","Turkey","Bear","Gorilla","Horse","Giraffe","Monkey","Elephant","Frog","Owl","Squirrel","Lion","Hippo","Zebra","Snake","Coon","Wolf","Tiger","Sloth","Deer","Bat","Kangaroo","Ostrich","Peacock","Duck","Yak","Parrot","Goat","Rhinoceros","Crow","Koala","Turtle","Donkey","Goose","Crocodile","Panda","Wild boar","Leopard","Anteater","Platypus","Alpaca","Taiwan black bear","Vulture","Flamingo","Malayan tapir","Lizard","Leopard cat","Sugar glider","Pangolin","Meerket","Sparrow","Hedgehog","Chameleon","Groundhog","Skunk","Woodpecker","Heron","Penguin"]
+
+    
+    var list2 = ["蘋果","咖啡","茶","蛋糕","香蕉","檸檬","餅乾","橘子","牛奶","雞","糖果","櫻桃","披薩","魚","冰淇淋","湯","飯","蛋","起司","番茄","芒果","三明治","果汁","牛排","鳳梨","奇異果","熱狗","吐司","梨子","薯條","玉米","麵","甜甜圈","草莓","巧克力","葡萄","豌豆","麵包","炒飯","漢堡","香菇","鬆餅","西瓜","楊桃","椰子","小黃瓜","包子","馬鈴薯","水餃","南瓜","甘蔗","花椰菜","芭樂","桃子","木瓜","洋蔥","紅蘿蔔","花生","青椒","茄子","鉛筆","紙","畫筆","調色盤","刀","沾板","茶壺","杯子","拖把","水桶","掃把","畚箕","針","線","枕頭","棉被","牙刷","牙膏","毛巾","肥皂","檯燈","書","電腦","滑鼠","收音機","唱片","菜瓜布","洗碗精","筷子","碗","鍋鏟","鍋子","板手","螺絲起子","鋸子","斧頭","噴水器","水管","電視","遙控器","跳繩","啞鈴","熨斗","熨斗板","衣服","洗衣板","梳子","鏡子","清潔劑","刷子","老鷹","兔子","狐狸","火雞","熊","猩猩","馬","長頸鹿","猴子","大象","青蛙","貓頭鷹","松鼠","獅子","河馬","斑馬","蛇","浣熊","狼","老虎","樹懶","鹿","蝙蝠","袋鼠","鴕鳥","孔雀","鴨子","犛","鸚鵡","山羊","犀牛","烏鴉","無尾熊","烏龜","驢子","鵝","鱷魚","熊貓","山豬","豹","食蟻獸","鴨嘴獸","羊駝","臺灣黑熊","禿鷹","紅鶴","馬萊摩","蜥蜴","狸貓","蜜袋鼬","穿山甲","狐獴","麻雀","刺蝟","變色龍","土撥鼠","臭鼬","啄木鳥","白鷺鷥","企鵝"]
+    
+    
+    
     var window: UIWindow?
 
 

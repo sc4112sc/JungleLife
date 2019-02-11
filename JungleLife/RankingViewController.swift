@@ -87,28 +87,42 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+       
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        myData = []
+        
+        
+        context = appDel.persistentContainer.viewContext
+        
+        let allItems = try! context.fetch(MyScore.fetchRequest())
+        
+        for item in allItems as! [MyScore]
+        {
+            
+            myData.append((item.name!,item.score!,item.level!))
+            
+        }
+        
+        if myData.count == 0 {
+            bg2.isHidden = false
+            noText.isHidden = false
+        } else {
+            bg2.isHidden = true
+            noText.isHidden = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         //先清空 否則會堆疊
-        myData = []
+       
         myData1 = []
         myData2 = []
         myData3 = []
 
-        context = appDel.persistentContainer.viewContext
-
-        let allItems = try! context.fetch(MyScore.fetchRequest())
-
-        for item in allItems as! [MyScore]
-        {
-
-            myData.append((item.name!,item.score!,item.level!))
-            
-        }
+       
 
 
         
@@ -137,13 +151,7 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         //重新載入
         myTableView.reloadData()
         
-        if myData.count == 0 {
-            bg2.isHidden = false
-            noText.isHidden = false
-        } else {
-            bg2.isHidden = true
-            noText.isHidden = true
-        }
+
         //
  
     }
