@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import ViewAnimator
 
 class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -90,6 +91,9 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
        
         // Do any additional setup after loading the view.
     }
+    let animations = AnimationType.from(direction: .left, offset: 30.0)
+   
+   
     
     override func viewWillAppear(_ animated: Bool) {
         myData = []
@@ -151,7 +155,9 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         //重新載入
         myTableView.reloadData()
         
-
+        UIView.animate(views: myTableView.visibleCells,
+                       animations: [animations],
+                       delay: 0.5)
         //
  
     }

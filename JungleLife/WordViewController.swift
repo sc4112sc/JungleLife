@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -52,6 +53,7 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
             cell.imageView?.image = UIImage(named: g3Words[indexPath.row]+"1")
         }
+        
         return cell
     }
     
@@ -121,10 +123,23 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        return .none
 //    }
     
+    private let animations = AnimationType.from(direction: .right, offset: 30.0)
+    private let zoomAnimation = AnimationType.zoom(scale: 0.2)
+    private let rotateAnimation = AnimationType.rotate(angle: CGFloat.pi/6)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
+  
+        
         // Do any additional setup after loading the view.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        myTableView.reloadData()
+        UIView.animate(views: myTableView.visibleCells,
+                       animations: [animations, zoomAnimation, rotateAnimation],
+                       delay: 0.5)
     }
     
     @IBAction func calBack(_ sender: UIBarButtonItem) {

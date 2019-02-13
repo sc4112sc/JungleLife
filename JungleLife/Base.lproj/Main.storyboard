@@ -1031,7 +1031,7 @@ By email: sc4112sc@gmail.com</string>
                     <viewLayoutGuide key="safeArea" id="3jd-ip-tr6"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="589.65517241379314" y="132"/>
+            <point key="canvasLocation" x="598" y="311"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="rph-E9-wY6">
