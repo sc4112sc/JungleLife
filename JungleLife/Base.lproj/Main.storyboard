@@ -2154,7 +2154,7 @@ By email: sc4112sc@gmail.com</string>
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winBG" translatesAutoresizingMaskIntoConstraints="NO" id="cEw-5j-YRL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winBg" translatesAutoresizingMaskIntoConstraints="NO" id="cEw-5j-YRL">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R28-Ah-Lug">
@@ -2359,7 +2359,7 @@ By email: sc4112sc@gmail.com</string>
         <image name="tab3" width="22.5" height="22.5"/>
         <image name="tab4" width="18" height="18"/>
         <image name="tabIcon1" width="42" height="42"/>
-        <image name="winBG" width="1334" height="750"/>
+        <image name="winBg" width="1334" height="750"/>
         <image name="word" width="81.599998474121094" height="24"/>
     </resources>
 </document>
