@@ -11,6 +11,7 @@
 		A1128A7821E8F1DC00BCB3E7 /* Story1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */; };
 		A1128A7921E8F1DC00BCB3E7 /* Story2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */; };
 		A1128A7A21E8F1DC00BCB3E7 /* Story3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */; };
+		A128D00A22205472000609A9 /* LandscapeAVPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128D00922205472000609A9 /* LandscapeAVPlayerController.swift */; };
 		A17ABBC321F37578003A0C05 /* JungleLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC121F37578003A0C05 /* JungleLife.xcdatamodeld */; };
 		A17ABBC621F375CD003A0C05 /* MyScore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC421F375CD003A0C05 /* MyScore+CoreDataClass.swift */; };
 		A17ABBC721F375CD003A0C05 /* MyScore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC521F375CD003A0C05 /* MyScore+CoreDataProperties.swift */; };
@@ -21,6 +22,7 @@
 		A17ABBD321F39F98003A0C05 /* MyScore3+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBCF21F39F98003A0C05 /* MyScore3+CoreDataProperties.swift */; };
 		A17ABBD421F39F98003A0C05 /* MyScore2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBD021F39F98003A0C05 /* MyScore2+CoreDataClass.swift */; };
 		A17ABBD521F39F98003A0C05 /* MyScore2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBD121F39F98003A0C05 /* MyScore2+CoreDataProperties.swift */; };
+		A1AD333C22183BA40096C3E7 /* ViewAnimator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1AD333B22183BA40096C3E7 /* ViewAnimator.framework */; };
 		A1B768A221F4C6B100074A04 /* mainM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768A121F4C6B100074A04 /* mainM.mp3 */; };
 		A1B768A421F4C94300074A04 /* homeM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768A321F4C94300074A04 /* homeM.mp3 */; };
 		A1B768A821F4C9E100074A04 /* game1M.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768A521F4C9E000074A04 /* game1M.mp3 */; };
@@ -76,6 +78,7 @@
 		A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story1.mp4; path = "../../JFImages/森林app/Story1.mp4"; sourceTree = "<group>"; };
 		A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story2.mp4; path = "../../JFImages/森林app/Story2.mp4"; sourceTree = "<group>"; };
 		A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story3.mp4; path = "../../JFImages/森林app/Story3.mp4"; sourceTree = "<group>"; };
+		A128D00922205472000609A9 /* LandscapeAVPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeAVPlayerController.swift; sourceTree = "<group>"; };
 		A17ABBC221F37578003A0C05 /* JungleLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JungleLife.xcdatamodel; sourceTree = "<group>"; };
 		A17ABBC421F375CD003A0C05 /* MyScore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A17ABBC521F375CD003A0C05 /* MyScore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		A17ABBCF21F39F98003A0C05 /* MyScore3+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore3+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A17ABBD021F39F98003A0C05 /* MyScore2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A17ABBD121F39F98003A0C05 /* MyScore2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore2+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1AD333B22183BA40096C3E7 /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B768A121F4C6B100074A04 /* mainM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mainM.mp3; path = ../../JFImages/jfMusic/mainM.mp3; sourceTree = "<group>"; };
 		A1B768A321F4C94300074A04 /* homeM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = homeM.mp3; path = ../../JFImages/jfMusic/homeM.mp3; sourceTree = "<group>"; };
 		A1B768A521F4C9E000074A04 /* game1M.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game1M.mp3; path = ../../JFImages/jfMusic/game1M.mp3; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1AD333C22183BA40096C3E7 /* ViewAnimator.framework in Frameworks */,
 				A1E4F28321E4F661002461C8 /* WebKit.framework in Frameworks */,
 				7F676B6C20FDA0FF8A59EA75 /* Pods_JungleLife.framework in Frameworks */,
 			);
@@ -162,6 +167,7 @@
 		A1E4F28121E4F660002461C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1AD333B22183BA40096C3E7 /* ViewAnimator.framework */,
 				A1E4F28221E4F661002461C8 /* WebKit.framework */,
 				676B02FD1715E99C6853ED23 /* Pods_JungleLife.framework */,
 			);
@@ -234,6 +240,7 @@
 				A17ABBCA21F39E3F003A0C05 /* Ranking2ViewController.swift */,
 				A17ABBCC21F39E54003A0C05 /* Ranking3ViewController.swift */,
 				A1E60F0D2211BEBC000B19CD /* ResultTVC.swift */,
+				A128D00922205472000609A9 /* LandscapeAVPlayerController.swift */,
 			);
 			path = JungleLife;
 			sourceTree = "<group>";
@@ -447,6 +454,7 @@
 				A17ABBD521F39F98003A0C05 /* MyScore2+CoreDataProperties.swift in Sources */,
 				A1E77E9221E65E6900D27662 /* G3MenuViewController.swift in Sources */,
 				A1EAA6CE21DBB1B700BB1129 /* AppDelegate.swift in Sources */,
+				A128D00A22205472000609A9 /* LandscapeAVPlayerController.swift in Sources */,
 				A1E576A021F0E9C500216231 /* MyTabViewController.swift in Sources */,
 				A1EC4F8221E26484000BE4A6 /* G1MenuViewController.swift in Sources */,
 				A1E4B8F721F23FFD004C3E24 /* RankingViewController.swift in Sources */,

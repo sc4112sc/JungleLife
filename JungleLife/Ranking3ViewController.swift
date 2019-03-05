@@ -26,7 +26,7 @@ class Ranking3ViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var intA = [Int]()
     
-    @IBOutlet weak var bg2: UIView!
+    
     @IBOutlet weak var noText: UILabel!
     
     @IBOutlet weak var myTableView: UITableView!
@@ -80,13 +80,24 @@ class Ranking3ViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return 3
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Easy"
-        } else if section == 1 {
-            return "Medium"
+      
+        if myData.count == 0 {
+            
+            return  nil
+            
         } else {
-            return "Hard"
+            
+            if section == 0 {
+                return "Easy"
+            } else if section == 1 {
+                return "Medium"
+            } else {
+                return "Hard"
+            }
+            
+            
         }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,10 +120,10 @@ class Ranking3ViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         
         if myData.count == 0 {
-            bg2.isHidden = false
+            
             noText.isHidden = false
         } else {
-            bg2.isHidden = true
+            
             noText.isHidden = true
         }
         

@@ -28,6 +28,9 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
+        
+        self.myView3.frame = UIScreen.main.bounds
+        
         let url = Bundle.main.url(forResource: "homeM", withExtension: "mp3")
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url!)
@@ -145,13 +148,15 @@ class MenuViewController: UIViewController {
         let videoURL = URL(fileURLWithPath: filePath!)
         
         let player = AVPlayer(url: videoURL)
-        let playerViewController = AVPlayerViewController()
+        let playerViewController = LandscapeAVPlayerController()
         playerViewController.player = player
         self.present(playerViewController, animated: true) {
             playerViewController.player!.play()
         }
         
     }
+    
+    
     
     let myImages:[UIImage]=[
         UIImage(named:"l1")!,

@@ -11,17 +11,32 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
+    var mytimer:Timer!
+    
+    var cloudAry = [UIImage(named: "nilBg1"),UIImage(named: "cloud1"),UIImage(named: "cloud2"),UIImage(named: "cloud4")]
+    
     var audioPlayer: AVAudioPlayer!
     
+    @IBOutlet weak var cloudImg: UIImageView!
     @IBOutlet weak var progress: UIProgressView!
     
     @IBOutlet var myView: UIView!
-    var count:Float=0.0
+    var count:Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.myView.frame = UIScreen.main.bounds
 
+        
+        //動畫1
+        if mytimer == nil {
+            mytimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(calImageCloud), userInfo: nil, repeats: true)
+            
+            mytimer.fire()
+        }else{
+            mytimer.invalidate()
+        }
         
         progress.progress = 0.0
     }
@@ -75,6 +90,16 @@ class ViewController: UIViewController {
         
     }
 
+    var imageIndex=0
     
+    @objc func calImageCloud() {
+        
+        cloudImg.image = cloudAry[imageIndex]
+        imageIndex = imageIndex + 1
+        if imageIndex == 4 {
+            imageIndex = 0
+        }
+        
+    }
 }
 

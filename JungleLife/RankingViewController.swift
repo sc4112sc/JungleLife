@@ -10,7 +10,11 @@ import UIKit
 import CoreData
 import ViewAnimator
 
+
 class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+   
+
     
     //core data
     var appDel = UIApplication.shared.delegate as! AppDelegate
@@ -22,7 +26,7 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var myData3:[(name:String,score:String,level:String)] = []
     
     @IBOutlet weak var noText: UILabel!
-    @IBOutlet weak var bg2: UIView!
+    
     @IBOutlet weak var myTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -78,13 +82,24 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return 3
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Easy"
-        } else if section == 1 {
-            return "Medium"
+        
+        if myData.count == 0 {
+            
+            return  nil
+            
         } else {
-            return "Hard"
+            
+            if section == 0 {
+                return "Easy"
+            } else if section == 1 {
+                return "Medium"
+            } else {
+                return "Hard"
+            }
+
+            
         }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,10 +126,10 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         
         if myData.count == 0 {
-            bg2.isHidden = false
+            
             noText.isHidden = false
         } else {
-            bg2.isHidden = true
+            
             noText.isHidden = true
         }
     }

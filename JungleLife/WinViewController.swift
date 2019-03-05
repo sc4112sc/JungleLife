@@ -61,11 +61,11 @@ class WinViewController: UIViewController,UITextFieldDelegate {
         
         
         if winOrNot == true {
-            winBg.image = UIImage(named: "winBg")
+            winBg.image = UIImage(named: "winBG")
             timeLabel.text = String(myTime)
             scoreLabel.text = String((myCount*1000)+((10-reduceCount)*1000)+(600-myTime))
         } else {
-            winBg.image = UIImage(named: "loseBg")
+            winBg.image = UIImage(named: "loseBG")
             timeLabel.text = String(myTime)
             scoreLabel.text = String((myCount*1000)+((10-reduceCount)*1000)+(600-myTime))
         }
