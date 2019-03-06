@@ -11,6 +11,14 @@ import AVFoundation
 
 class Game1ViewController: UIViewController {
     
+    //
+    var timer:Timer! = nil
+    
+    let time: Double = 0.3
+    
+    var flakeImage: UIImage!
+    //
+    
     var audioPlayer: AVAudioPlayer!
     var boyAudioPlayer: AVAudioPlayer!
     var hunterAudioPlayer: AVAudioPlayer!
@@ -178,7 +186,7 @@ class Game1ViewController: UIViewController {
             mytimer3 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(calTime), userInfo: nil, repeats: true)
             
             mytimer3.fire()
-        }else{
+        } else {
             mytimer3.invalidate()
         }
         
@@ -190,6 +198,21 @@ class Game1ViewController: UIViewController {
         
         
 
+        //飛行動畫
+        flakeImage = UIImage(named: "Eagle2.png")
+        
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector:
+                #selector(self.onTimer), userInfo: nil, repeats: true)
+            
+            timer.fire()
+        } else {
+            timer.invalidate()
+        }
+        
+        
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -463,6 +486,40 @@ class Game1ViewController: UIViewController {
             present(vc, animated: true, completion: nil)
         }
         timeLabel.text = String(timeCount)
+    }
+    
+    
+    //
+    @objc func onTimer() {
+        
+        
+        
+        let flakeImageView = UIImageView(image: flakeImage)
+        let startX: Int = Int(arc4random()) % Int(UIScreen.main.bounds.maxX) // 0~670
+        let endX: Int = Int(arc4random()) % Int(UIScreen.main.bounds.maxX)
+        let scale: Float = Float( Int(arc4random()) % 100 ) / 100.0 + 0.5 // 0.5 ~ 1.5
+       // let speed: Float = Float( Int(arc4random()) % 100 ) / 100.0 + 1.0 // 1.0 ~ 2.0
+        let cgScale = CGFloat(scale) * 70.0
+       // let cgSpeed = CGFloat(speed) * 35.0
+        flakeImageView.frame = CGRect(x: CGFloat(startX), y: CGFloat(UIScreen.main.bounds.maxY), width: cgScale, height:cgScale)
+        
+        flakeImageView.alpha = 1
+        self.view.addSubview(flakeImageView)
+        
+        
+        
+        UIView.animate(
+            withDuration: 10, animations: {
+                flakeImageView.frame=CGRect(x: CGFloat(endX), y: -100.0, width: cgScale, height:cgScale)
+        }
+            )
+        {
+            (value) in
+            flakeImageView.removeFromSuperview()
+        }
+        
+        
+        
     }
     /*
     // MARK: - Navigation

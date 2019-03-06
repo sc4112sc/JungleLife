@@ -142,7 +142,7 @@
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.61827951670000003" green="0.32416969540000001" blue="0.1376546025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ys-jv-BRI">
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ys-jv-BRI">
                                 <rect key="frame" x="0.0" y="32" width="667" height="343"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -150,22 +150,29 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="J0C-3s-Hb6">
+                                <rect key="frame" x="315" y="169" width="37" height="37"/>
+                                <color key="color" red="0.63524991269999997" green="0.43102103470000003" blue="0.25613132119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.25512036681175232" green="0.49873840808868408" blue="0.17169967293739319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="0ys-jv-BRI" secondAttribute="trailing" id="73k-6i-Gmh"/>
                             <constraint firstItem="uvO-ay-Gvk" firstAttribute="top" secondItem="gsf-hO-Ruk" secondAttribute="top" id="7AC-QM-3VZ"/>
                             <constraint firstAttribute="trailing" secondItem="uvO-ay-Gvk" secondAttribute="trailing" id="BGS-xc-CS7"/>
                             <constraint firstItem="0ys-jv-BRI" firstAttribute="top" secondItem="gsf-hO-Ruk" secondAttribute="top" constant="32" id="EiS-iG-vHq"/>
                             <constraint firstItem="0ys-jv-BRI" firstAttribute="leading" secondItem="gsf-hO-Ruk" secondAttribute="leading" id="RQ1-yr-Fml"/>
+                            <constraint firstItem="J0C-3s-Hb6" firstAttribute="centerX" secondItem="gsf-hO-Ruk" secondAttribute="centerX" id="dhm-3c-yu4"/>
                             <constraint firstAttribute="bottom" secondItem="0ys-jv-BRI" secondAttribute="bottom" id="v7d-Kz-6Ek"/>
                             <constraint firstItem="0ys-jv-BRI" firstAttribute="top" secondItem="uvO-ay-Gvk" secondAttribute="bottom" id="wGr-aQ-s0C"/>
                             <constraint firstItem="uvO-ay-Gvk" firstAttribute="leading" secondItem="gsf-hO-Ruk" secondAttribute="leading" id="x5D-xO-49D"/>
+                            <constraint firstItem="J0C-3s-Hb6" firstAttribute="centerY" secondItem="gsf-hO-Ruk" secondAttribute="centerY" id="yO2-k0-d8g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="umj-6m-dHS"/>
                     </view>
                     <navigationItem key="navigationItem" id="z0d-8r-vPg"/>
                     <connections>
+                        <outlet property="active" destination="J0C-3s-Hb6" id="WO7-la-wHF"/>
                         <outlet property="webView" destination="0ys-jv-BRI" id="q3P-Cz-i8Y"/>
                     </connections>
                 </viewController>
