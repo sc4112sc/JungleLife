@@ -8,9 +8,10 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var list1 = ["Apple","Coffee","Tea","Cake","Banana","Lemon","Cookies","Orange","Milk","Chicken","Candy","Cherry","Pizza","Fish","Ice cream","Soup","Rice","Egg","Cheese","Tomato","Mango","Sandwich","Juice","Steak","Pineapple","Kiwi","Hot dog","Toast","Pear","French fries","Corn","Noodle","Donut","Strawberry","Chocolate","Grape","Pea","Bread","Fried rice","Hamburger","Mushroom","Muffins","Watermelon","Starfruit","Coconut","Cucumber","Meat bun","Potato","Dumplings","Pumpkin","Sugar cane","Broccoli","Guava","Peach","Papaya","Onion","Carrot","Peanut","Green paper","Eggpalant","Pencil","Paper","Brush","Palette","Knife","Chopping block","Kettle","Cup","Mop","Bucket","Broom","Dustpan","Needle","Thread","Pillow","Duvet","Toothbrush","Toothpaste","Towel","Soap","Table lamp","Book","Computer","Mouse","Radio","Recode","Scouring pad","Dish soap","Chopsticks","Bowl","Spatula","Pot","Wrench","Screwdriver","Saws","Ax","Sprinklers","Water pipe","Television","Remote control","Jump rope","Dumbbell","Iron","Ironing board","Clothes","Washboard","Comb","Mirror","Detergent","Scrub brushes","Eagle","Rabbit","Fox","Turkey","Bear","Gorilla","Horse","Giraffe","Monkey","Elephant","Frog","Owl","Squirrel","Lion","Hippo","Zebra","Snake","Coon","Wolf","Tiger","Sloth","Deer","Bat","Kangaroo","Ostrich","Peacock","Duck","Yak","Parrot","Goat","Rhinoceros","Crow","Koala","Turtle","Donkey","Goose","Crocodile","Panda","Wild boar","Leopard","Anteater","Platypus","Alpaca","Taiwan black bear","Vulture","Flamingo","Malayan tapir","Lizard","Leopard cat","Sugar glider","Pangolin","Meerket","Sparrow","Hedgehog","Chameleon","Groundhog","Skunk","Woodpecker","Heron","Penguin"]
 
@@ -24,6 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //推播
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted == false {
+                print("使用者未授權")
+            }
+        }
+        
+        center.setNotificationCategories(Set<UNNotificationCategory>())
+        center.delegate = self
+        sendNotification()
+        
         return true
     }
 
@@ -94,6 +108,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    
+    func sendNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Jungle Life"
+        content.body = "快來使用英文能力擊敗獵人吧！"
+        content.badge = 0
+        content.sound = UNNotificationSound.default
+        
+        var date = DateComponents()
+        date.hour = 12
+        
+        
+        let imageURL:URL = Bundle.main.url(forResource: "Crow1", withExtension: "png")!
+        let attachment = try! UNNotificationAttachment(identifier: "image", url: imageURL, options: nil)
+        content.attachments = [attachment]
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+        let request = UNNotificationRequest(identifier: "myid", content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: nil)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("在前景收到通知")
+        completionHandler()
     }
 
 }

@@ -45,6 +45,7 @@
 		A1E66C9C21EDF9B2002CB888 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E66C9B21EDF9B2002CB888 /* WordViewController.swift */; };
 		A1E77E9021E64DA100D27662 /* G2MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E77E8F21E64DA100D27662 /* G2MenuViewController.swift */; };
 		A1E77E9221E65E6900D27662 /* G3MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E77E9121E65E6900D27662 /* G3MenuViewController.swift */; };
+		A1E89044224A819E00D2D683 /* Crow1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1E89043224A819D00D2D683 /* Crow1.png */; };
 		A1E94EAC21ECDAA7007E659E /* Game1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E94EAB21ECDAA7007E659E /* Game1ViewController.swift */; };
 		A1EAA6CE21DBB1B700BB1129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA6CD21DBB1B700BB1129 /* AppDelegate.swift */; };
 		A1EAA6D021DBB1B700BB1129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA6CF21DBB1B700BB1129 /* ViewController.swift */; };
@@ -112,6 +113,7 @@
 		A1E66C9B21EDF9B2002CB888 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		A1E77E8F21E64DA100D27662 /* G2MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G2MenuViewController.swift; sourceTree = "<group>"; };
 		A1E77E9121E65E6900D27662 /* G3MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G3MenuViewController.swift; sourceTree = "<group>"; };
+		A1E89043224A819D00D2D683 /* Crow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crow1.png; sourceTree = "<group>"; };
 		A1E94EAB21ECDAA7007E659E /* Game1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game1ViewController.swift; sourceTree = "<group>"; };
 		A1EAA6CA21DBB1B700BB1129 /* JungleLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JungleLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EAA6CD21DBB1B700BB1129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		A1EAA6CC21DBB1B700BB1129 /* JungleLife */ = {
 			isa = PBXGroup;
 			children = (
+				A1E89043224A819D00D2D683 /* Crow1.png */,
 				A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */,
 				A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */,
 				A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */,
@@ -359,6 +362,7 @@
 				A1128A7A21E8F1DC00BCB3E7 /* Story3.mp4 in Resources */,
 				A1B768A221F4C6B100074A04 /* mainM.mp3 in Resources */,
 				A1B768AE21F4CC4000074A04 /* winM.mp3 in Resources */,
+				A1E89044224A819E00D2D683 /* Crow1.png in Resources */,
 				A1B768A421F4C94300074A04 /* homeM.mp3 in Resources */,
 				A1B768A921F4C9E100074A04 /* game2M.mp3 in Resources */,
 				A1EAA6D321DBB1B700BB1129 /* Main.storyboard in Resources */,

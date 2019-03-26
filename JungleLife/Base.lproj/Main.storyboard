@@ -2175,21 +2175,21 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calHome:" destination="urb-cD-u7m" eventType="touchUpInside" id="qvz-SP-148"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6745" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIg-tG-e0A">
-                                <rect key="frame" x="471" y="168.5" width="79.5" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="67458" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIg-tG-e0A">
+                                <rect key="frame" x="445" y="168.5" width="105.5" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="79.5" id="Aaz-Ej-sEb"/>
+                                    <constraint firstAttribute="width" constant="105.5" id="Aaz-Ej-sEb"/>
                                     <constraint firstAttribute="height" constant="38" id="YdP-4q-phC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <color key="textColor" red="0.65461558099999995" green="0.14299732449999999" blue="0.12801098820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6745" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkg-Rg-Oar">
-                                <rect key="frame" x="471" y="241" width="79.5" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="67458" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkg-Rg-Oar">
+                                <rect key="frame" x="445" y="241" width="105.5" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="FSx-MG-4Qn"/>
-                                    <constraint firstAttribute="width" constant="79.5" id="RfB-eZ-JkI"/>
+                                    <constraint firstAttribute="width" constant="105.5" id="RfB-eZ-JkI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <color key="textColor" red="0.65461558099999995" green="0.14299732449999999" blue="0.12801098820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

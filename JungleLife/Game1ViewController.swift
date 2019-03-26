@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
 
 class Game1ViewController: UIViewController {
     
@@ -452,6 +453,8 @@ class Game1ViewController: UIViewController {
         }
         
         hunterAudioPlayer.play()
+        //震動
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
     
     @objc func delayBtn2() {
@@ -471,6 +474,8 @@ class Game1ViewController: UIViewController {
         }
         
         boyAudioPlayer.play()
+        //震動
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
     
      @objc func calTime() {
