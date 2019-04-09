@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,UITableViewDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -36,16 +37,27 @@ class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,
         return filterList.count ?? 0
     }
 
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //1
+        var voiceBtn = UIButton()
+        voiceBtn.setImage(UIImage(named: "voice.png"), for: UIControl.State.normal)
+        voiceBtn.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        voiceBtn.addTarget(self, action: #selector(self.voiceBtn(_:)), for: .touchUpInside)
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         cell.textLabel?.text = filterList[indexPath.row]
         cell.detailTextLabel?.text = filterList2[indexPath.row]
         cell.imageView?.image = UIImage(named: filterList[indexPath.row] + "1")
         cell.backgroundColor = #colorLiteral(red: 0.7568627596, green: 0.5755516863, blue: 0.5688795421, alpha: 1)
-        // Configure the cell...
+        cell.accessoryView = voiceBtn
+        voiceBtn.tag = indexPath.row
+        
 
         return cell
     }
@@ -110,6 +122,31 @@ class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,
             
             myTableView.reloadData()
         }
+    }
+    
+    
+    
+    
+    var voicePlayer: AVAudioPlayer!
+    var word = ""
+    
+    @objc func voiceBtn(_ sender: UIButton){
+        //voice
+        
+        word = filterList[sender.tag]
+        
+        
+        let url2 = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3")
+        do {
+            voicePlayer = try AVAudioPlayer(contentsOf: url2!)
+            voicePlayer.prepareToPlay()
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
+        
+        voicePlayer.play()
+        
+        
     }
     
 }

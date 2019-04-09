@@ -8,6 +8,7 @@
 
 import UIKit
 import ViewAnimator
+import AVFoundation
 
 class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -34,24 +35,52 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return g3Words.count
         }
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //1
+        var voiceBtn = UIButton()
+        voiceBtn.setImage(UIImage(named: "voice.png"), for: UIControl.State.normal)
+        voiceBtn.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        voiceBtn.addTarget(self, action: #selector(self.voiceBtn(_:)), for: .touchUpInside)
+        //2
+        var voiceBtn2 = UIButton()
+        voiceBtn2.setImage(UIImage(named: "voice.png"), for: UIControl.State.normal)
+        voiceBtn2.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        voiceBtn2.addTarget(self, action: #selector(self.voiceBtn2(_:)), for: .touchUpInside)
+        
+        //3
+        var voiceBtn3 = UIButton()
+        voiceBtn3.setImage(UIImage(named: "voice.png"), for: UIControl.State.normal)
+        voiceBtn3.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        voiceBtn3.addTarget(self, action: #selector(self.voiceBtn3(_:)), for: .touchUpInside)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if indexPath.section == 0 {
             cell.textLabel?.text = g1Words[indexPath.row]
             cell.detailTextLabel?.text = g1WordsCh[indexPath.row]
             cell.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
             cell.imageView?.image = UIImage(named: g1Words[indexPath.row]+"1")
+            cell.accessoryView = voiceBtn
+            voiceBtn.tag = indexPath.row
+            
         } else if indexPath.section == 1 {
             cell.textLabel?.text = g2Words[indexPath.row]
             cell.detailTextLabel?.text = g2WordsCh[indexPath.row]
             cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
             cell.imageView?.image = UIImage(named: g2Words[indexPath.row]+"1")
+            cell.accessoryView = voiceBtn2
+            voiceBtn2.tag = indexPath.row
         } else {
             cell.textLabel?.text = g3Words[indexPath.row]
             cell.detailTextLabel?.text = g3WordsCh[indexPath.row]
             cell.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
             cell.imageView?.image = UIImage(named: g3Words[indexPath.row]+"1")
+            cell.accessoryView = voiceBtn3
+            voiceBtn3.tag = indexPath.row
         }
         
         return cell
@@ -148,6 +177,63 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     }
     
+    var voicePlayer: AVAudioPlayer!
+    var word = ""
+    
+    @objc func voiceBtn(_ sender: UIButton){
+        //voice
+        
+        word = g1Words[sender.tag]
+        
+        
+        let url2 = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3")
+        do {
+            voicePlayer = try AVAudioPlayer(contentsOf: url2!)
+            voicePlayer.prepareToPlay()
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
+        
+        voicePlayer.play()
+        
+        
+    }
+    
+    @objc func voiceBtn2(_ sender: UIButton){
+        //voice
+        
+        word = g2Words[sender.tag]
+        
+        let url2 = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3")
+        do {
+            voicePlayer = try AVAudioPlayer(contentsOf: url2!)
+            voicePlayer.prepareToPlay()
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
+        
+        voicePlayer.play()
+        
+        
+    }
+    
+    @objc func voiceBtn3(_ sender: UIButton){
+        //voice
+        
+        word = g3Words[sender.tag]
+        
+        let url2 = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3")
+        do {
+            voicePlayer = try AVAudioPlayer(contentsOf: url2!)
+            voicePlayer.prepareToPlay()
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
+        
+        voicePlayer.play()
+        
+        
+    }
     /*
     // MARK: - Navigation
 
