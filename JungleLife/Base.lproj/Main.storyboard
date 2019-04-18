@@ -59,7 +59,7 @@
                                     <action selector="calAbout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KuK-oB-ggn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud1" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-mC-sKc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nilBg1" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-mC-sKc">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="64R-p3-hGF"/>
@@ -2337,7 +2337,6 @@ By email: sc4112sc@gmail.com</string>
         <image name="boy1" width="68.160003662109375" height="87.360000610351562"/>
         <image name="boyB1" width="110.40000152587891" height="9.6000003814697266"/>
         <image name="clock" width="38.400001525878906" height="28.799999237060547"/>
-        <image name="cloud1" width="1334" height="200"/>
         <image name="easy" width="370" height="100"/>
         <image name="g1Level" width="600" height="500"/>
         <image name="g1_easy" width="900" height="675"/>

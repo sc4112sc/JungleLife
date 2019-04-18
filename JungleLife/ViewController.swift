@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     var mytimer:Timer!
     
-    var cloudAry = [UIImage(named: "nilBg1"),UIImage(named: "cloud1"),UIImage(named: "cloud2"),UIImage(named: "cloud4")]
+    var cloudAry = [UIImage(named: "nilBg1"),UIImage(named: "cloud"),UIImage(named: "cloud2"),UIImage(named: "cloud3"),UIImage(named: "cloud4"),UIImage(named: "cloud5"),UIImage(named: "cloud6"),UIImage(named: "cloud7"),UIImage(named: "cloud8"),UIImage(named: "cloud9"),UIImage(named: "cloud10"),UIImage(named: "cloud11"),UIImage(named: "cloud12"),UIImage(named: "cloud13")]
     
     var audioPlayer: AVAudioPlayer!
     
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         //動畫1
         if mytimer == nil {
-            mytimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(calImageCloud), userInfo: nil, repeats: true)
+            mytimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(calImageCloud), userInfo: nil, repeats: true)
             
             mytimer.fire()
         }else{
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         
         cloudImg.image = cloudAry[imageIndex]
         imageIndex = imageIndex + 1
-        if imageIndex == 4 {
+        if imageIndex == 14 {
             imageIndex = 0
         }
         
