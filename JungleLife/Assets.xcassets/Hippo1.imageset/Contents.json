@@ -6,11 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Hippo1.png",
+      "filename" : "Hippo1@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Hippo1@3x.png",
       "scale" : "3x"
     }
   ],

@@ -6,11 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Hot dog1.png",
+      "filename" : "Hot dog1@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Hot dog1@3x.png",
       "scale" : "3x"
     }
   ],

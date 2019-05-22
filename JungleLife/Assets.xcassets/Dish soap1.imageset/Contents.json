@@ -6,11 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Dish soap1.png",
+      "filename" : "Dish soap1@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Dish soap1@3x.png",
       "scale" : "3x"
     }
   ],

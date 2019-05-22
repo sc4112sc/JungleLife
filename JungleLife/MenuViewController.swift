@@ -15,19 +15,47 @@ class MenuViewController: UIViewController {
 
     var audioPlayer: AVAudioPlayer!
     
+    
    
     @IBOutlet var myView: UIView!
     @IBOutlet var myView2: UIView!
     @IBOutlet var myView3: UIView!
+    @IBOutlet var launchedOnceView: UIView!
     @IBOutlet weak var blurEffect: UIView!
     @IBOutlet weak var loadImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
   
+        
+      
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
+
+        //nav
+        self.launchedOnceView.frame = UIScreen.main.bounds
+        
+        
+        
+        imageViewA.image = UIImage(named: "nav1.jpg")
+        tempImageView = imageViewB
+        
+        if pageControl.currentPage == 0 {
+            leftBtn.isHidden = true
+        }
+        
+        //偵測
+        var alreadyLaunchedOnce = isAppAlreadyLaunchedOnce()
+        
+        if alreadyLaunchedOnce == false {
+            
+            
+            launchedOnceView.center = view.center
+            
+            view.addSubview(launchedOnceView)
+        }
+        
         
         self.myView3.frame = UIScreen.main.bounds
         
@@ -148,6 +176,7 @@ class MenuViewController: UIViewController {
         let videoURL = URL(fileURLWithPath: filePath!)
         
         let player = AVPlayer(url: videoURL)
+        //強制橫向
         let playerViewController = LandscapeAVPlayerController()
         playerViewController.player = player
         self.present(playerViewController, animated: true) {
@@ -181,7 +210,7 @@ class MenuViewController: UIViewController {
         UIImage(named:"l20")!
         ]
     
-    var imageIndex=0
+    var imageIndex = 0
     
     var resourceNames = ""
     
@@ -260,8 +289,18 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func calAbout(_ sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "web") as! WebViewController
-        present(vc, animated: true, completion: nil)
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "web") as! WebViewController
+//        present(vc, animated: true, completion: nil)
+        
+        launchedOnceView.center = view.center
+        pageControl.currentPage = 0
+        imageViewA.image = UIImage(named: "nav1.jpg")
+        imageViewB.image = UIImage(named: "nav1.jpg")
+        if pageControl.currentPage == 0 {
+            leftBtn.isHidden = true
+        }
+        rightBtn.isHidden = false
+        view.addSubview(launchedOnceView)
     }
     
     @IBAction func calWord(_ sender: UIButton) {
@@ -272,6 +311,114 @@ class MenuViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabScore") as! TabScoreViewController
         present(vc, animated: true, completion: nil)
     }
+    
+    
+    //查看是否為第一次開啟
+    func isAppAlreadyLaunchedOnce() -> Bool {
+        let defaults = UserDefaults.standard
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
+            print("App already lauched : \(isAppAlreadyLaunchedOnce)")
+            return true
+        } else {
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print("App lauched first time")
+            return false
+        }
+    }
+    
+    
+    var tempImageView: UIImageView!
+    var bgImageView: UIImageView!
+    @IBOutlet weak var imageViewA: UIImageView!
+    @IBOutlet weak var imageViewB: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var leftBtn: UIButton!
+    @IBOutlet weak var rightBtn: UIButton!
+    
+    
+    @IBAction func closePage(_ sender: Any) {
+        
+        launchedOnceView.removeFromSuperview()
+    }
+    
+    
+    @IBAction func nextPage(_ sender: Any) {
+        
+        
+        
+        if pageControl.currentPage < 7 {
+            pageControl.currentPage = pageControl.currentPage + 1
+            pageTurning()
+            leftBtn.isHidden = false
+        }
+        
+        if pageControl.currentPage == 7{
+            rightBtn.isHidden = true
+        }
+       
+        
+        
+        
+    }
+    
+    @IBAction func returnPage(_ sender: Any) {
+        
+       
+        if pageControl.currentPage > 0 {
+            pageControl.currentPage = pageControl.currentPage - 1
+            pageTurning()
+            rightBtn.isHidden = false
+        }
+        
+        if pageControl.currentPage == 0{
+            leftBtn.isHidden = true
+        }
+        
+        
+        
+    }
+    
+    //nav
+    func pageTurning() {
+        
+        var picNumber = "nav" + String(pageControl.currentPage + 1) + ".jpg"
+        tempImageView.image = UIImage(named: picNumber)
+        
+        if tempImageView.tag == 0 {
+            tempImageView = imageViewB;
+            bgImageView = imageViewA;
+        } else {
+            tempImageView = imageViewA;
+            bgImageView = imageViewB;
+        }
+        
+        
+        
+        UIView.beginAnimations("fipping View", context: nil)
+        UIView.setAnimationDuration(0.5)
+        UIView.setAnimationCurve(UIView.AnimationCurve.easeInOut)
+        UIView.setAnimationTransition(UIView.AnimationTransition.curlUp, for: tempImageView, cache: true)
+        tempImageView.isHidden = true
+        // 將 pageControll 元件放在最前
+        view.bringSubviewToFront(pageControl)
+        view.bringSubviewToFront(leftBtn)
+        view.bringSubviewToFront(rightBtn)
+        
+        UIView.commitAnimations()
+        
+        UIView.beginAnimations("fipping View", context: nil)
+        UIView.setAnimationDuration(0.5)
+        UIView.setAnimationCurve(UIView.AnimationCurve.easeInOut)
+        UIView.setAnimationTransition(UIView.AnimationTransition.curlDown, for: bgImageView, cache: true)
+        bgImageView.isHidden = false
+        view.bringSubviewToFront(pageControl)
+        view.bringSubviewToFront(leftBtn)
+        view.bringSubviewToFront(rightBtn)
+
+       
+        UIView.commitAnimations()
+    }
+    
     /*
     // MARK: - Navigation
 

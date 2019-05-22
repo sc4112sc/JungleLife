@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         //動畫1
         if mytimer == nil {
-            mytimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(calImageCloud), userInfo: nil, repeats: true)
+            mytimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(calImageCloud), userInfo: nil, repeats: true)
             
             mytimer.fire()
         }else{

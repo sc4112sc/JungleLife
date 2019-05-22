@@ -22,7 +22,6 @@
 		A17ABBD321F39F98003A0C05 /* MyScore3+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBCF21F39F98003A0C05 /* MyScore3+CoreDataProperties.swift */; };
 		A17ABBD421F39F98003A0C05 /* MyScore2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBD021F39F98003A0C05 /* MyScore2+CoreDataClass.swift */; };
 		A17ABBD521F39F98003A0C05 /* MyScore2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBD121F39F98003A0C05 /* MyScore2+CoreDataProperties.swift */; };
-		A1AD333C22183BA40096C3E7 /* ViewAnimator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1AD333B22183BA40096C3E7 /* ViewAnimator.framework */; };
 		A1B768AC21F4CB7300074A04 /* gameNow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AB21F4CB7300074A04 /* gameNow.mp3 */; };
 		A1B768AE21F4CC4000074A04 /* winM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AD21F4CC3F00074A04 /* winM.mp3 */; };
 		A1B768B121F4CE4B00074A04 /* hunterOh.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AF21F4CE4A00074A04 /* hunterOh.wav */; };
@@ -136,7 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1AD333C22183BA40096C3E7 /* ViewAnimator.framework in Frameworks */,
 				A1E4F28321E4F661002461C8 /* WebKit.framework in Frameworks */,
 				7F676B6C20FDA0FF8A59EA75 /* Pods_JungleLife.framework in Frameworks */,
 			);

@@ -8,24 +8,18 @@
 
 import UIKit
 import WebKit
-class WebViewController: UIViewController {
+class WebViewController: UIViewController,WKNavigationDelegate {
 
-    var mytimer:Timer!
+    
     
     @IBOutlet weak var active: UIActivityIndicatorView!
     @IBOutlet weak var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        webView.navigationDelegate = self
 
-        if mytimer == nil {
-            mytimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(calActive(sender:)), userInfo: nil, repeats: true)
-            
-            mytimer.fire()
-        }else{
-            mytimer.invalidate()
-        }
-        
+
         let url = URL(string: "https://www.facebook.com/KidDreamer5/")
         let request = URLRequest(url: url!)
         webView.load(request)
@@ -37,19 +31,13 @@ class WebViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    var index=0
-    
-    @objc func calActive(sender:AnyObject) {
-        
-        
-        index = index + 1
-        if index == 3 {
-            index = 0
-            sender.invalidate()//把時間清空
-            active.stopAnimating()
-        }
-        
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        active.stopAnimating()
     }
+    
+
+    
+    
     /*
     // MARK: - Navigation
 
