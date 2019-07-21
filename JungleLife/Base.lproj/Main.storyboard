@@ -315,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="kLW-Wo-vsT">
-                                <rect key="frame" x="0.0" y="32" width="667" height="311"/>
+                                <rect key="frame" x="0.0" y="60" width="667" height="283"/>
                                 <color key="backgroundColor" red="0.93241924047470093" green="0.81225365400314331" blue="0.65581667423248291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="JJe-oZ-2d3" detailTextLabel="8Ci-fh-lfD" style="IBUITableViewCellStyleValue1" id="K5H-OU-4ue">
@@ -378,16 +378,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JpN-9v-0Bb">
+                                <rect key="frame" x="0.0" y="32" width="667" height="29"/>
+                                <segments>
+                                    <segment title="Native ranking"/>
+                                    <segment title="Global ranking"/>
+                                </segments>
+                                <color key="tintColor" red="0.61827951670000003" green="0.32416969540000001" blue="0.1376546025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeRK:" destination="Ubf-iq-t7i" eventType="valueChanged" id="XKD-Eq-BGT"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JpN-9v-0Bb" secondAttribute="trailing" id="1Ud-KT-qnL"/>
+                            <constraint firstItem="JpN-9v-0Bb" firstAttribute="leading" secondItem="1vg-OW-ZNf" secondAttribute="leading" id="9FL-zE-4cd"/>
                             <constraint firstItem="vZ9-en-m7D" firstAttribute="centerX" secondItem="1vg-OW-ZNf" secondAttribute="centerX" id="COr-wj-90Z"/>
                             <constraint firstItem="vZ9-en-m7D" firstAttribute="centerY" secondItem="1vg-OW-ZNf" secondAttribute="centerY" id="MoO-BU-ho1"/>
                             <constraint firstItem="mmM-jq-MWv" firstAttribute="top" secondItem="1vg-OW-ZNf" secondAttribute="top" id="Tie-zL-IQh"/>
-                            <constraint firstItem="kLW-Wo-vsT" firstAttribute="top" secondItem="mmM-jq-MWv" secondAttribute="bottom" id="WGI-W2-g2B"/>
                             <constraint firstItem="kLW-Wo-vsT" firstAttribute="bottom" secondItem="EWj-dF-jkk" secondAttribute="bottom" id="b2S-NG-oWS"/>
+                            <constraint firstItem="JpN-9v-0Bb" firstAttribute="top" secondItem="mmM-jq-MWv" secondAttribute="bottom" id="e0V-9j-I08"/>
                             <constraint firstItem="mmM-jq-MWv" firstAttribute="leading" secondItem="1vg-OW-ZNf" secondAttribute="leading" id="kc8-Mt-eeH"/>
                             <constraint firstAttribute="trailing" secondItem="kLW-Wo-vsT" secondAttribute="trailing" id="psq-Mf-epg"/>
+                            <constraint firstItem="kLW-Wo-vsT" firstAttribute="top" secondItem="JpN-9v-0Bb" secondAttribute="bottom" id="r1h-HF-OdU"/>
+                            <constraint firstItem="kLW-Wo-vsT" firstAttribute="top" secondItem="JpN-9v-0Bb" secondAttribute="bottom" id="vM1-Wj-Ym0"/>
                             <constraint firstAttribute="trailing" secondItem="mmM-jq-MWv" secondAttribute="trailing" id="vT4-iR-aV6"/>
                             <constraint firstItem="kLW-Wo-vsT" firstAttribute="leading" secondItem="1vg-OW-ZNf" secondAttribute="leading" id="zfI-SI-RrH"/>
                         </constraints>
@@ -395,6 +410,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Game1" image="tabIcon1" id="BRU-rd-h26"/>
                     <connections>
+                        <outlet property="mySeg" destination="JpN-9v-0Bb" id="71y-Lc-F67"/>
                         <outlet property="myTableView" destination="kLW-Wo-vsT" id="822-5E-txz"/>
                         <outlet property="noText" destination="vZ9-en-m7D" id="Tew-4Z-lAR"/>
                     </connections>
@@ -679,7 +695,7 @@ By email: sc4112sc@gmail.com</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="98t-NO-BIB">
-                                <rect key="frame" x="0.0" y="32" width="667" height="311"/>
+                                <rect key="frame" x="0.0" y="60" width="667" height="283"/>
                                 <color key="backgroundColor" red="0.93241924050000002" green="0.81225365400000005" blue="0.6558166742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="7HW-2U-mpy" detailTextLabel="G2w-fx-qpP" style="IBUITableViewCellStyleValue1" id="wvP-0k-qxa">
@@ -739,23 +755,39 @@ By email: sc4112sc@gmail.com</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pyO-3O-Lc8">
+                                <rect key="frame" x="0.0" y="32" width="667" height="29"/>
+                                <segments>
+                                    <segment title="Native ranking"/>
+                                    <segment title="Global ranking"/>
+                                </segments>
+                                <color key="tintColor" red="0.61827951670000003" green="0.32416969540000001" blue="0.1376546025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeRK:" destination="7HI-E8-7XR" eventType="valueChanged" id="lej-DZ-Lp2"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="98t-NO-BIB" firstAttribute="top" secondItem="pyO-3O-Lc8" secondAttribute="bottom" id="Fwn-nu-E72"/>
                             <constraint firstItem="Pc0-de-1cv" firstAttribute="leading" secondItem="ZpP-Tc-jaj" secondAttribute="leading" id="KKe-e8-3Xn"/>
+                            <constraint firstAttribute="trailing" secondItem="pyO-3O-Lc8" secondAttribute="trailing" id="Lco-g9-afI"/>
                             <constraint firstItem="98t-NO-BIB" firstAttribute="bottom" secondItem="oOj-7u-KK5" secondAttribute="bottom" id="WB8-YH-qIA"/>
                             <constraint firstItem="RfX-Dh-wsX" firstAttribute="centerX" secondItem="ZpP-Tc-jaj" secondAttribute="centerX" id="en3-dN-vVH"/>
                             <constraint firstItem="98t-NO-BIB" firstAttribute="leading" secondItem="ZpP-Tc-jaj" secondAttribute="leading" id="fDg-Ii-yr2"/>
                             <constraint firstItem="RfX-Dh-wsX" firstAttribute="centerY" secondItem="ZpP-Tc-jaj" secondAttribute="centerY" id="fou-x8-1Zu"/>
+                            <constraint firstItem="pyO-3O-Lc8" firstAttribute="top" secondItem="Pc0-de-1cv" secondAttribute="bottom" id="h68-jF-6MZ"/>
                             <constraint firstAttribute="trailing" secondItem="98t-NO-BIB" secondAttribute="trailing" id="ii4-XR-Skb"/>
                             <constraint firstItem="Pc0-de-1cv" firstAttribute="top" secondItem="oOj-7u-KK5" secondAttribute="top" id="kOQ-SC-q1d"/>
-                            <constraint firstItem="98t-NO-BIB" firstAttribute="top" secondItem="Pc0-de-1cv" secondAttribute="bottom" id="ymQ-ZE-xCO"/>
+                            <constraint firstItem="pyO-3O-Lc8" firstAttribute="leading" secondItem="ZpP-Tc-jaj" secondAttribute="leading" id="qdu-WG-Ecs"/>
+                            <constraint firstItem="98t-NO-BIB" firstAttribute="top" secondItem="pyO-3O-Lc8" secondAttribute="bottom" id="szT-eJ-tx7"/>
                             <constraint firstAttribute="trailing" secondItem="Pc0-de-1cv" secondAttribute="trailing" id="zLY-3L-MMy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oOj-7u-KK5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game3" image="tabIcon1" id="Emi-ub-m80"/>
                     <connections>
+                        <outlet property="mySeg" destination="pyO-3O-Lc8" id="7A9-J7-LTg"/>
                         <outlet property="myTableView" destination="98t-NO-BIB" id="ElM-tr-ufb"/>
                         <outlet property="noText" destination="RfX-Dh-wsX" id="4sT-Hi-8A6"/>
                     </connections>
@@ -773,7 +805,7 @@ By email: sc4112sc@gmail.com</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uy1-fH-Tao">
-                                <rect key="frame" x="0.0" y="32" width="667" height="311"/>
+                                <rect key="frame" x="0.0" y="60" width="667" height="283"/>
                                 <color key="backgroundColor" red="0.93241924050000002" green="0.81225365400000005" blue="0.6558166742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="ree-JI-Vho" detailTextLabel="tQ7-p1-jas" style="IBUITableViewCellStyleValue1" id="Rgi-KQ-K89">
@@ -834,23 +866,39 @@ By email: sc4112sc@gmail.com</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="92A-sh-IgK">
+                                <rect key="frame" x="0.0" y="32" width="667" height="29"/>
+                                <segments>
+                                    <segment title="Native ranking"/>
+                                    <segment title="Global ranking"/>
+                                </segments>
+                                <color key="tintColor" red="0.61827951670000003" green="0.32416969540000001" blue="0.1376546025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeRK:" destination="M3e-nF-lMt" eventType="valueChanged" id="xcT-Ja-jLx"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uy1-fH-Tao" firstAttribute="top" secondItem="Cgm-Ni-xMA" secondAttribute="bottom" id="Ae3-gP-rKf"/>
+                            <constraint firstItem="92A-sh-IgK" firstAttribute="top" secondItem="Cgm-Ni-xMA" secondAttribute="bottom" id="CHT-4T-Nnu"/>
                             <constraint firstItem="Cgm-Ni-xMA" firstAttribute="top" secondItem="Eve-Dn-HLO" secondAttribute="top" id="CWF-8R-58O"/>
                             <constraint firstItem="uy1-fH-Tao" firstAttribute="bottom" secondItem="Kqc-uM-NYU" secondAttribute="bottom" id="E6a-ca-bEh"/>
+                            <constraint firstAttribute="trailing" secondItem="92A-sh-IgK" secondAttribute="trailing" id="HJ1-A7-zba"/>
+                            <constraint firstItem="uy1-fH-Tao" firstAttribute="top" secondItem="92A-sh-IgK" secondAttribute="bottom" id="U6z-ft-bRe"/>
                             <constraint firstItem="MPt-5g-qnN" firstAttribute="centerY" secondItem="Eve-Dn-HLO" secondAttribute="centerY" id="UrS-1f-49S"/>
+                            <constraint firstItem="92A-sh-IgK" firstAttribute="leading" secondItem="Eve-Dn-HLO" secondAttribute="leading" id="Z2N-Uv-DG9"/>
                             <constraint firstAttribute="trailing" secondItem="uy1-fH-Tao" secondAttribute="trailing" id="ana-Fs-ESm"/>
                             <constraint firstItem="Cgm-Ni-xMA" firstAttribute="leading" secondItem="Eve-Dn-HLO" secondAttribute="leading" id="d3q-zL-31v"/>
                             <constraint firstItem="uy1-fH-Tao" firstAttribute="leading" secondItem="Eve-Dn-HLO" secondAttribute="leading" id="jFH-2s-HEz"/>
                             <constraint firstAttribute="trailing" secondItem="Cgm-Ni-xMA" secondAttribute="trailing" id="jfS-u6-kQe"/>
                             <constraint firstItem="MPt-5g-qnN" firstAttribute="centerX" secondItem="Eve-Dn-HLO" secondAttribute="centerX" id="nOi-CR-uwI"/>
+                            <constraint firstItem="uy1-fH-Tao" firstAttribute="top" secondItem="92A-sh-IgK" secondAttribute="bottom" id="zYE-98-BjI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kqc-uM-NYU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game2" image="tabIcon1" id="YY7-Ek-SrQ"/>
                     <connections>
+                        <outlet property="mySeg" destination="92A-sh-IgK" id="vJm-AW-xzz"/>
                         <outlet property="myTableView" destination="uy1-fH-Tao" id="AVL-3x-Noc"/>
                         <outlet property="noText" destination="MPt-5g-qnN" id="mS6-Zv-jGR"/>
                     </connections>
