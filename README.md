@@ -1,5 +1,6 @@
 # JungleLife
-森林的生命 英文教材app
+森林的生命 英文教材
+iOS App
 
 
 主要實作
