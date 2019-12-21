@@ -34,9 +34,7 @@ class G1MenuViewController: UIViewController {
         audioPlayer.play()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        audioPlayer.stop()
-    }
+
     
     @IBAction func calStart(_ sender: UIButton) {
         blurEffect.frame = view.frame
@@ -74,21 +72,45 @@ class G1MenuViewController: UIViewController {
     }
     
     @IBAction func calBack(_ sender: UIButton) {
-        
-        dismiss(animated: true, completion: nil)
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func goG1Easy(_ sender: UIButton) {
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g1Easy"
         present(vc, animated: true, completion: nil)
     }
     @IBAction func goG1Medium(_ sender: UIButton) {
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g1Medium"
         present(vc, animated: true, completion: nil)
     }
     @IBAction func goG1Hard(_ sender: UIButton) {
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g1Hard"
         present(vc, animated: true, completion: nil)

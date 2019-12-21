@@ -172,8 +172,9 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     @IBAction func calBack(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-        
+
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
+        present(vc, animated: true, completion: nil)
     
     }
     

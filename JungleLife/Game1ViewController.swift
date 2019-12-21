@@ -200,10 +200,10 @@ class Game1ViewController: UIViewController {
         
 
         //飛行動畫
-        flakeImage = UIImage(named: "Eagle2.png")
+        flakeImage = UIImage(named: "Eagle1.png")
         
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector:
+            timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector:
                 #selector(self.onTimer), userInfo: nil, repeats: true)
             
             timer.fire()
@@ -360,6 +360,13 @@ class Game1ViewController: UIViewController {
     }
     
     @objc func calWin() {
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
+
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as! WinViewController
         vc.myCount = boyCount
         vc.myTime = timeCount
@@ -410,7 +417,14 @@ class Game1ViewController: UIViewController {
         }
     }
     @IBAction func calBack(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+                //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
+        present(vc, animated: true, completion: nil)
     }
     
     
@@ -481,6 +495,13 @@ class Game1ViewController: UIViewController {
      @objc func calTime() {
         timeCount += 1
         if timeCount > 600{
+            //音樂暫停
+            if audioPlayer != nil {
+                if audioPlayer.isPlaying {
+                    audioPlayer.stop()
+                }
+            }
+
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as! WinViewController
             vc.myCount = boyCount
             vc.reduceCount = hunterCount
@@ -503,19 +524,19 @@ class Game1ViewController: UIViewController {
         let startX: Int = Int(arc4random()) % Int(UIScreen.main.bounds.maxX) // 0~670
         let endX: Int = Int(arc4random()) % Int(UIScreen.main.bounds.maxX)
         let scale: Float = Float( Int(arc4random()) % 100 ) / 100.0 + 0.5 // 0.5 ~ 1.5
-       // let speed: Float = Float( Int(arc4random()) % 100 ) / 100.0 + 1.0 // 1.0 ~ 2.0
-        let cgScale = CGFloat(scale) * 70.0
-       // let cgSpeed = CGFloat(speed) * 35.0
+        let speed: Float = Float( Int(arc4random()) % 100 ) / 100.0 + 1.0 // 1.0 ~ 2.0
+        let cgScale = CGFloat(scale) * 50.0
+        let cgSpeed = CGFloat(speed) * 5.0
         flakeImageView.frame = CGRect(x: CGFloat(startX), y: CGFloat(UIScreen.main.bounds.maxY), width: cgScale, height:cgScale)
         
-        flakeImageView.alpha = 1
+        flakeImageView.alpha = 0.8
         self.view.addSubview(flakeImageView)
         
         
         
         UIView.animate(
-            withDuration: 10, animations: {
-                flakeImageView.frame=CGRect(x: CGFloat(endX), y: -100.0, width: cgScale, height:cgScale)
+            withDuration: TimeInterval(cgSpeed), animations: {
+                flakeImageView.frame = CGRect(x: CGFloat(endX), y: -100.0, width: cgScale, height:cgScale)
         }
             )
         {

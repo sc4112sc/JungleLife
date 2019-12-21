@@ -9,12 +9,19 @@
 import UIKit
 import AVKit
 import AVFoundation
+import ChainableAnimations
 
 
 class MenuViewController: UIViewController {
 
     var audioPlayer: AVAudioPlayer!
     
+    @IBOutlet weak var btn1: UIButton!
+    @IBOutlet weak var btn2: UIButton!
+    @IBOutlet weak var btn3: UIButton!
+    @IBOutlet weak var btn4: UIButton!
+    @IBOutlet weak var btn5: UIButton!
+    @IBOutlet weak var btn6: UIButton!
     
    
     @IBOutlet var myView: UIView!
@@ -31,7 +38,7 @@ class MenuViewController: UIViewController {
       
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
 
         //nav
         self.launchedOnceView.frame = UIScreen.main.bounds
@@ -53,9 +60,22 @@ class MenuViewController: UIViewController {
             
             launchedOnceView.center = view.center
             
+            
+            
+            
+            //ChainableAnimations
+            let animator = ChainableAnimator(view: rightBtn)
+            animator.transform(x: 50).bounce.thenAfter(t: 1.0).transform(x: -50).spring.animate(t: 1.0)
+            
+            let okAnimator = ChainableAnimator(view: okBtn)
+            okAnimator.transform(scale: 0.5).bounce.thenAfter(t: 1.0).transform(scale: 2.0).bounce.animate(t: 1.0)
+            
             view.addSubview(launchedOnceView)
+            
+            
         }
         
+
         
         self.myView3.frame = UIScreen.main.bounds
         
@@ -68,6 +88,60 @@ class MenuViewController: UIViewController {
         }
         audioPlayer.numberOfLoops = -1
         audioPlayer.play()
+        
+        
+        //按鈕動畫
+        
+        let btnAnimator = ChainableAnimator(view: btn1)
+        btnAnimator.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let btnAnimator2 = ChainableAnimator(view: self.btn2)
+            btnAnimator2.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let btnAnimator3 = ChainableAnimator(view: self.btn3)
+            btnAnimator3.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            let btnAnimator4 = ChainableAnimator(view: self.btn4)
+            btnAnimator4.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            let btnAnimator5 = ChainableAnimator(view: self.btn5)
+            btnAnimator5.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            let btnAnimator6 = ChainableAnimator(view: self.btn6)
+            btnAnimator6.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            let btnAnimator = ChainableAnimator(view: self.btn1)
+            btnAnimator.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+            let btnAnimator2 = ChainableAnimator(view: self.btn2)
+            btnAnimator2.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+            let btnAnimator3 = ChainableAnimator(view: self.btn3)
+            btnAnimator3.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+            let btnAnimator4 = ChainableAnimator(view: self.btn4)
+            btnAnimator4.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            let btnAnimator5 = ChainableAnimator(view: self.btn5)
+            btnAnimator5.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) {
+            let btnAnimator6 = ChainableAnimator(view: self.btn6)
+            btnAnimator6.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        }
+        
+
+        
+        //
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -240,6 +314,13 @@ class MenuViewController: UIViewController {
             imageIndex = 0
             sender.invalidate()//把時間清空
             
+            //音樂暫停
+            if audioPlayer != nil {
+                if audioPlayer.isPlaying {
+                    audioPlayer.stop()
+                }
+            }
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "g1Menu") as! G1MenuViewController
             present(vc, animated: true, completion: nil)
             
@@ -256,6 +337,13 @@ class MenuViewController: UIViewController {
         if imageIndex == 20 {
             imageIndex = 0
             sender.invalidate()//把時間清空
+            
+            //音樂暫停
+            if audioPlayer != nil {
+                if audioPlayer.isPlaying {
+                    audioPlayer.stop()
+                }
+            }
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "g2Menu") as! G2MenuViewController
             present(vc, animated: true, completion: nil)
@@ -274,6 +362,13 @@ class MenuViewController: UIViewController {
             imageIndex = 0
             sender.invalidate()//把時間清空
             
+            //音樂暫停
+            if audioPlayer != nil {
+                if audioPlayer.isPlaying {
+                    audioPlayer.stop()
+                }
+            }
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "g3Menu") as! G3MenuViewController
             present(vc, animated: true, completion: nil)
             
@@ -284,6 +379,7 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func calHelper(_ sender: UIButton) {
+        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "myTab") as! MyTabViewController
         present(vc, animated: true, completion: nil)
     }
@@ -300,10 +396,28 @@ class MenuViewController: UIViewController {
             leftBtn.isHidden = true
         }
         rightBtn.isHidden = false
+        
+        
+      
+        //ChainableAnimations
+        let animator = ChainableAnimator(view: rightBtn)
+        animator.transform(x: 50).bounce.thenAfter(t: 1.0).transform(x: -50).spring.animate(t: 1.0)
+        
+        let okAnimator = ChainableAnimator(view: okBtn)
+        okAnimator.transform(scale: 0.5).bounce.thenAfter(t: 1.0).transform(scale: 2.0).bounce.animate(t: 1.0)
+        
         view.addSubview(launchedOnceView)
+        
+        
     }
     
     @IBAction func calWord(_ sender: UIButton) {
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "word") as! WordViewController
         present(vc, animated: true, completion: nil)
     }
@@ -334,6 +448,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var leftBtn: UIButton!
     @IBOutlet weak var rightBtn: UIButton!
+    @IBOutlet weak var okBtn: UIButton!
     
     
     @IBAction func closePage(_ sender: Any) {
@@ -350,6 +465,7 @@ class MenuViewController: UIViewController {
             pageControl.currentPage = pageControl.currentPage + 1
             pageTurning()
             leftBtn.isHidden = false
+
         }
         
         if pageControl.currentPage == 7{
@@ -358,6 +474,16 @@ class MenuViewController: UIViewController {
        
         
         
+        //ChainableAnimations
+        let animator = ChainableAnimator(view: leftBtn)
+        animator.transform(x: -50).bounce.thenAfter(t: 1.0).transform(x: 50).spring.animate(t: 1.0)
+        
+        //ChainableAnimations
+        let animator2 = ChainableAnimator(view: rightBtn)
+        animator2.transform(x: 50).bounce.thenAfter(t: 1.0).transform(x: -50).spring.animate(t: 1.0)
+        
+        let okAnimator = ChainableAnimator(view: okBtn)
+        okAnimator.transform(scale: 0.5).bounce.thenAfter(t: 1.0).transform(scale: 2.0).bounce.animate(t: 1.0)
         
     }
     
@@ -368,13 +494,24 @@ class MenuViewController: UIViewController {
             pageControl.currentPage = pageControl.currentPage - 1
             pageTurning()
             rightBtn.isHidden = false
+            
+            
         }
         
         if pageControl.currentPage == 0{
             leftBtn.isHidden = true
         }
         
+        //ChainableAnimations
+        let animator = ChainableAnimator(view: leftBtn)
+        animator.transform(x: -50).bounce.thenAfter(t: 1.0).transform(x: 50).spring.animate(t: 1.0)
         
+        //ChainableAnimations
+        let animator2 = ChainableAnimator(view: rightBtn)
+        animator2.transform(x: 50).bounce.thenAfter(t: 1.0).transform(x: -50).spring.animate(t: 1.0)
+        
+        let okAnimator = ChainableAnimator(view: okBtn)
+        okAnimator.transform(scale: 0.5).bounce.thenAfter(t: 1.0).transform(scale: 2.0).bounce.animate(t: 1.0)
         
     }
     

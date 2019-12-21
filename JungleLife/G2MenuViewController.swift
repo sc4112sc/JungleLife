@@ -72,20 +72,43 @@ class G2MenuViewController: UIViewController {
         g2Image.image = UIImage(named: "g2_hard")
     }
     @IBAction func calHome(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
+        present(vc, animated: true, completion: nil)
+        
     }
     
     @IBAction func goG1Easy(_ sender: UIButton) {
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g2Easy"
         present(vc, animated: true, completion: nil)
     }
     @IBAction func goG1Medium(_ sender: UIButton) {
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g2Medium"
         present(vc, animated: true, completion: nil)
     }
     @IBAction func goG1Hard(_ sender: UIButton) {
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g2Hard"
         present(vc, animated: true, completion: nil)

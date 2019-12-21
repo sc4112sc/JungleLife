@@ -74,19 +74,48 @@ class G3MenuViewController: UIViewController {
         g3Image.image = UIImage(named: "g3_hard")
     }
     @IBAction func calHome(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
+        present(vc, animated: true, completion: nil)
     }
     @IBAction func goG1Easy(_ sender: UIButton) {
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
+
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g3Easy"
         present(vc, animated: true, completion: nil)
     }
     @IBAction func goG1Medium(_ sender: UIButton) {
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
+
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g3Medium"
         present(vc, animated: true, completion: nil)
     }
     @IBAction func goG1Hard(_ sender: UIButton) {
+        //音樂暫停
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayer.stop()
+            }
+        }
+
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
         vc.gameName = "g3Hard"
         present(vc, animated: true, completion: nil)
