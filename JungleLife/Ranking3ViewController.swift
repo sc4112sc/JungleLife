@@ -240,7 +240,24 @@ class Ranking3ViewController: UIViewController,UITableViewDelegate,UITableViewDa
                             }
                 
                             DispatchQueue.main.async {  // UI的更新必須在Main thread
-                                
+                                if self.mySeg.selectedSegmentIndex == 0 {
+                                    if self.myData.count == 0 {
+                                        
+                                        self.noText.isHidden = false
+                                    } else {
+                                        
+                                        self.noText.isHidden = true
+                                    }
+                                }else{
+
+                                    if self.myJsonData.count == 0 {
+                                        
+                                        self.noText.isHidden = false
+                                    } else {
+                                        
+                                        self.noText.isHidden = true
+                                    }
+                                }
                                 self.update()
                                 //重新載入
                                 self.myTableView.reloadData()
@@ -294,6 +311,9 @@ class Ranking3ViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidAppear(_ animated: Bool) {
         //先清空 否則會堆疊
+        
+        noText.isHidden = true
+
         
         myData1 = []
         myData2 = []

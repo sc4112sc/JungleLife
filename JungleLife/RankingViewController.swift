@@ -165,6 +165,7 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
        
+
         // Do any additional setup after loading the view.
     }
     let animations = AnimationType.from(direction: .left, offset: 30.0)
@@ -225,6 +226,7 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
         }
         
+        
 //        //
 //        myJsonData = []
 //        let url = URL(string: "https://sheetdb.io/api/v1/ammj39o4i2wja")
@@ -265,10 +267,29 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 }
                 
                 DispatchQueue.main.async {  // UI的更新必須在Main thread
-                    
+
+                    if self.mySeg.selectedSegmentIndex == 0 {
+                        if self.myData.count == 0 {
+                            
+                            self.noText.isHidden = false
+                        } else {
+                            
+                            self.noText.isHidden = true
+                        }
+                    }else{
+
+                        if self.myJsonData.count == 0 {
+                            
+                            self.noText.isHidden = false
+                        } else {
+                            
+                            self.noText.isHidden = true
+                        }
+                    }
                     self.update()
                     //重新載入
                     self.myTableView.reloadData()
+                    
                 }
             }
             
@@ -278,12 +299,13 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         task.resume() // 開始在背景下載資料
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         //先清空 否則會堆疊
        
+        noText.isHidden = true
+
         myData1 = []
         myData2 = []
         myData3 = []
@@ -327,18 +349,21 @@ class RankingViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 
                 noText.isHidden = true
             }
-        } 
+        }
         
         UIView.animate(views: myTableView.visibleCells,
                        animations: [animations],
                        delay: 0.5)
         //
+        
  
     }
     
     var rankStatus = false
    
     @IBAction func changeRK(_ sender: UISegmentedControl) {
+        noText.isHidden = true
+
         if sender.selectedSegmentIndex == 0 {
             if myData.count == 0 {
                 
