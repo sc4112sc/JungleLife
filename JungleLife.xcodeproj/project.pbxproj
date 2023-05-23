@@ -3,14 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD08D9B2A1BB07E0047D91C /* boyOh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D942A1BB07A0047D91C /* boyOh.wav */; };
+		0AD08D9C2A1BB07E0047D91C /* Story3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D952A1BB07B0047D91C /* Story3.mp4 */; };
+		0AD08D9D2A1BB07E0047D91C /* Story1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D962A1BB07C0047D91C /* Story1.mp4 */; };
+		0AD08D9E2A1BB07E0047D91C /* Story2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D972A1BB07C0047D91C /* Story2.mp4 */; };
+		0AD08D9F2A1BB07E0047D91C /* winM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D982A1BB07D0047D91C /* winM.mp3 */; };
+		0AD08DA02A1BB07E0047D91C /* gameNow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D992A1BB07D0047D91C /* gameNow.mp3 */; };
+		0AD08DA12A1BB07E0047D91C /* hunterOh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D9A2A1BB07D0047D91C /* hunterOh.wav */; };
 		7F676B6C20FDA0FF8A59EA75 /* Pods_JungleLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676B02FD1715E99C6853ED23 /* Pods_JungleLife.framework */; };
-		A1128A7821E8F1DC00BCB3E7 /* Story1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */; };
-		A1128A7921E8F1DC00BCB3E7 /* Story2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */; };
-		A1128A7A21E8F1DC00BCB3E7 /* Story3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */; };
 		A128D00A22205472000609A9 /* LandscapeAVPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128D00922205472000609A9 /* LandscapeAVPlayerController.swift */; };
 		A17ABBC321F37578003A0C05 /* JungleLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC121F37578003A0C05 /* JungleLife.xcdatamodeld */; };
 		A17ABBC621F375CD003A0C05 /* MyScore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBC421F375CD003A0C05 /* MyScore+CoreDataClass.swift */; };
@@ -22,10 +26,6 @@
 		A17ABBD321F39F98003A0C05 /* MyScore3+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBCF21F39F98003A0C05 /* MyScore3+CoreDataProperties.swift */; };
 		A17ABBD421F39F98003A0C05 /* MyScore2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBD021F39F98003A0C05 /* MyScore2+CoreDataClass.swift */; };
 		A17ABBD521F39F98003A0C05 /* MyScore2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17ABBD121F39F98003A0C05 /* MyScore2+CoreDataProperties.swift */; };
-		A1B768AC21F4CB7300074A04 /* gameNow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AB21F4CB7300074A04 /* gameNow.mp3 */; };
-		A1B768AE21F4CC4000074A04 /* winM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AD21F4CC3F00074A04 /* winM.mp3 */; };
-		A1B768B121F4CE4B00074A04 /* hunterOh.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1B768AF21F4CE4A00074A04 /* hunterOh.wav */; };
-		A1B768B221F4CE4B00074A04 /* boyOh.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1B768B021F4CE4A00074A04 /* boyOh.wav */; };
 		A1E4B8F721F23FFD004C3E24 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4B8F621F23FFD004C3E24 /* RankingViewController.swift */; };
 		A1E4F28021E4F5EB002461C8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4F27F21E4F5EB002461C8 /* WebViewController.swift */; };
 		A1E4F28321E4F661002461C8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E4F28221E4F661002461C8 /* WebKit.framework */; };
@@ -57,11 +57,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AD08D942A1BB07A0047D91C /* boyOh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boyOh.wav; sourceTree = "<group>"; };
+		0AD08D952A1BB07B0047D91C /* Story3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Story3.mp4; sourceTree = "<group>"; };
+		0AD08D962A1BB07C0047D91C /* Story1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Story1.mp4; sourceTree = "<group>"; };
+		0AD08D972A1BB07C0047D91C /* Story2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Story2.mp4; sourceTree = "<group>"; };
+		0AD08D982A1BB07D0047D91C /* winM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winM.mp3; sourceTree = "<group>"; };
+		0AD08D992A1BB07D0047D91C /* gameNow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameNow.mp3; sourceTree = "<group>"; };
+		0AD08D9A2A1BB07D0047D91C /* hunterOh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hunterOh.wav; sourceTree = "<group>"; };
 		447C14F4AEEEAEF3AED711EC /* Pods-JungleLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JungleLife.debug.xcconfig"; path = "Target Support Files/Pods-JungleLife/Pods-JungleLife.debug.xcconfig"; sourceTree = "<group>"; };
 		676B02FD1715E99C6853ED23 /* Pods_JungleLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JungleLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story1.mp4; path = "../../JFImages/森林app/Story1.mp4"; sourceTree = "<group>"; };
-		A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story2.mp4; path = "../../JFImages/森林app/Story2.mp4"; sourceTree = "<group>"; };
-		A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Story3.mp4; path = "../../JFImages/森林app/Story3.mp4"; sourceTree = "<group>"; };
 		A128D00922205472000609A9 /* LandscapeAVPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeAVPlayerController.swift; sourceTree = "<group>"; };
 		A17ABBC221F37578003A0C05 /* JungleLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JungleLife.xcdatamodel; sourceTree = "<group>"; };
 		A17ABBC421F375CD003A0C05 /* MyScore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -74,10 +78,6 @@
 		A17ABBD021F39F98003A0C05 /* MyScore2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A17ABBD121F39F98003A0C05 /* MyScore2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyScore2+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1AD333B22183BA40096C3E7 /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1B768AB21F4CB7300074A04 /* gameNow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gameNow.mp3; path = ../../JFImages/jfMusic/gameNow.mp3; sourceTree = "<group>"; };
-		A1B768AD21F4CC3F00074A04 /* winM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = winM.mp3; path = ../../JFImages/jfMusic/winM.mp3; sourceTree = "<group>"; };
-		A1B768AF21F4CE4A00074A04 /* hunterOh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hunterOh.wav; path = ../../JFImages/jfMusic/hunterOh.wav; sourceTree = "<group>"; };
-		A1B768B021F4CE4A00074A04 /* boyOh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = boyOh.wav; path = ../../JFImages/jfMusic/boyOh.wav; sourceTree = "<group>"; };
 		A1E4B8F621F23FFD004C3E24 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		A1E4F27F21E4F5EB002461C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A1E4F28221E4F661002461C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -172,14 +172,14 @@
 			children = (
 				A1E6C44A225CF1D20020C24D /* voice1 */,
 				A1E89043224A819D00D2D683 /* Crow1.png */,
-				A1128A7521E8F1DB00BCB3E7 /* Story1.mp4 */,
-				A1128A7621E8F1DB00BCB3E7 /* Story2.mp4 */,
-				A1128A7721E8F1DB00BCB3E7 /* Story3.mp4 */,
-				A1B768AB21F4CB7300074A04 /* gameNow.mp3 */,
-				A1B768B021F4CE4A00074A04 /* boyOh.wav */,
-				A1B768AF21F4CE4A00074A04 /* hunterOh.wav */,
+				0AD08D942A1BB07A0047D91C /* boyOh.wav */,
+				0AD08D992A1BB07D0047D91C /* gameNow.mp3 */,
+				0AD08D9A2A1BB07D0047D91C /* hunterOh.wav */,
+				0AD08D962A1BB07C0047D91C /* Story1.mp4 */,
+				0AD08D972A1BB07C0047D91C /* Story2.mp4 */,
+				0AD08D952A1BB07B0047D91C /* Story3.mp4 */,
+				0AD08D982A1BB07D0047D91C /* winM.mp3 */,
 				A1E6C450225D044E0020C24D /* mainM.mp3 */,
-				A1B768AD21F4CC3F00074A04 /* winM.mp3 */,
 				A1E6C454225D06FB0020C24D /* game1M.mp3 */,
 				A1E6C458225D07690020C24D /* game3M.mp3 */,
 				A1E6C455225D06FC0020C24D /* game2M.mp3 */,
@@ -274,23 +274,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD08D9E2A1BB07E0047D91C /* Story2.mp4 in Resources */,
 				A1E6C456225D06FC0020C24D /* game1M.mp3 in Resources */,
-				A1B768B121F4CE4B00074A04 /* hunterOh.wav in Resources */,
+				0AD08D9B2A1BB07E0047D91C /* boyOh.wav in Resources */,
 				A1E6C457225D06FC0020C24D /* game2M.mp3 in Resources */,
+				0AD08D9D2A1BB07E0047D91C /* Story1.mp4 in Resources */,
 				A1E6C453225D062B0020C24D /* homeM.mp3 in Resources */,
 				A1EAA6DB21DBB1B800BB1129 /* LaunchScreen.storyboard in Resources */,
+				0AD08DA02A1BB07E0047D91C /* gameNow.mp3 in Resources */,
 				A1EAA6D821DBB1B800BB1129 /* Assets.xcassets in Resources */,
-				A1128A7921E8F1DC00BCB3E7 /* Story2.mp4 in Resources */,
 				A1E6C44B225CF1D20020C24D /* voice1 in Resources */,
 				A1E6C451225D044E0020C24D /* mainM.mp3 in Resources */,
 				A1E6C459225D07690020C24D /* game3M.mp3 in Resources */,
-				A1128A7A21E8F1DC00BCB3E7 /* Story3.mp4 in Resources */,
-				A1B768AE21F4CC4000074A04 /* winM.mp3 in Resources */,
+				0AD08D9F2A1BB07E0047D91C /* winM.mp3 in Resources */,
+				0AD08D9C2A1BB07E0047D91C /* Story3.mp4 in Resources */,
 				A1E89044224A819E00D2D683 /* Crow1.png in Resources */,
+				0AD08DA12A1BB07E0047D91C /* hunterOh.wav in Resources */,
 				A1EAA6D321DBB1B700BB1129 /* Main.storyboard in Resources */,
-				A1B768B221F4CE4B00074A04 /* boyOh.wav in Resources */,
-				A1128A7821E8F1DC00BCB3E7 /* Story1.mp4 in Resources */,
-				A1B768AC21F4CB7300074A04 /* gameNow.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,18 +325,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JungleLife/Pods-JungleLife-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ChainableAnimations/ChainableAnimations.framework",
-				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JungleLife/Pods-JungleLife-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChainableAnimations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JungleLife/Pods-JungleLife-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

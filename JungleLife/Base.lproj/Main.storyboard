@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +20,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBG" translatesAutoresizingMaskIntoConstraints="NO" id="NDr-Gq-308">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qq-Pd-3fC">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qq-Pd-3fC">
                                 <rect key="frame" x="365.5" y="241" width="165" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7id-bO-xG7"/>
@@ -38,7 +39,7 @@
                                     <action selector="calMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NkQ-yr-Ojf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGT-Yq-5ju">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGT-Yq-5ju">
                                 <rect key="frame" x="365.5" y="313" width="165" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="165" id="UuX-yP-xuy"/>
@@ -64,6 +65,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fGT-Yq-5ju" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0zw-vI-UuK"/>
@@ -78,7 +80,6 @@
                             <constraint firstAttribute="bottom" secondItem="NDr-Gq-308" secondAttribute="bottom" id="q7B-wd-WTL"/>
                             <constraint firstItem="RtO-mC-sKc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="quk-PH-sWs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cloudImg" destination="RtO-mC-sKc" id="imt-Jh-zCc"/>
@@ -102,6 +103,7 @@
                             <color key="progressTintColor" red="0.95773595570000003" green="0.94082539023334488" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </progressView>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="k9U-9U-Tc9"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="chd-C4-xMj" firstAttribute="leading" secondItem="GPo-v3-Idc" secondAttribute="leading" id="6Af-Jb-0Pe"/>
@@ -113,7 +115,6 @@
                         <constraint firstItem="4sd-Ta-DhK" firstAttribute="top" secondItem="GPo-v3-Idc" secondAttribute="top" id="sxn-Uk-R6I"/>
                         <constraint firstAttribute="bottom" secondItem="chd-C4-xMj" secondAttribute="bottom" constant="44" id="t9D-B2-uhe"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="k9U-9U-Tc9"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="-638" y="132"/>
@@ -126,8 +127,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4Z-He-xWQ">
+                                <rect key="frame" x="0.0" y="44" width="896" height="370"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="YES"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvO-ay-Gvk">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="32"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jCZ-XT-i4s"/>
                                     <barButtonItem title="❌" id="hVY-GD-cMg">
@@ -141,43 +150,34 @@
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.61827951670000003" green="0.32416969540000001" blue="0.1376546025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ys-jv-BRI">
-                                <rect key="frame" x="0.0" y="32" width="896" height="382"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="J0C-3s-Hb6">
                                 <rect key="frame" x="429.5" y="188.5" width="37" height="37"/>
                                 <color key="color" red="0.63524991269999997" green="0.43102103470000003" blue="0.25613132119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="umj-6m-dHS"/>
                         <color key="backgroundColor" red="0.25512036681175232" green="0.49873840808868408" blue="0.17169967293739319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="0ys-jv-BRI" secondAttribute="trailing" id="73k-6i-Gmh"/>
                             <constraint firstItem="uvO-ay-Gvk" firstAttribute="top" secondItem="gsf-hO-Ruk" secondAttribute="top" id="7AC-QM-3VZ"/>
                             <constraint firstAttribute="trailing" secondItem="uvO-ay-Gvk" secondAttribute="trailing" id="BGS-xc-CS7"/>
-                            <constraint firstItem="0ys-jv-BRI" firstAttribute="top" secondItem="gsf-hO-Ruk" secondAttribute="top" constant="32" id="EiS-iG-vHq"/>
-                            <constraint firstItem="0ys-jv-BRI" firstAttribute="leading" secondItem="gsf-hO-Ruk" secondAttribute="leading" id="RQ1-yr-Fml"/>
+                            <constraint firstItem="b4Z-He-xWQ" firstAttribute="top" secondItem="uvO-ay-Gvk" secondAttribute="bottom" id="Qr1-sX-arT"/>
+                            <constraint firstAttribute="bottom" secondItem="b4Z-He-xWQ" secondAttribute="bottom" id="UKt-F8-HoQ"/>
+                            <constraint firstAttribute="trailing" secondItem="b4Z-He-xWQ" secondAttribute="trailing" id="dG1-9P-u5y"/>
                             <constraint firstItem="J0C-3s-Hb6" firstAttribute="centerX" secondItem="gsf-hO-Ruk" secondAttribute="centerX" id="dhm-3c-yu4"/>
-                            <constraint firstAttribute="bottom" secondItem="0ys-jv-BRI" secondAttribute="bottom" id="v7d-Kz-6Ek"/>
-                            <constraint firstItem="0ys-jv-BRI" firstAttribute="top" secondItem="uvO-ay-Gvk" secondAttribute="bottom" id="wGr-aQ-s0C"/>
+                            <constraint firstItem="b4Z-He-xWQ" firstAttribute="leading" secondItem="gsf-hO-Ruk" secondAttribute="leading" id="ryO-YT-bXx"/>
                             <constraint firstItem="uvO-ay-Gvk" firstAttribute="leading" secondItem="gsf-hO-Ruk" secondAttribute="leading" id="x5D-xO-49D"/>
                             <constraint firstItem="J0C-3s-Hb6" firstAttribute="centerY" secondItem="gsf-hO-Ruk" secondAttribute="centerY" id="yO2-k0-d8g"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="umj-6m-dHS"/>
                     </view>
                     <navigationItem key="navigationItem" id="z0d-8r-vPg"/>
                     <connections>
                         <outlet property="active" destination="J0C-3s-Hb6" id="WO7-la-wHF"/>
-                        <outlet property="webView" destination="0ys-jv-BRI" id="q3P-Cz-i8Y"/>
+                        <outlet property="webView" destination="b4Z-He-xWQ" id="L36-kh-aGK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqY-iy-qm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-638" y="932"/>
+            <point key="canvasLocation" x="-691" y="968"/>
         </scene>
         <!--常見問題-->
         <scene sceneID="ZYm-8t-0BE">
@@ -190,8 +190,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l1" translatesAutoresizingMaskIntoConstraints="NO" id="QOI-QN-csY">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="344"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAG-4t-Q9a">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAG-4t-Q9a">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Ogo-5O-M8N"/>
                                     <constraint firstAttribute="height" constant="48" id="hxo-JX-NRS"/>
@@ -202,14 +202,14 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LOf-BO-TPR">
-                                <rect key="frame" x="123" y="46" width="649" height="261"/>
+                                <rect key="frame" x="131" y="46" width="633" height="261"/>
                                 <string key="text">問：如何查詢到遊戲裡的單字？    答：在主畫面點選左上方的按鈕，便會看到單字庫的選項，點進去便有遊戲中出現的所有單字。  問：請問遊戲的計分方式？  答：遊戲的計分方式為，用戶所答對的題目為基準。答錯的題數越多則會使分數降低，接著再以作答的時間來進行加權。  問：如何選擇適合自己的關卡？  答：遊戲關卡前，可以先行點選說明頁面，裡面有題庫以供參考，可以一目了然的分析自己能夠駕馭的關卡。</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LS6-F2-5QS"/>
                         <constraints>
                             <constraint firstItem="QOI-QN-csY" firstAttribute="top" secondItem="1wa-gI-bXJ" secondAttribute="top" id="5Da-fS-DSp"/>
                             <constraint firstAttribute="trailing" secondItem="QOI-QN-csY" secondAttribute="trailing" id="7OR-gW-OsA"/>
@@ -222,7 +222,6 @@
                             <constraint firstItem="QOI-QN-csY" firstAttribute="leading" secondItem="1wa-gI-bXJ" secondAttribute="leading" id="cyb-og-ba3"/>
                             <constraint firstItem="LOf-BO-TPR" firstAttribute="leading" secondItem="1wa-gI-bXJ" secondAttribute="leadingMargin" constant="63" id="j4h-mA-sRx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LS6-F2-5QS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="常見問題" image="questionmark.square.fill" catalog="system" id="3ac-og-u6B"/>
                 </viewController>
@@ -243,10 +242,10 @@
                                 <color key="backgroundColor" red="0.93241924050000002" green="0.81225365400000005" blue="0.6558166742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="haH-Jn-3Z5" detailTextLabel="PUs-uE-xC0" rowHeight="70" style="IBUITableViewCellStyleValue1" id="VmW-Qj-02K">
-                                        <rect key="frame" x="0.0" y="28" width="896" height="70"/>
+                                        <rect key="frame" x="0.0" y="50" width="896" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VmW-Qj-02K" id="Q9r-g4-e1s">
-                                            <rect key="frame" x="44" y="0.0" width="764" height="70"/>
+                                            <rect key="frame" x="48" y="0.0" width="756" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="haH-Jn-3Z5">
@@ -257,7 +256,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PUs-uE-xC0">
-                                                    <rect key="frame" x="695.5" y="24" width="60.5" height="26.5"/>
+                                                    <rect key="frame" x="688" y="24" width="60" height="26.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -284,6 +283,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="PSu-Jb-8nT"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ZiK-KL-n9Z" secondAttribute="trailing" id="2Zb-H2-0Dx"/>
@@ -294,7 +294,6 @@
                             <constraint firstItem="VDd-Dm-f3t" firstAttribute="top" secondItem="ZiK-KL-n9Z" secondAttribute="bottom" id="nsq-xg-lB3"/>
                             <constraint firstAttribute="trailing" secondItem="VDd-Dm-f3t" secondAttribute="trailing" id="shc-8f-idh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PSu-Jb-8nT"/>
                     </view>
                     <connections>
                         <outlet property="myTableView" destination="VDd-Dm-f3t" id="7W1-Z7-hD2"/>
@@ -320,7 +319,7 @@
                                         <rect key="frame" x="0.0" y="55.5" width="896" height="54.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K5H-OU-4ue" id="hhY-jM-V7v">
-                                            <rect key="frame" x="44" y="0.0" width="808" height="54.5"/>
+                                            <rect key="frame" x="48" y="0.0" width="800" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JJe-oZ-2d3">
@@ -331,7 +330,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Ci-fh-lfD">
-                                                    <rect key="frame" x="739.5" y="14" width="48.5" height="27.5"/>
+                                                    <rect key="frame" x="731.5" y="14" width="48.5" height="27.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
                                                     <color key="textColor" red="0.65461558099999995" green="0.14299732449999999" blue="0.12801098820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -378,18 +377,19 @@
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JpN-9v-0Bb">
                                 <rect key="frame" x="0.0" y="44" width="896" height="32"/>
-                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <segments>
                                     <segment title="Native ranking"/>
                                     <segment title="Global ranking"/>
                                 </segments>
                                 <color key="tintColor" red="0.61827951670000003" green="0.32416969540000001" blue="0.1376546025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="selectedSegmentTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="changeRK:" destination="Ubf-iq-t7i" eventType="valueChanged" id="XKD-Eq-BGT"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EWj-dF-jkk"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JpN-9v-0Bb" secondAttribute="trailing" id="1Ud-KT-qnL"/>
@@ -406,7 +406,6 @@
                             <constraint firstAttribute="trailing" secondItem="mmM-jq-MWv" secondAttribute="trailing" id="vT4-iR-aV6"/>
                             <constraint firstItem="kLW-Wo-vsT" firstAttribute="leading" secondItem="1vg-OW-ZNf" secondAttribute="leading" id="zfI-SI-RrH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EWj-dF-jkk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game1" image="gamecontroller.fill" catalog="system" id="BRU-rd-h26"/>
                     <connections>
@@ -430,8 +429,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l1" translatesAutoresizingMaskIntoConstraints="NO" id="edW-uw-17V">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="344"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vae-dF-X7o">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vae-dF-X7o">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="CHO-Vr-kd7"/>
                                     <constraint firstAttribute="height" constant="48" id="NXv-Gg-KVU"/>
@@ -442,7 +441,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I4D-H1-T85">
-                                <rect key="frame" x="123" y="46" width="649" height="261"/>
+                                <rect key="frame" x="131" y="46" width="633" height="261"/>
                                 <string key="text">Jungle Life 
 這是一款專門給兒童設計的英文教學電子書App。 本專案製作來源是國小的英文課本，由於現在英文的應用日益普及，學習英文的重要性與需求也相對提升，我們希望讓學生從小學習英文，不單只是課本書面教材上的靜態畫面，而是更生動有趣且具有吸引力，讓孩子們增加課本以外的其他數位式互動遊戲來增加學習，期望小朋友們能夠從故事中有所獲得，搭配歡樂的動畫、遊戲的智能測驗，得到正確句型用法以及獲得對於英文有更大的興趣。故事主角彼得與凱薩，在因緣際會下相遇而一起成長，他們從小居住在森林裡，有次玩耍時看見一位獵人在獵殺動物，使他們有了想要保護森林的衝動，並且尋求協助展開對獵人的反擊。整個畫面將以2D呈現，我們設計一個屬於小孩子的全新故事，搭配可愛的動物角色，創造出一個捍衛森林的童話故事，運用三段接續性的動畫及三關不同內容且分別擁有三個難易度的遊戲關卡做為結合，全程的英文會話，希望達到英文教育上，寓教於樂的效果。  
 版本 ： 1.0</string>
@@ -451,6 +450,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mpb-FT-Trk"/>
                         <constraints>
                             <constraint firstItem="vae-dF-X7o" firstAttribute="top" secondItem="usN-ch-Hed" secondAttribute="topMargin" constant="20" id="47Q-MG-tzD"/>
                             <constraint firstAttribute="bottomMargin" secondItem="I4D-H1-T85" secondAttribute="bottom" constant="37" id="9Rm-1b-FRp"/>
@@ -463,7 +463,6 @@
                             <constraint firstItem="vae-dF-X7o" firstAttribute="leading" secondItem="usN-ch-Hed" secondAttribute="leadingMargin" id="mSr-qj-Uyc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I4D-H1-T85" secondAttribute="trailing" constant="64" id="pJw-jI-3Wp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Mpb-FT-Trk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="產品介紹" image="book.circle.fill" catalog="system" id="ivU-1D-gMT"/>
                 </viewController>
@@ -482,8 +481,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l1" translatesAutoresizingMaskIntoConstraints="NO" id="E4B-fh-ALE">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="344"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsH-Ls-B6g">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsH-Ls-B6g">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="2h8-q9-TeY"/>
                                     <constraint firstAttribute="height" constant="48" id="yid-XN-QCQ"/>
@@ -494,7 +493,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-FM-3Dl">
-                                <rect key="frame" x="123" y="46" width="649" height="261"/>
+                                <rect key="frame" x="131" y="46" width="633" height="261"/>
                                 <string key="text">Jungle Life 隱私權政策  Privacy Policy
 Effective date: January 18, 2019
 
@@ -589,7 +588,7 @@ By email: sc4112sc@gmail.com</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cU0-eo-PyD"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="ElR-FM-3Dl" secondAttribute="bottom" constant="37" id="3CN-Jf-TKW"/>
                             <constraint firstItem="E4B-fh-ALE" firstAttribute="leading" secondItem="hIl-io-XuI" secondAttribute="leading" id="3vh-IM-5Z6"/>
@@ -602,7 +601,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="E4B-fh-ALE" firstAttribute="bottom" secondItem="cU0-eo-PyD" secondAttribute="bottom" id="sd8-Ut-7nO"/>
                             <constraint firstItem="qsH-Ls-B6g" firstAttribute="top" secondItem="hIl-io-XuI" secondAttribute="topMargin" constant="20" id="yZl-Ie-ONk"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cU0-eo-PyD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="隱私權聲明" image="book.fill" catalog="system" id="06U-zj-JTK"/>
                 </viewController>
@@ -621,8 +619,8 @@ By email: sc4112sc@gmail.com</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l1" translatesAutoresizingMaskIntoConstraints="NO" id="A8U-o4-ppg">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="344"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-iO-1j8">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-iO-1j8">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Bvg-Pm-dMj"/>
                                     <constraint firstAttribute="height" constant="48" id="yjy-eA-2oJ"/>
@@ -633,7 +631,7 @@ By email: sc4112sc@gmail.com</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="感謝您成為我們App的用戶之一，若在操作上出現什麼問題，或者想聯絡我們，歡迎以右側途徑來聯絡我們。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2og-Rr-RBu">
-                                <rect key="frame" x="125" y="148" width="234" height="97"/>
+                                <rect key="frame" x="133" y="148" width="234" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="1DD-Zh-yd8"/>
                                     <constraint firstAttribute="width" constant="234" id="d42-lG-JmG"/>
@@ -643,7 +641,7 @@ By email: sc4112sc@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="親愛的用戶，您好！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zec-0V-EDC">
-                                <rect key="frame" x="125" y="89" width="180" height="20"/>
+                                <rect key="frame" x="133" y="89" width="180" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="BVb-Mo-F0U"/>
                                     <constraint firstAttribute="width" constant="180" id="sM1-1K-4ze"/>
@@ -653,7 +651,7 @@ By email: sc4112sc@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="創作者：Scott Lee    📧 Email： sc4112sc@gmail.com  🔎 Facebook： Jungle Life  🔎 Youtube： Jungle Life" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZA-ie-1Bh">
-                                <rect key="frame" x="554" y="74" width="237" height="195"/>
+                                <rect key="frame" x="546" y="74" width="237" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="237" id="ATW-1G-dix"/>
                                     <constraint firstAttribute="height" constant="195" id="JXH-eQ-oc1"/>
@@ -663,7 +661,7 @@ By email: sc4112sc@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Dur-Uk-DQd"/>
                         <constraints>
                             <constraint firstItem="A8U-o4-ppg" firstAttribute="top" secondItem="hWq-we-vyR" secondAttribute="top" id="6HH-2v-4te"/>
                             <constraint firstItem="Rzf-iO-1j8" firstAttribute="leading" secondItem="hWq-we-vyR" secondAttribute="leadingMargin" id="M66-Wn-Ivc"/>
@@ -678,7 +676,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="YZA-ie-1Bh" firstAttribute="top" secondItem="hWq-we-vyR" secondAttribute="topMargin" constant="74" id="xq3-42-s91"/>
                             <constraint firstItem="2og-Rr-RBu" firstAttribute="leading" secondItem="hWq-we-vyR" secondAttribute="leadingMargin" constant="65" id="z3K-UR-f2f"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Dur-Uk-DQd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="聯絡我們" image="person.2.fill" catalog="system" id="Csr-jK-Nxw"/>
                 </viewController>
@@ -702,7 +699,7 @@ By email: sc4112sc@gmail.com</string>
                                         <rect key="frame" x="0.0" y="55.5" width="896" height="54.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wvP-0k-qxa" id="Ggd-CY-3hO">
-                                            <rect key="frame" x="44" y="0.0" width="808" height="54.5"/>
+                                            <rect key="frame" x="48" y="0.0" width="800" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7HW-2U-mpy">
@@ -713,7 +710,7 @@ By email: sc4112sc@gmail.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G2w-fx-qpP">
-                                                    <rect key="frame" x="739.5" y="14" width="48.5" height="27.5"/>
+                                                    <rect key="frame" x="731.5" y="14" width="48.5" height="27.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
                                                     <color key="textColor" red="0.65461558099999995" green="0.14299732449999999" blue="0.12801098820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -757,18 +754,19 @@ By email: sc4112sc@gmail.com</string>
                             </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pyO-3O-Lc8">
                                 <rect key="frame" x="0.0" y="44" width="896" height="32"/>
-                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <segments>
                                     <segment title="Native ranking"/>
                                     <segment title="Global ranking"/>
                                 </segments>
                                 <color key="tintColor" red="0.61827951670000003" green="0.32416969540000001" blue="0.1376546025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="selectedSegmentTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="changeRK:" destination="7HI-E8-7XR" eventType="valueChanged" id="lej-DZ-Lp2"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="oOj-7u-KK5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="98t-NO-BIB" firstAttribute="top" secondItem="pyO-3O-Lc8" secondAttribute="bottom" id="Fwn-nu-E72"/>
@@ -785,7 +783,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="98t-NO-BIB" firstAttribute="top" secondItem="pyO-3O-Lc8" secondAttribute="bottom" id="szT-eJ-tx7"/>
                             <constraint firstAttribute="trailing" secondItem="Pc0-de-1cv" secondAttribute="trailing" id="zLY-3L-MMy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="oOj-7u-KK5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game3" image="gamecontroller.fill" catalog="system" id="Emi-ub-m80"/>
                     <connections>
@@ -814,7 +811,7 @@ By email: sc4112sc@gmail.com</string>
                                         <rect key="frame" x="0.0" y="55.5" width="896" height="54.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rgi-KQ-K89" id="Tay-Tc-hdx">
-                                            <rect key="frame" x="44" y="0.0" width="808" height="54.5"/>
+                                            <rect key="frame" x="48" y="0.0" width="800" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ree-JI-Vho">
@@ -825,7 +822,7 @@ By email: sc4112sc@gmail.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tQ7-p1-jas">
-                                                    <rect key="frame" x="739.5" y="14" width="48.5" height="27.5"/>
+                                                    <rect key="frame" x="731.5" y="14" width="48.5" height="27.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
                                                     <color key="textColor" red="0.65461558099999995" green="0.14299732449999999" blue="0.12801098820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -870,18 +867,19 @@ By email: sc4112sc@gmail.com</string>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="92A-sh-IgK">
                                 <rect key="frame" x="0.0" y="44" width="896" height="32"/>
-                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <segments>
                                     <segment title="Native ranking"/>
                                     <segment title="Global ranking"/>
                                 </segments>
                                 <color key="tintColor" red="0.61827951670000003" green="0.32416969540000001" blue="0.1376546025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="selectedSegmentTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="changeRK:" destination="M3e-nF-lMt" eventType="valueChanged" id="xcT-Ja-jLx"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kqc-uM-NYU"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="92A-sh-IgK" firstAttribute="top" secondItem="Cgm-Ni-xMA" secondAttribute="bottom" id="CHT-4T-Nnu"/>
@@ -898,7 +896,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="MPt-5g-qnN" firstAttribute="centerX" secondItem="Eve-Dn-HLO" secondAttribute="centerX" id="nOi-CR-uwI"/>
                             <constraint firstItem="uy1-fH-Tao" firstAttribute="top" secondItem="92A-sh-IgK" secondAttribute="bottom" id="zYE-98-BjI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Kqc-uM-NYU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game2" image="gamecontroller" catalog="system" id="YY7-Ek-SrQ"/>
                     <connections>
@@ -920,7 +917,7 @@ By email: sc4112sc@gmail.com</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.63524991269999997" green="0.43102103470000003" blue="0.25613132119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="Ubf-iq-t7i" kind="relationship" relationship="viewControllers" id="XPc-vt-HKG"/>
@@ -939,9 +936,9 @@ By email: sc4112sc@gmail.com</string>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HLl-Mx-A3y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.66888332366943359" green="0.41994285583496094" blue="0.25896888971328735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="6or-JC-yI2" kind="relationship" relationship="viewControllers" id="M9f-rb-Jeg"/>
@@ -970,7 +967,7 @@ By email: sc4112sc@gmail.com</string>
                                         <rect key="frame" x="0.0" y="55.5" width="896" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gjr-MR-N61" id="yVR-na-HnJ">
-                                            <rect key="frame" x="44" y="0.0" width="764" height="70"/>
+                                            <rect key="frame" x="48" y="0.0" width="756" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cFW-XU-1sQ">
@@ -981,7 +978,7 @@ By email: sc4112sc@gmail.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xfh-KD-uV3">
-                                                    <rect key="frame" x="695.5" y="24" width="60.5" height="26.5"/>
+                                                    <rect key="frame" x="688" y="24" width="60" height="26.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1021,6 +1018,7 @@ By email: sc4112sc@gmail.com</string>
                                 </items>
                             </navigationBar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cuN-e2-NFL"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="WlJ-CT-I5A" secondAttribute="bottom" id="2r6-qL-o3r"/>
@@ -1031,7 +1029,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstAttribute="trailing" secondItem="WlJ-CT-I5A" secondAttribute="trailing" id="vhL-ia-F4g"/>
                             <constraint firstItem="VyJ-03-WNW" firstAttribute="top" secondItem="Zld-dn-e3A" secondAttribute="top" id="wSn-FW-ata"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cuN-e2-NFL"/>
                     </view>
                     <connections>
                         <outlet property="myTableView" destination="WlJ-CT-I5A" id="AUs-LL-lnl"/>
@@ -1052,8 +1049,8 @@ By email: sc4112sc@gmail.com</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBG" translatesAutoresizingMaskIntoConstraints="NO" id="9ym-3n-egr">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG6-0A-rm6">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG6-0A-rm6">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="G8N-2U-CeB"/>
                                     <constraint firstAttribute="height" constant="48" id="f4f-gN-Nsc"/>
@@ -1063,8 +1060,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="show1:" destination="QgZ-s1-1No" eventType="touchUpInside" id="XVd-eE-YpS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCK-JW-CaI">
-                                <rect key="frame" x="96" y="112" width="78" height="225"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCK-JW-CaI">
+                                <rect key="frame" x="104" y="112" width="78" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="Er3-C8-ZVJ"/>
                                 </constraints>
@@ -1078,8 +1075,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calS1:" destination="QgZ-s1-1No" eventType="touchUpInside" id="Ofs-ZY-hR8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgy-py-Ydx">
-                                <rect key="frame" x="186" y="112" width="78" height="225"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgy-py-Ydx">
+                                <rect key="frame" x="194" y="112" width="78" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="QUx-2z-Uu7"/>
                                 </constraints>
@@ -1093,8 +1090,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calS2:" destination="QgZ-s1-1No" eventType="touchUpInside" id="nxh-Y3-gBT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfm-7p-H0Z">
-                                <rect key="frame" x="276" y="112" width="78" height="225"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfm-7p-H0Z">
+                                <rect key="frame" x="284" y="112" width="78" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="QOz-yR-kwU"/>
                                 </constraints>
@@ -1108,8 +1105,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calS3:" destination="QgZ-s1-1No" eventType="touchUpInside" id="7Ee-dh-F5z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vy-Yj-RGr">
-                                <rect key="frame" x="540" y="112" width="78" height="225"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vy-Yj-RGr">
+                                <rect key="frame" x="532" y="112" width="78" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="3ks-Uq-yT4"/>
                                 </constraints>
@@ -1123,8 +1120,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calG1:" destination="QgZ-s1-1No" eventType="touchUpInside" id="wm9-cJ-meO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evh-PV-sN8">
-                                <rect key="frame" x="630" y="112" width="78" height="225"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evh-PV-sN8">
+                                <rect key="frame" x="622" y="112" width="78" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="gwh-ix-UA3"/>
                                 </constraints>
@@ -1138,8 +1135,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calG2:" destination="QgZ-s1-1No" eventType="touchUpInside" id="Pxi-jd-mFs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4J-Zd-VzZ">
-                                <rect key="frame" x="720" y="112" width="78" height="225"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4J-Zd-VzZ">
+                                <rect key="frame" x="712" y="112" width="78" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="ife-WD-OG5"/>
                                 </constraints>
@@ -1153,8 +1150,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calG3:" destination="QgZ-s1-1No" eventType="touchUpInside" id="nEK-7c-UPd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKb-p8-joq">
-                                <rect key="frame" x="788" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKb-p8-joq">
+                                <rect key="frame" x="780" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="hYg-yH-NCa"/>
                                     <constraint firstAttribute="width" constant="48" id="w9v-Ge-Zct"/>
@@ -1165,6 +1162,7 @@ By email: sc4112sc@gmail.com</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hag-5z-pPu"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Evh-PV-sN8" firstAttribute="top" secondItem="lus-uw-5Ei" secondAttribute="topMargin" constant="112" id="0vQ-zH-Tv3"/>
@@ -1194,7 +1192,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="mfm-7p-H0Z" firstAttribute="leading" secondItem="lus-uw-5Ei" secondAttribute="leadingMargin" constant="216" id="wzm-WO-953"/>
                             <constraint firstItem="XKb-p8-joq" firstAttribute="trailing" secondItem="lus-uw-5Ei" secondAttribute="trailingMargin" id="zvK-hb-bsB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hag-5z-pPu"/>
                     </view>
                     <connections>
                         <outlet property="blurEffect" destination="dp8-Do-ZgT" id="JrQ-go-Pdx"/>
@@ -1225,7 +1222,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingBg" translatesAutoresizingMaskIntoConstraints="NO" id="P2h-aI-ZYF">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="220"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldR-sT-JKJ">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldR-sT-JKJ">
                             <rect key="frame" x="254" y="11" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Qi4-7P-lG1"/>
@@ -1236,7 +1233,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="close2:" destination="QgZ-s1-1No" eventType="touchUpInside" id="c92-s1-Vgd"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5P-R1-U8J">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5P-R1-U8J">
                             <rect key="frame" x="69" y="53" width="170" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ZPJ-mh-Rhw"/>
@@ -1247,7 +1244,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calHelper:" destination="QgZ-s1-1No" eventType="touchUpInside" id="n6l-yV-Uke"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf2-js-8Hj">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf2-js-8Hj">
                             <rect key="frame" x="69" y="115" width="170" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="I75-mh-RC2"/>
@@ -1259,6 +1256,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="Hhf-id-Mm9"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="P2h-aI-ZYF" secondAttribute="trailing" id="4C9-J7-LPn"/>
@@ -1273,7 +1271,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstAttribute="bottom" secondItem="P2h-aI-ZYF" secondAttribute="bottom" id="kyX-rw-VDJ"/>
                         <constraint firstItem="m5P-R1-U8J" firstAttribute="leading" secondItem="G4d-RC-OCo" secondAttribute="leading" constant="69" id="oe5-vM-rxw"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="Hhf-id-Mm9"/>
                 </view>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" id="IJt-qX-0sQ">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1292,7 +1289,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingBg" translatesAutoresizingMaskIntoConstraints="NO" id="aXS-ah-00b">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="220"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZh-Pc-FcW">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZh-Pc-FcW">
                             <rect key="frame" x="254" y="12" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="LZh-pU-8Cy"/>
@@ -1303,7 +1300,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="close1:" destination="QgZ-s1-1No" eventType="touchUpInside" id="i9i-Ui-yfW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zn-nc-tdH">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zn-nc-tdH">
                             <rect key="frame" x="65" y="53" width="170" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="170" id="W59-z2-wPh"/>
@@ -1314,7 +1311,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calWord:" destination="QgZ-s1-1No" eventType="touchUpInside" id="a1s-M6-Og4"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-AL-Y77">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-AL-Y77">
                             <rect key="frame" x="65" y="115" width="170" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="9gW-3O-A8t"/>
@@ -1326,6 +1323,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="HSD-DI-np9"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="hhz-AL-Y77" secondAttribute="bottom" constant="55" id="CzM-MA-ZT9"/>
                         <constraint firstItem="aXS-ah-00b" firstAttribute="leading" secondItem="0zw-9c-kkT" secondAttribute="leading" id="ISU-wL-DyR"/>
@@ -1339,7 +1337,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstItem="1Zn-nc-tdH" firstAttribute="leading" secondItem="0zw-9c-kkT" secondAttribute="leading" constant="65" id="qhR-kq-mGe"/>
                         <constraint firstItem="1Zn-nc-tdH" firstAttribute="top" secondItem="0zw-9c-kkT" secondAttribute="top" constant="53" id="xW7-C1-JwZ"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="HSD-DI-np9"/>
                 </view>
                 <view contentMode="scaleToFill" id="6gR-Tv-N4L">
                     <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
@@ -1349,6 +1346,7 @@ By email: sc4112sc@gmail.com</string>
                             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         </imageView>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="3jd-ip-tr6"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="tSN-1z-FUL" firstAttribute="top" secondItem="6gR-Tv-N4L" secondAttribute="top" id="i8T-NP-XHw"/>
@@ -1356,7 +1354,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstItem="tSN-1z-FUL" firstAttribute="leading" secondItem="6gR-Tv-N4L" secondAttribute="leading" id="xfH-FC-NRG"/>
                         <constraint firstAttribute="trailing" secondItem="tSN-1z-FUL" secondAttribute="trailing" id="zgi-Td-mFK"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="3jd-ip-tr6"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="z7t-ma-ceG">
                     <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
@@ -1381,8 +1378,8 @@ By email: sc4112sc@gmail.com</string>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-9J-V7H">
-                            <rect key="frame" x="44" y="157.5" width="60" height="60"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-9J-V7H">
+                            <rect key="frame" x="48" y="157.5" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="JRN-IR-hda"/>
                                 <constraint firstAttribute="width" constant="60" id="SkD-q1-zfr"/>
@@ -1392,8 +1389,8 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="returnPage:" destination="QgZ-s1-1No" eventType="touchUpInside" id="fcn-Kh-Y92"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebV-32-XCF">
-                            <rect key="frame" x="607" y="157.5" width="60" height="60"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebV-32-XCF">
+                            <rect key="frame" x="559" y="157.5" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="4Dx-Kq-5mD"/>
                                 <constraint firstAttribute="width" constant="60" id="7eb-ml-Dgm"/>
@@ -1404,11 +1401,11 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                         <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="8" translatesAutoresizingMaskIntoConstraints="NO" id="Enn-h1-hTl">
-                            <rect key="frame" x="274" y="318" width="119" height="37"/>
+                            <rect key="frame" x="230.5" y="308" width="206.5" height="26"/>
                             <color key="currentPageIndicatorTintColor" red="0.35934954879999997" green="0.18798437709999999" blue="0.48744922880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </pageControl>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eew-qn-McS">
-                            <rect key="frame" x="567" y="0.0" width="100" height="60"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eew-qn-McS">
+                            <rect key="frame" x="519" y="0.0" width="100" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="P7e-lz-4NN"/>
                                 <constraint firstAttribute="height" constant="60" id="icM-yb-1kP"/>
@@ -1419,6 +1416,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="8l7-1Z-c4f"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="7tv-B2-K22" firstAttribute="top" secondItem="z7t-ma-ceG" secondAttribute="top" id="1Fe-uO-klP"/>
@@ -1442,7 +1440,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstItem="Ikz-o9-aTx" firstAttribute="width" secondItem="7tv-B2-K22" secondAttribute="width" multiplier="0.9" id="vnT-GK-ozK"/>
                         <constraint firstItem="ebV-32-XCF" firstAttribute="centerY" secondItem="z7t-ma-ceG" secondAttribute="centerY" id="ylm-oM-0M1"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="8l7-1Z-c4f"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="984" y="183"/>
@@ -1458,8 +1455,8 @@ By email: sc4112sc@gmail.com</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GAME2" translatesAutoresizingMaskIntoConstraints="NO" id="y9J-o2-11f">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiz-pg-BEd">
-                                <rect key="frame" x="591" y="27" width="200" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiz-pg-BEd">
+                                <rect key="frame" x="583" y="27" width="200" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="bxo-eb-iTh"/>
                                     <constraint firstAttribute="width" constant="200" id="zfP-B9-qxp"/>
@@ -1469,8 +1466,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calStart:" destination="ul1-sN-SY3" eventType="touchUpInside" id="6x8-mx-Qik"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3x-CS-DO6">
-                                <rect key="frame" x="581" y="105" width="200" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3x-CS-DO6">
+                                <rect key="frame" x="573" y="105" width="200" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="FB1-Q4-zVM"/>
                                     <constraint firstAttribute="width" constant="200" id="cx5-Pd-QxZ"/>
@@ -1480,8 +1477,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calInstruction:" destination="ul1-sN-SY3" eventType="touchUpInside" id="M0o-wz-qnJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-BG-r3z">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-BG-r3z">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="FRx-nD-3JK"/>
                                     <constraint firstAttribute="height" constant="48" id="as0-hJ-g8t"/>
@@ -1492,6 +1489,7 @@ By email: sc4112sc@gmail.com</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Qr-2k-EDo"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bQe-BG-r3z" firstAttribute="leading" secondItem="2m5-Wh-n30" secondAttribute="leadingMargin" id="AyC-Px-zhZ"/>
@@ -1505,7 +1503,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="A3x-CS-DO6" firstAttribute="top" secondItem="Kiz-pg-BEd" secondAttribute="bottom" constant="13" id="vpK-xh-ism"/>
                             <constraint firstItem="Kiz-pg-BEd" firstAttribute="top" secondItem="2m5-Wh-n30" secondAttribute="topMargin" constant="27" id="zrf-lB-TZ9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0Qr-2k-EDo"/>
                     </view>
                     <connections>
                         <outlet property="blurEffect" destination="xmQ-xi-UzQ" id="AcE-Ie-7y4"/>
@@ -1522,7 +1519,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g2_easy" translatesAutoresizingMaskIntoConstraints="NO" id="l0D-Jf-LKu">
                             <rect key="frame" x="0.0" y="0.0" width="450" height="338"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-zg-yQj">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-zg-yQj">
                             <rect key="frame" x="0.0" y="20" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="1ac-gZ-z0J"/>
@@ -1533,7 +1530,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calClose2:" destination="ul1-sN-SY3" eventType="touchUpInside" id="gki-Ne-TMi"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOh-7L-SxR">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOh-7L-SxR">
                             <rect key="frame" x="366" y="31" width="73" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="73" id="D9W-Dz-XQm"/>
@@ -1543,7 +1540,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calEasy:" destination="ul1-sN-SY3" eventType="touchUpInside" id="RKA-7j-Fm8"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngf-XH-Tcm">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngf-XH-Tcm">
                             <rect key="frame" x="366" y="57" width="73" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="73" id="JsN-oY-MUw"/>
@@ -1553,7 +1550,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calMedium:" destination="ul1-sN-SY3" eventType="touchUpInside" id="TkK-7B-qUi"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c94-gV-hDO">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c94-gV-hDO">
                             <rect key="frame" x="366" y="83" width="73" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="QZh-RN-f3l"/>
@@ -1564,6 +1561,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="22L-ka-7Jf"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="l0D-Jf-LKu" secondAttribute="trailing" id="1b7-o3-PZM"/>
                         <constraint firstItem="c94-gV-hDO" firstAttribute="top" secondItem="ngf-XH-Tcm" secondAttribute="bottom" constant="4" id="2Fw-ic-xd2"/>
@@ -1578,7 +1576,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstAttribute="trailing" secondItem="c94-gV-hDO" secondAttribute="trailing" constant="11" id="q5z-M6-BYM"/>
                         <constraint firstAttribute="trailing" secondItem="ZOh-7L-SxR" secondAttribute="trailing" constant="11" id="v0U-Sb-AoC"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="22L-ka-7Jf"/>
                 </view>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" id="vkN-iT-A3Q">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1597,7 +1594,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g1Level" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-iz-3Sq">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxx-Nj-7Gb">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxx-Nj-7Gb">
                             <rect key="frame" x="270" y="20" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="jVM-ae-bgK"/>
@@ -1608,7 +1605,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calClose:" destination="ul1-sN-SY3" eventType="touchUpInside" id="AHE-NX-s6k"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adc-q3-kqG">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adc-q3-kqG">
                             <rect key="frame" x="58" y="60" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="185" id="rJ4-Ee-vjo"/>
@@ -1619,7 +1616,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="goG1Easy:" destination="ul1-sN-SY3" eventType="touchUpInside" id="ghf-ou-V3k"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VE-fc-Xqx">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VE-fc-Xqx">
                             <rect key="frame" x="58" y="120" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="J98-td-h3u"/>
@@ -1630,7 +1627,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="goG1Medium:" destination="ul1-sN-SY3" eventType="touchUpInside" id="QS0-MC-mJb"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPa-qu-q2o">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPa-qu-q2o">
                             <rect key="frame" x="58" y="180" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="OEX-4w-jsC"/>
@@ -1642,6 +1639,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="Ey4-tg-PPL"/>
                     <constraints>
                         <constraint firstItem="vPa-qu-q2o" firstAttribute="leading" secondItem="qMC-8Y-B6g" secondAttribute="leading" constant="58" id="1dq-nY-DR8"/>
                         <constraint firstItem="hmq-iz-3Sq" firstAttribute="leading" secondItem="qMC-8Y-B6g" secondAttribute="leading" id="3Zj-d9-7cP"/>
@@ -1656,7 +1654,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstItem="vxx-Nj-7Gb" firstAttribute="top" secondItem="qMC-8Y-B6g" secondAttribute="top" constant="20" id="s4z-Fr-aQP"/>
                         <constraint firstItem="0VE-fc-Xqx" firstAttribute="top" secondItem="adc-q3-kqG" secondAttribute="bottom" constant="10" id="vhR-AX-QN9"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="Ey4-tg-PPL"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="1190" y="1655"/>
@@ -1672,8 +1669,8 @@ By email: sc4112sc@gmail.com</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GAME3" translatesAutoresizingMaskIntoConstraints="NO" id="bLn-Vx-h6n">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qj-ol-c5m">
-                                <rect key="frame" x="616" y="203" width="200" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qj-ol-c5m">
+                                <rect key="frame" x="608" y="203" width="200" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5oL-lw-yoZ"/>
                                     <constraint firstAttribute="height" constant="60" id="DJq-xg-gtZ"/>
@@ -1683,8 +1680,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calStart:" destination="gnQ-04-4ix" eventType="touchUpInside" id="ebo-pb-bOY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR5-XG-4us">
-                                <rect key="frame" x="622" y="287" width="200" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR5-XG-4us">
+                                <rect key="frame" x="614" y="287" width="200" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="QMg-Zc-lte"/>
                                     <constraint firstAttribute="width" constant="200" id="fkB-kr-qqt"/>
@@ -1694,8 +1691,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calInstruction:" destination="gnQ-04-4ix" eventType="touchUpInside" id="ivt-9h-eKB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25c-iu-CK4">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25c-iu-CK4">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="AHV-tj-lOZ"/>
                                     <constraint firstAttribute="width" constant="48" id="oYA-OS-q3O"/>
@@ -1706,6 +1703,7 @@ By email: sc4112sc@gmail.com</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="szg-ab-khY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="bLn-Vx-h6n" secondAttribute="bottom" id="10T-Uw-SLz"/>
@@ -1719,7 +1717,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="hR5-XG-4us" firstAttribute="top" secondItem="6qj-ol-c5m" secondAttribute="bottom" constant="24" id="snu-i5-kQ3"/>
                             <constraint firstAttribute="trailing" secondItem="bLn-Vx-h6n" secondAttribute="trailing" id="yLG-rk-nR9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="szg-ab-khY"/>
                     </view>
                     <connections>
                         <outlet property="blurEffect" destination="u3R-jE-vYU" id="5Ju-C1-Phc"/>
@@ -1736,7 +1733,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g3_easy" translatesAutoresizingMaskIntoConstraints="NO" id="Hcy-Em-bdm">
                             <rect key="frame" x="0.0" y="0.0" width="450" height="338"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-df-hzE">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-df-hzE">
                             <rect key="frame" x="0.0" y="20" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="vVW-wi-Hdp"/>
@@ -1747,7 +1744,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calClose2:" destination="gnQ-04-4ix" eventType="touchUpInside" id="Vuu-t6-CZA"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAI-hf-IyL">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAI-hf-IyL">
                             <rect key="frame" x="366" y="31" width="73" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="tDZ-dz-yio"/>
@@ -1757,7 +1754,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calEasy:" destination="gnQ-04-4ix" eventType="touchUpInside" id="esD-Yo-koq"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbi-vN-uyW">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbi-vN-uyW">
                             <rect key="frame" x="366" y="57" width="73" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="73" id="KSB-Xt-JnI"/>
@@ -1767,7 +1764,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calMedium:" destination="gnQ-04-4ix" eventType="touchUpInside" id="58i-yE-Zdi"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUD-Fa-fle">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUD-Fa-fle">
                             <rect key="frame" x="366" y="83" width="73" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="4wz-OF-AVH"/>
@@ -1778,6 +1775,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="RVc-IU-PoA"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Vbi-vN-uyW" secondAttribute="trailing" constant="11" id="36S-rc-GLS"/>
                         <constraint firstItem="Hcy-Em-bdm" firstAttribute="leading" secondItem="o3K-an-bD6" secondAttribute="leading" id="4MJ-eG-LEN"/>
@@ -1792,7 +1790,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstAttribute="trailing" secondItem="XAI-hf-IyL" secondAttribute="trailing" constant="11" id="rG1-xE-kth"/>
                         <constraint firstItem="PUD-Fa-fle" firstAttribute="top" secondItem="Vbi-vN-uyW" secondAttribute="bottom" constant="4" id="zXo-rw-836"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="RVc-IU-PoA"/>
                 </view>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" id="7T4-xE-I3w">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1811,7 +1808,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g1Level" translatesAutoresizingMaskIntoConstraints="NO" id="1XD-tL-TK7">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQX-j5-ddA">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQX-j5-ddA">
                             <rect key="frame" x="58" y="60" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="dhb-C3-45D"/>
@@ -1822,7 +1819,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="goG1Easy:" destination="gnQ-04-4ix" eventType="touchUpInside" id="2tl-3Y-ntf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeU-Ua-e11">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeU-Ua-e11">
                             <rect key="frame" x="58" y="120" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ZTy-MR-c2T"/>
@@ -1833,7 +1830,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="goG1Medium:" destination="gnQ-04-4ix" eventType="touchUpInside" id="2wJ-lb-QOZ"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znb-EP-7Y7">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znb-EP-7Y7">
                             <rect key="frame" x="58" y="180" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="185" id="42W-dJ-ZY3"/>
@@ -1844,7 +1841,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="goG1Hard:" destination="gnQ-04-4ix" eventType="touchUpInside" id="0sp-yY-FmB"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E34-tF-hAd">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E34-tF-hAd">
                             <rect key="frame" x="270" y="20" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Col-2I-htQ"/>
@@ -1856,6 +1853,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="syY-V7-reY"/>
                     <constraints>
                         <constraint firstItem="znb-EP-7Y7" firstAttribute="top" secondItem="VeU-Ua-e11" secondAttribute="bottom" constant="10" id="406-m1-xZf"/>
                         <constraint firstItem="VeU-Ua-e11" firstAttribute="leading" secondItem="UzB-fz-IYm" secondAttribute="leading" constant="58" id="5Vn-ZK-IA4"/>
@@ -1870,7 +1868,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstItem="znb-EP-7Y7" firstAttribute="leading" secondItem="UzB-fz-IYm" secondAttribute="leading" constant="58" id="oVb-Mr-E3X"/>
                         <constraint firstItem="E34-tF-hAd" firstAttribute="top" secondItem="UzB-fz-IYm" secondAttribute="top" constant="20" id="yLX-yt-ckR"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="syY-V7-reY"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="2349" y="1630"/>
@@ -1886,8 +1883,8 @@ By email: sc4112sc@gmail.com</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GAME1" translatesAutoresizingMaskIntoConstraints="NO" id="qPK-1R-UZC">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpG-Ir-F2y">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpG-Ir-F2y">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="bvd-yn-lyb"/>
                                     <constraint firstAttribute="height" constant="48" id="kdC-9Q-YXc"/>
@@ -1898,8 +1895,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calBack:" destination="Ak3-lk-5PU" eventType="touchUpInside" id="mYa-FU-QaV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX4-4d-gGm">
-                                <rect key="frame" x="569" y="300" width="200" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX4-4d-gGm">
+                                <rect key="frame" x="561" y="300" width="200" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Kp2-Cv-HcL"/>
                                     <constraint firstAttribute="width" constant="200" id="rKf-rN-jdn"/>
@@ -1909,8 +1906,8 @@ By email: sc4112sc@gmail.com</string>
                                     <action selector="calInstruction:" destination="Ak3-lk-5PU" eventType="touchUpInside" id="qj6-iQ-ysi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSR-eb-Zhb">
-                                <rect key="frame" x="126" y="315" width="200" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSR-eb-Zhb">
+                                <rect key="frame" x="134" y="315" width="200" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="dFy-ui-Rv5"/>
                                     <constraint firstAttribute="height" constant="47" id="gY3-9b-d2D"/>
@@ -1921,6 +1918,7 @@ By email: sc4112sc@gmail.com</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="phh-fl-eHl"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qPK-1R-UZC" secondAttribute="bottom" id="14V-wY-spd"/>
@@ -1934,7 +1932,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="qPK-1R-UZC" firstAttribute="leading" secondItem="6aR-ow-GUZ" secondAttribute="leading" id="z5h-dQ-xmI"/>
                             <constraint firstAttribute="bottomMargin" secondItem="oX4-4d-gGm" secondAttribute="bottom" constant="23" id="zlS-5T-eAx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="phh-fl-eHl"/>
                     </view>
                     <connections>
                         <outlet property="blurEffect" destination="F85-7a-ynM" id="Ye7-av-HAB"/>
@@ -1951,7 +1948,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g1_easy" translatesAutoresizingMaskIntoConstraints="NO" id="aep-zn-t9D">
                             <rect key="frame" x="0.0" y="0.0" width="450" height="338"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee1-mW-OQ0">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee1-mW-OQ0">
                             <rect key="frame" x="0.0" y="20" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Bhj-Zz-VfN"/>
@@ -1962,7 +1959,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calClose2:" destination="Ak3-lk-5PU" eventType="touchUpInside" id="SgD-FW-ZL5"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i39-hM-WBt">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i39-hM-WBt">
                             <rect key="frame" x="367" y="31" width="72" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="72" id="ZkX-cr-3Kq"/>
@@ -1972,7 +1969,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calEasy:" destination="Ak3-lk-5PU" eventType="touchUpInside" id="2J8-O4-J3h"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrL-kc-p0f">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrL-kc-p0f">
                             <rect key="frame" x="367" y="57" width="72" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="72" id="9Hx-np-97i"/>
@@ -1982,7 +1979,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="calMedium:" destination="Ak3-lk-5PU" eventType="touchUpInside" id="9mn-bC-dq5"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aM-JF-uKK">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aM-JF-uKK">
                             <rect key="frame" x="367" y="82" width="72" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="72" id="BCB-dx-9JV"/>
@@ -1993,6 +1990,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="1Oo-yk-nH0"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="aep-zn-t9D" secondAttribute="bottom" id="4vY-wn-MyJ"/>
                         <constraint firstItem="i39-hM-WBt" firstAttribute="top" secondItem="xad-bv-qgX" secondAttribute="top" constant="31" id="GxV-32-azy"/>
@@ -2007,7 +2005,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstAttribute="trailing" secondItem="aep-zn-t9D" secondAttribute="trailing" id="oaZ-5Y-uV2"/>
                         <constraint firstItem="0aM-JF-uKK" firstAttribute="top" secondItem="GrL-kc-p0f" secondAttribute="bottom" constant="3" id="tNS-fN-rCf"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="1Oo-yk-nH0"/>
                 </view>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" id="P8z-rR-Rvn">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -2026,7 +2023,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g1Level" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-dg-sJO">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGD-vx-CmZ">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGD-vx-CmZ">
                             <rect key="frame" x="58" y="60" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="185" id="QLb-dg-oEP"/>
@@ -2037,7 +2034,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="goG1Easy:" destination="Ak3-lk-5PU" eventType="touchUpInside" id="0Zn-5q-IDF"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnw-ie-9z5">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnw-ie-9z5">
                             <rect key="frame" x="58" y="120" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="pME-Pm-JzE"/>
@@ -2048,7 +2045,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="goG1Medium:" destination="Ak3-lk-5PU" eventType="touchUpInside" id="CvS-SI-AE1"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il2-vB-j36">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il2-vB-j36">
                             <rect key="frame" x="58" y="180" width="185" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="185" id="Drk-jI-3qQ"/>
@@ -2059,7 +2056,7 @@ By email: sc4112sc@gmail.com</string>
                                 <action selector="goG1Hard:" destination="Ak3-lk-5PU" eventType="touchUpInside" id="Lsx-gf-yqW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPl-07-CpB">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPl-07-CpB">
                             <rect key="frame" x="270" y="20" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="5ol-0j-HeK"/>
@@ -2071,6 +2068,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="NCk-Bv-67g"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="IGa-dg-sJO" secondAttribute="bottom" id="1ee-mN-NOB"/>
                         <constraint firstItem="IGa-dg-sJO" firstAttribute="leading" secondItem="qLt-qv-cGh" secondAttribute="leading" id="AyQ-Hm-2Ey"/>
@@ -2085,7 +2083,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstItem="IGa-dg-sJO" firstAttribute="top" secondItem="qLt-qv-cGh" secondAttribute="top" id="pCc-p3-hOZ"/>
                         <constraint firstAttribute="bottom" secondItem="il2-vB-j36" secondAttribute="bottom" constant="20" id="uMu-H1-IB6"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="NCk-Bv-67g"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="181" y="1569"/>
@@ -2110,7 +2107,7 @@ By email: sc4112sc@gmail.com</string>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="FaM-0n-YIa">
                                 <rect key="frame" x="158" y="347" width="580" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXU-NY-Fct">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXU-NY-Fct">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.98132258650000004" green="0.94874968229982282" blue="0.64173392564346765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2121,7 +2118,7 @@ By email: sc4112sc@gmail.com</string>
                                             <action selector="calAns1:" destination="7xi-Zy-PNJ" eventType="touchUpInside" id="DLb-Hr-3zA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQc-Se-ut8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQc-Se-ut8">
                                         <rect key="frame" x="130" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.98132258650000004" green="0.94874968229982282" blue="0.64173392564346765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2132,7 +2129,7 @@ By email: sc4112sc@gmail.com</string>
                                             <action selector="calAns2:" destination="7xi-Zy-PNJ" eventType="touchUpInside" id="dc6-jv-fRG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSN-hk-GR2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSN-hk-GR2">
                                         <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.98132258650000004" green="0.94874968229982282" blue="0.64173392564346765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2143,7 +2140,7 @@ By email: sc4112sc@gmail.com</string>
                                             <action selector="calAns3:" destination="7xi-Zy-PNJ" eventType="touchUpInside" id="iPs-zW-00o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="077-TM-h21">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="077-TM-h21">
                                         <rect key="frame" x="390" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.98132258650000004" green="0.94874968229982282" blue="0.64173392564346765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2154,7 +2151,7 @@ By email: sc4112sc@gmail.com</string>
                                             <action selector="calAns4:" destination="7xi-Zy-PNJ" eventType="touchUpInside" id="Io4-dC-RdM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4A-u7-0q5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4A-u7-0q5">
                                         <rect key="frame" x="520" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.98132258650000004" green="0.94874968229982282" blue="0.64173392564346765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2168,28 +2165,28 @@ By email: sc4112sc@gmail.com</string>
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boy1" translatesAutoresizingMaskIntoConstraints="NO" id="Og2-vK-W8D">
-                                <rect key="frame" x="86" y="132" width="142" height="182"/>
+                                <rect key="frame" x="94" y="132" width="142" height="182"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="142" id="59G-j0-wJK"/>
                                     <constraint firstAttribute="height" constant="182" id="JZ6-Ik-JAf"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hunter1" translatesAutoresizingMaskIntoConstraints="NO" id="H4T-c4-dmH">
-                                <rect key="frame" x="607" y="87" width="227" height="246"/>
+                                <rect key="frame" x="599" y="87" width="227" height="246"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="246" id="3o1-wn-DQB"/>
                                     <constraint firstAttribute="width" constant="227" id="tQ5-J2-X2U"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bloodBg" translatesAutoresizingMaskIntoConstraints="NO" id="s5W-QY-EBD">
-                                <rect key="frame" x="85" y="14" width="260" height="40"/>
+                                <rect key="frame" x="93" y="14" width="260" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="1kH-ea-Ug4"/>
                                     <constraint firstAttribute="height" constant="40" id="Eiz-JN-km6"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bloodBg" translatesAutoresizingMaskIntoConstraints="NO" id="hzp-FQ-9AS">
-                                <rect key="frame" x="550" y="14" width="260" height="40"/>
+                                <rect key="frame" x="542" y="14" width="260" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="5io-52-pQq"/>
                                     <constraint firstAttribute="height" constant="40" id="znf-uU-GIS"/>
@@ -2202,7 +2199,7 @@ By email: sc4112sc@gmail.com</string>
                                     <constraint firstAttribute="width" constant="80" id="a7q-S9-ing"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nu9-pR-Yso">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nu9-pR-Yso">
                                 <rect key="frame" x="20" y="20" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="7iF-Aq-REW"/>
@@ -2236,13 +2233,13 @@ By email: sc4112sc@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nilBg1" translatesAutoresizingMaskIntoConstraints="NO" id="tjl-WG-c1S">
-                                <rect key="frame" x="138.5" y="62" width="619" height="76"/>
+                                <rect key="frame" x="146.5" y="62" width="603" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="4LW-nx-uCj"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyB1" translatesAutoresizingMaskIntoConstraints="NO" id="NIs-7r-nKZ">
-                                <rect key="frame" x="566" y="22" width="230" height="20"/>
+                                <rect key="frame" x="558" y="22" width="230" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="3Wq-g3-oee"/>
                                     <constraint firstAttribute="width" constant="230" id="r7e-pw-L71"/>
@@ -2254,7 +2251,7 @@ By email: sc4112sc@gmail.com</string>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hunterB1" translatesAutoresizingMaskIntoConstraints="NO" id="ygP-dM-Ofu">
-                                <rect key="frame" x="100" y="22" width="230" height="20"/>
+                                <rect key="frame" x="108" y="22" width="230" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Mt4-70-ZZZ"/>
                                     <constraint firstAttribute="width" constant="230" id="T6O-x2-KsC"/>
@@ -2276,6 +2273,7 @@ By email: sc4112sc@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="dAd-DV-YFy"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Nu9-pR-Yso" firstAttribute="top" secondItem="Y8q-Df-5mz" secondAttribute="top" constant="20" id="0oR-zW-07w"/>
@@ -2314,7 +2312,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="LrH-F7-H5Z" firstAttribute="centerY" secondItem="Y8q-Df-5mz" secondAttribute="centerY" id="ym8-DZ-ytW"/>
                             <constraint firstItem="roH-Lm-Mwg" firstAttribute="centerX" secondItem="Y8q-Df-5mz" secondAttribute="centerX" id="zXt-Y3-rfZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dAd-DV-YFy"/>
                     </view>
                     <connections>
                         <outlet property="ans1" destination="SXU-NY-Fct" id="N43-Hl-hFx"/>
@@ -2346,8 +2343,8 @@ By email: sc4112sc@gmail.com</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winBg" translatesAutoresizingMaskIntoConstraints="NO" id="cEw-5j-YRL">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R28-Ah-Lug">
-                                <rect key="frame" x="60" y="20" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R28-Ah-Lug">
+                                <rect key="frame" x="68" y="20" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Gl6-Pa-f3u"/>
                                     <constraint firstAttribute="height" constant="48" id="d4O-P6-467"/>
@@ -2358,7 +2355,7 @@ By email: sc4112sc@gmail.com</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="67458" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIg-tG-e0A">
-                                <rect key="frame" x="634" y="188" width="105.5" height="38"/>
+                                <rect key="frame" x="626" y="188" width="105.5" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105.5" id="Aaz-Ej-sEb"/>
                                     <constraint firstAttribute="height" constant="38" id="YdP-4q-phC"/>
@@ -2368,7 +2365,7 @@ By email: sc4112sc@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="67458" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkg-Rg-Oar">
-                                <rect key="frame" x="634" y="260.5" width="105.5" height="38"/>
+                                <rect key="frame" x="626" y="260.5" width="105.5" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="FSx-MG-4Qn"/>
                                     <constraint firstAttribute="width" constant="105.5" id="RfB-eZ-JkI"/>
@@ -2378,6 +2375,7 @@ By email: sc4112sc@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="LqM-9f-Trp"/>
                         <color key="backgroundColor" red="0.66888332366943359" green="0.41994285583496094" blue="0.25896888971328735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="R28-Ah-Lug" firstAttribute="leading" secondItem="71U-pL-0cn" secondAttribute="leadingMargin" id="9EU-cf-wOH"/>
@@ -2391,7 +2389,6 @@ By email: sc4112sc@gmail.com</string>
                             <constraint firstItem="wkg-Rg-Oar" firstAttribute="top" secondItem="dIg-tG-e0A" secondAttribute="bottom" constant="34.5" id="vYP-lw-mdk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wkg-Rg-Oar" secondAttribute="trailing" constant="96.5" id="xqe-xF-dd9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LqM-9f-Trp"/>
                     </view>
                     <connections>
                         <outlet property="myView" destination="IoJ-gJ-zO6" id="sT9-Mc-RJ6"/>
@@ -2410,7 +2407,7 @@ By email: sc4112sc@gmail.com</string>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nameBg" translatesAutoresizingMaskIntoConstraints="NO" id="UMt-lx-hSU">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
                         </imageView>
-                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVO-9T-YzP">
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVO-9T-YzP">
                             <rect key="frame" x="141" y="138" width="68" height="25"/>
                             <color key="backgroundColor" red="0.66888332370000003" green="0.41994285580000001" blue="0.25896888969999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -2463,6 +2460,7 @@ By email: sc4112sc@gmail.com</string>
                             </connections>
                         </textField>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="tNY-Wq-vVq"/>
                     <constraints>
                         <constraint firstItem="UMt-lx-hSU" firstAttribute="leading" secondItem="IoJ-gJ-zO6" secondAttribute="leading" id="8Es-f3-sM4"/>
                         <constraint firstAttribute="bottom" secondItem="qVO-9T-YzP" secondAttribute="bottom" constant="37" id="HV4-VC-HdT"/>
@@ -2477,7 +2475,6 @@ By email: sc4112sc@gmail.com</string>
                         <constraint firstItem="Etn-SH-NUJ" firstAttribute="centerX" secondItem="IoJ-gJ-zO6" secondAttribute="centerX" id="oGf-bU-m8M"/>
                         <constraint firstItem="rDO-Px-nay" firstAttribute="top" secondItem="IoJ-gJ-zO6" secondAttribute="top" constant="32" id="pud-US-H7W"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="tNY-Wq-vVq"/>
                 </view>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" id="bM0-Uz-54l">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -2515,8 +2512,8 @@ By email: sc4112sc@gmail.com</string>
         <image name="about" width="170" height="50"/>
         <image name="ansBg" width="667" height="76"/>
         <image name="bloodBg" width="260" height="40"/>
-        <image name="book.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="book.fill" catalog="system" width="64" height="50"/>
+        <image name="book.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="boy1" width="142" height="182"/>
         <image name="boyB1" width="230" height="20"/>
         <image name="clock" width="80" height="60"/>
@@ -2526,8 +2523,8 @@ By email: sc4112sc@gmail.com</string>
         <image name="g2_easy" width="450" height="337.5"/>
         <image name="g3_easy" width="450" height="337.5"/>
         <image name="gameBg" width="667" height="300"/>
-        <image name="gamecontroller" catalog="system" width="64" height="40"/>
-        <image name="gamecontroller.fill" catalog="system" width="64" height="40"/>
+        <image name="gamecontroller" catalog="system" width="128" height="79"/>
+        <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
         <image name="hard" width="185" height="50"/>
         <image name="helper" width="170" height="50"/>
         <image name="home" width="48" height="48"/>
@@ -2542,14 +2539,23 @@ By email: sc4112sc@gmail.com</string>
         <image name="menuBG" width="667" height="375"/>
         <image name="nameBg" width="350" height="200"/>
         <image name="nilBg1" width="470" height="76"/>
-        <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="person.2.fill" catalog="system" width="128" height="81"/>
         <image name="puzzleIconRight" width="24" height="24"/>
         <image name="puzzleIconRight2" width="24" height="24"/>
-        <image name="questionmark.square.fill" catalog="system" width="64" height="56"/>
+        <image name="questionmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="ranking" width="170" height="50"/>
         <image name="rightBtn" width="60" height="60"/>
         <image name="settingBg" width="300" height="220"/>
         <image name="winBg" width="667" height="375"/>
         <image name="word" width="170" height="50"/>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
