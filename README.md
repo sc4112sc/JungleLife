@@ -13,3 +13,4 @@ iOS App
 6.排名系統
 7.Core data資料庫運用
 8.時間執行緒
+9.Json 解析
