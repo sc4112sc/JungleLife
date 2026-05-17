@@ -19,9 +19,8 @@ class WebViewController: UIViewController,WKNavigationDelegate {
         
         webView.navigationDelegate = self
 
-
-        let url = URL(string: "https://piko.live/")
-        let request = URLRequest(url: url!)
+        guard let url = URL(string: "https://github.com/sc4112sc") else { return }
+        let request = URLRequest(url: url)
         // 設定 WKWebView 的縮放屬性：在載入網頁之前，嘗試設定 WKWebView 的 scrollView 的 contentInsetAdjustmentBehavior 屬性為 .never，這可以避免頂部和底部的留白。
         webView.scrollView.contentInsetAdjustmentBehavior = .never
 
@@ -31,7 +30,7 @@ class WebViewController: UIViewController,WKNavigationDelegate {
 
 
     @IBAction func calHome(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismissCurrentPage()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

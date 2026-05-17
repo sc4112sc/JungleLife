@@ -1,0 +1,859 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FC28CEA37CCF443A29D8A82B274117C /* JHAnimationChainLink.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB8CB8298988F965D432901F8D04620 /* JHAnimationChainLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12AD321469AFA25D49FCA36683BF2A67 /* ChainableAnimations-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FC282887579D9AEBECB47BFA03687E /* ChainableAnimations-dummy.m */; };
+		13AFE34045B4C9DF8FF84A871E1F2E7E /* ChainableAnimations-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82963447B262F6EF9C12F759F5697EB0 /* ChainableAnimations-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B4479276799FEA42860CB6BE28827B0 /* Pods-JungleLife-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B2B25C634AB6B978B11A5E114C3969 /* Pods-JungleLife-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D79FD7A7D5C7736D27A5FC64E943B31 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10DAB51E7CC7FB7C9F6DE688ED4D19 /* AnimationType.swift */; };
+		30DB257B937DB63DB603D036DCF56A0F /* JHAnimationChainLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EA0294B4DEB7BB75A816B86D82FEDA /* JHAnimationChainLink.m */; };
+		41C6E82E3B1D2C8747806AA8BCC9D82A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379E389F1A6D51C9E971D7FDEFE2446 /* Animation.swift */; };
+		4735694D9DBFD8FFCAF80BE7F692877E /* JHChainableAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 368C4B4C492D6B9E67B12DA88A0A1F6B /* JHChainableAnimator.m */; };
+		4C02F49469A2547D9C61D73EB9F62AD6 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF6639BAF9FA16122B5AA0C6BCC5D3D /* Direction.swift */; };
+		5964E322DADA6FB61E042D7D63FE41CA /* JHKeyframeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9077BDA75D19E33807BDB68E925E3478 /* JHKeyframeAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7584EA475179148D03302C89A2FB56DE /* ViewAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BE9BD60D66396CB170F4558DBCC2583 /* ViewAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CB15506904A64CBF25CF37BCB2696CC /* JHChainableBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = FF7AD548538484AADC50A5E746E5F5D7 /* JHChainableBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82529B1EB3F8FBC7D7A541A24EAAADD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		856EC0E2CBFBE3C0A8BF69EC38AD0732 /* UIView+ChainableAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A123E1EAED7C4E96DD401264D6689D /* UIView+ChainableAnimator.swift */; };
+		87028C46D7E272DB5EFB8BFB3C559E62 /* ChainableAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB73969FA9DC67B096C1AEF2EC139E /* ChainableAnimator.swift */; };
+		8D5A58BAC3170B8FD6E4397D45B5890D /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC819BD9443F5BB6B81A75A3DBE18CA1 /* ViewAnimatorConfig.swift */; };
+		97F55F7F9218C6694004E88A485E5225 /* JHKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = E2FE0155C3490F7CCE483C17BDF942CC /* JHKeyframeAnimationFunctions.c */; };
+		99EAEA82E98994089FB9DEE5A0500154 /* ViewAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42471C0A26C5CDB03DC09672D55EA00B /* ViewAnimator-dummy.m */; };
+		B21203B049601C4B093818D9EE739CD5 /* JHKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE189100C1B061189CAA18302FD71729 /* JHKeyframeAnimation.m */; };
+		B2557B0A67A66C2832765E67C59022FB /* ChainableAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D10477E75A93EC717B09CD94BDC9D72 /* ChainableAnimations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3AA97940D99E03E184C3B59B3B3757F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3632D0CD4F6BFA6B9DAE968D1AEE5 /* Utilities.swift */; };
+		C2B32C066763FE5F3EF1BDCF0759E5E8 /* UITableView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A79E0054639492D4ABC81FDF64627F /* UITableView + ViewAnimator.swift */; };
+		CAE59570C4B31A69A93C5A645175004C /* Pods-JungleLife-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8FECC67C8754C2198BCF9F41D83A89 /* Pods-JungleLife-dummy.m */; };
+		CF887A561111421859D699AECE3BA4A7 /* UICollectionView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87BC36993EBE0503111A516F922F736 /* UICollectionView + ViewAnimator.swift */; };
+		D320DA6CFE6C52625D4DED8837F81AA2 /* JHKeyframeAnimationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8548D0C4DABA3B99ACF9BC9B8E87BAAC /* JHKeyframeAnimationFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4850ACE6877FD3C053AA832FB5B2B74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		EA6393DC0F6557C37C628E43A8C3420B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F86EE1383CD6DEF9BBD6349852A22B6A /* JHChainableAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6040DA7868490021D2AF813543447833 /* JHChainableAnimator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF0258C07C1C7DB81A35F63AC7E7376E /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A3FE138AE5EF9AA9899CA4B327168C /* ViewAnimator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF6213BDC1F878EE8D4A949490F564A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91BFC2827E7E6E2B51AB2CFF58AC6317;
+			remoteInfo = ViewAnimator;
+		};
+		ECE7CC81D79B0510AED82157DA99E97D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E4888FDDC3F64FCCEB978BBA804931F;
+			remoteInfo = ChainableAnimations;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09BE4D1727873DD196D2933BF9524BE0 /* Pods-JungleLife-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JungleLife-acknowledgements.plist"; sourceTree = "<group>"; };
+		0DAD1A3FF07DE611967361C3A94A05E9 /* ChainableAnimations */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChainableAnimations; path = ChainableAnimations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F10DAB51E7CC7FB7C9F6DE688ED4D19 /* AnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = ViewAnimator/Classes/Models/AnimationType.swift; sourceTree = "<group>"; };
+		1C8FECC67C8754C2198BCF9F41D83A89 /* Pods-JungleLife-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JungleLife-dummy.m"; sourceTree = "<group>"; };
+		1ED7CC6C9349C1903A8AAA82DB7812C7 /* Pods-JungleLife-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JungleLife-Info.plist"; sourceTree = "<group>"; };
+		34A123E1EAED7C4E96DD401264D6689D /* UIView+ChainableAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+ChainableAnimator.swift"; path = "JHChainableAnimations/UIView+ChainableAnimator.swift"; sourceTree = "<group>"; };
+		368C4B4C492D6B9E67B12DA88A0A1F6B /* JHChainableAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JHChainableAnimator.m; path = JHChainableAnimations/JHChainableAnimator.m; sourceTree = "<group>"; };
+		42471C0A26C5CDB03DC09672D55EA00B /* ViewAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewAnimator-dummy.m"; sourceTree = "<group>"; };
+		4D10477E75A93EC717B09CD94BDC9D72 /* ChainableAnimations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChainableAnimations.h; path = "Frameworks-Swift/ChainableAnimations.h"; sourceTree = "<group>"; };
+		5BD524A05EAA5425A5D877A891903D17 /* ChainableAnimations.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChainableAnimations.modulemap; sourceTree = "<group>"; };
+		6040DA7868490021D2AF813543447833 /* JHChainableAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JHChainableAnimator.h; path = JHChainableAnimations/JHChainableAnimator.h; sourceTree = "<group>"; };
+		68EA0294B4DEB7BB75A816B86D82FEDA /* JHAnimationChainLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JHAnimationChainLink.m; path = JHChainableAnimations/JHAnimationChainLink.m; sourceTree = "<group>"; };
+		6A5B939479E467D580226FA083DC71B8 /* ViewAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ViewAnimator.modulemap; sourceTree = "<group>"; };
+		6B48A61C1FDDEBAFFC3AA87380B0E2FC /* Pods-JungleLife */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-JungleLife"; path = Pods_JungleLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF6639BAF9FA16122B5AA0C6BCC5D3D /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = ViewAnimator/Classes/Models/Direction.swift; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7C48E4E6518AF58DB4DA9A810C3406BE /* Pods-JungleLife-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JungleLife-frameworks.sh"; sourceTree = "<group>"; };
+		7CA9F2B859240C2C9397FC57F21FFF81 /* ChainableAnimations-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChainableAnimations-prefix.pch"; sourceTree = "<group>"; };
+		7DB3632D0CD4F6BFA6B9DAE968D1AEE5 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ViewAnimator/Classes/Utilities/Utilities.swift; sourceTree = "<group>"; };
+		82963447B262F6EF9C12F759F5697EB0 /* ChainableAnimations-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChainableAnimations-umbrella.h"; sourceTree = "<group>"; };
+		8548D0C4DABA3B99ACF9BC9B8E87BAAC /* JHKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JHKeyframeAnimationFunctions.h; path = JHChainableAnimations/JHKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
+		862046AF1B1C5A52B5AB85447044D686 /* Pods-JungleLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JungleLife.debug.xcconfig"; sourceTree = "<group>"; };
+		9077BDA75D19E33807BDB68E925E3478 /* JHKeyframeAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JHKeyframeAnimation.h; path = JHChainableAnimations/JHKeyframeAnimation.h; sourceTree = "<group>"; };
+		9BCB73969FA9DC67B096C1AEF2EC139E /* ChainableAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChainableAnimator.swift; path = JHChainableAnimations/ChainableAnimator.swift; sourceTree = "<group>"; };
+		9BE9BD60D66396CB170F4558DBCC2583 /* ViewAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-umbrella.h"; sourceTree = "<group>"; };
+		9BEF5A1C9F54C38E4F7AA3E0942989FC /* ViewAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-prefix.pch"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9ED29D6FEACE04EE0869E28D8B78AC83 /* ChainableAnimations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChainableAnimations.debug.xcconfig; sourceTree = "<group>"; };
+		A76921F7329D552AD6FA723972B6337A /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE189100C1B061189CAA18302FD71729 /* JHKeyframeAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JHKeyframeAnimation.m; path = JHChainableAnimations/JHKeyframeAnimation.m; sourceTree = "<group>"; };
+		AF9568BD66BE783C7EB4D3E8E43A7D44 /* Pods-JungleLife-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JungleLife-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B0EC61047401EEFE0B329CD09DA67D2C /* ViewAnimator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.release.xcconfig; sourceTree = "<group>"; };
+		B31CCCFB9DED16154271637FD389D4FE /* ChainableAnimations-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChainableAnimations-Info.plist"; sourceTree = "<group>"; };
+		B7A79E0054639492D4ABC81FDF64627F /* UITableView + ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView + ViewAnimator.swift"; path = "ViewAnimator/Classes/Extensions/UITableView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		B9B2B25C634AB6B978B11A5E114C3969 /* Pods-JungleLife-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JungleLife-umbrella.h"; sourceTree = "<group>"; };
+		BBCC1B11C62B4DB954A298F6ED7D3385 /* ChainableAnimations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChainableAnimations.release.xcconfig; sourceTree = "<group>"; };
+		C0A3FE138AE5EF9AA9899CA4B327168C /* ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimator.swift; path = ViewAnimator/Classes/ViewAnimator.swift; sourceTree = "<group>"; };
+		C185819339C9D3501CCB7C95F6904584 /* Pods-JungleLife.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JungleLife.modulemap"; sourceTree = "<group>"; };
+		C379E389F1A6D51C9E971D7FDEFE2446 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = ViewAnimator/Classes/Protocols/Animation.swift; sourceTree = "<group>"; };
+		D6376BDF3E437937AB13158BCFF54CDE /* Pods-JungleLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JungleLife.release.xcconfig"; sourceTree = "<group>"; };
+		DC819BD9443F5BB6B81A75A3DBE18CA1 /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimatorConfig.swift; path = ViewAnimator/Classes/ViewAnimatorConfig.swift; sourceTree = "<group>"; };
+		DC8EE7D058438291050CD8B07AEF44BB /* ViewAnimator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.debug.xcconfig; sourceTree = "<group>"; };
+		E2FE0155C3490F7CCE483C17BDF942CC /* JHKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = JHKeyframeAnimationFunctions.c; path = JHChainableAnimations/JHKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
+		EDB8CB8298988F965D432901F8D04620 /* JHAnimationChainLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JHAnimationChainLink.h; path = JHChainableAnimations/JHAnimationChainLink.h; sourceTree = "<group>"; };
+		F007EBAAEE547B223BA8DAA7B966F79B /* ViewAnimator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ViewAnimator-Info.plist"; sourceTree = "<group>"; };
+		F87BC36993EBE0503111A516F922F736 /* UICollectionView + ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView + ViewAnimator.swift"; path = "ViewAnimator/Classes/Extensions/UICollectionView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		F8FC282887579D9AEBECB47BFA03687E /* ChainableAnimations-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChainableAnimations-dummy.m"; sourceTree = "<group>"; };
+		FF7AD548538484AADC50A5E746E5F5D7 /* JHChainableBlocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JHChainableBlocks.h; path = JHChainableAnimations/JHChainableBlocks.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2512BC3059E986920165F0AAC50844BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6393DC0F6557C37C628E43A8C3420B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E9A509A8301ED19189D8D73547C995D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4850ACE6877FD3C053AA832FB5B2B74 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D274A002279D57AE54F2B5EFAB82ACFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82529B1EB3F8FBC7D7A541A24EAAADD4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15EF6EC83B2045D4A2F66F607E1F61EB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BD524A05EAA5425A5D877A891903D17 /* ChainableAnimations.modulemap */,
+				F8FC282887579D9AEBECB47BFA03687E /* ChainableAnimations-dummy.m */,
+				B31CCCFB9DED16154271637FD389D4FE /* ChainableAnimations-Info.plist */,
+				7CA9F2B859240C2C9397FC57F21FFF81 /* ChainableAnimations-prefix.pch */,
+				82963447B262F6EF9C12F759F5697EB0 /* ChainableAnimations-umbrella.h */,
+				9ED29D6FEACE04EE0869E28D8B78AC83 /* ChainableAnimations.debug.xcconfig */,
+				BBCC1B11C62B4DB954A298F6ED7D3385 /* ChainableAnimations.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ChainableAnimations";
+			sourceTree = "<group>";
+		};
+		3F5ECD3B19D3442DC6843EDF037B58DB /* Pods-JungleLife */ = {
+			isa = PBXGroup;
+			children = (
+				C185819339C9D3501CCB7C95F6904584 /* Pods-JungleLife.modulemap */,
+				AF9568BD66BE783C7EB4D3E8E43A7D44 /* Pods-JungleLife-acknowledgements.markdown */,
+				09BE4D1727873DD196D2933BF9524BE0 /* Pods-JungleLife-acknowledgements.plist */,
+				1C8FECC67C8754C2198BCF9F41D83A89 /* Pods-JungleLife-dummy.m */,
+				7C48E4E6518AF58DB4DA9A810C3406BE /* Pods-JungleLife-frameworks.sh */,
+				1ED7CC6C9349C1903A8AAA82DB7812C7 /* Pods-JungleLife-Info.plist */,
+				B9B2B25C634AB6B978B11A5E114C3969 /* Pods-JungleLife-umbrella.h */,
+				862046AF1B1C5A52B5AB85447044D686 /* Pods-JungleLife.debug.xcconfig */,
+				D6376BDF3E437937AB13158BCFF54CDE /* Pods-JungleLife.release.xcconfig */,
+			);
+			name = "Pods-JungleLife";
+			path = "Target Support Files/Pods-JungleLife";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		8E55647086C6C155725041FBE3782F8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E125939D236099BE051B6D7E53EFFE83 /* ChainableAnimations */,
+				F87D190BEE836BD77F04FAD91E76886A /* ViewAnimator */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA1C7537B1569D887D8F58F0F7AB25FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DAD1A3FF07DE611967361C3A94A05E9 /* ChainableAnimations */,
+				6B48A61C1FDDEBAFFC3AA87380B0E2FC /* Pods-JungleLife */,
+				A76921F7329D552AD6FA723972B6337A /* ViewAnimator.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				8E55647086C6C155725041FBE3782F8E /* Pods */,
+				CA1C7537B1569D887D8F58F0F7AB25FD /* Products */,
+				E5D82F2A8D5060285BAF63D478318F62 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEC473BC713619CDFC9B28DE2E1587AD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A5B939479E467D580226FA083DC71B8 /* ViewAnimator.modulemap */,
+				42471C0A26C5CDB03DC09672D55EA00B /* ViewAnimator-dummy.m */,
+				F007EBAAEE547B223BA8DAA7B966F79B /* ViewAnimator-Info.plist */,
+				9BEF5A1C9F54C38E4F7AA3E0942989FC /* ViewAnimator-prefix.pch */,
+				9BE9BD60D66396CB170F4558DBCC2583 /* ViewAnimator-umbrella.h */,
+				DC8EE7D058438291050CD8B07AEF44BB /* ViewAnimator.debug.xcconfig */,
+				B0EC61047401EEFE0B329CD09DA67D2C /* ViewAnimator.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ViewAnimator";
+			sourceTree = "<group>";
+		};
+		E125939D236099BE051B6D7E53EFFE83 /* ChainableAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				4D10477E75A93EC717B09CD94BDC9D72 /* ChainableAnimations.h */,
+				9BCB73969FA9DC67B096C1AEF2EC139E /* ChainableAnimator.swift */,
+				EDB8CB8298988F965D432901F8D04620 /* JHAnimationChainLink.h */,
+				68EA0294B4DEB7BB75A816B86D82FEDA /* JHAnimationChainLink.m */,
+				6040DA7868490021D2AF813543447833 /* JHChainableAnimator.h */,
+				368C4B4C492D6B9E67B12DA88A0A1F6B /* JHChainableAnimator.m */,
+				FF7AD548538484AADC50A5E746E5F5D7 /* JHChainableBlocks.h */,
+				9077BDA75D19E33807BDB68E925E3478 /* JHKeyframeAnimation.h */,
+				AE189100C1B061189CAA18302FD71729 /* JHKeyframeAnimation.m */,
+				E2FE0155C3490F7CCE483C17BDF942CC /* JHKeyframeAnimationFunctions.c */,
+				8548D0C4DABA3B99ACF9BC9B8E87BAAC /* JHKeyframeAnimationFunctions.h */,
+				34A123E1EAED7C4E96DD401264D6689D /* UIView+ChainableAnimator.swift */,
+				15EF6EC83B2045D4A2F66F607E1F61EB /* Support Files */,
+			);
+			path = ChainableAnimations;
+			sourceTree = "<group>";
+		};
+		E5D82F2A8D5060285BAF63D478318F62 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F5ECD3B19D3442DC6843EDF037B58DB /* Pods-JungleLife */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F87D190BEE836BD77F04FAD91E76886A /* ViewAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				C379E389F1A6D51C9E971D7FDEFE2446 /* Animation.swift */,
+				0F10DAB51E7CC7FB7C9F6DE688ED4D19 /* AnimationType.swift */,
+				6FF6639BAF9FA16122B5AA0C6BCC5D3D /* Direction.swift */,
+				F87BC36993EBE0503111A516F922F736 /* UICollectionView + ViewAnimator.swift */,
+				B7A79E0054639492D4ABC81FDF64627F /* UITableView + ViewAnimator.swift */,
+				7DB3632D0CD4F6BFA6B9DAE968D1AEE5 /* Utilities.swift */,
+				C0A3FE138AE5EF9AA9899CA4B327168C /* ViewAnimator.swift */,
+				DC819BD9443F5BB6B81A75A3DBE18CA1 /* ViewAnimatorConfig.swift */,
+				DEC473BC713619CDFC9B28DE2E1587AD /* Support Files */,
+			);
+			path = ViewAnimator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5DEBF754604E46769A6636FA8DA21F5E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2557B0A67A66C2832765E67C59022FB /* ChainableAnimations.h in Headers */,
+				13AFE34045B4C9DF8FF84A871E1F2E7E /* ChainableAnimations-umbrella.h in Headers */,
+				0FC28CEA37CCF443A29D8A82B274117C /* JHAnimationChainLink.h in Headers */,
+				F86EE1383CD6DEF9BBD6349852A22B6A /* JHChainableAnimator.h in Headers */,
+				7CB15506904A64CBF25CF37BCB2696CC /* JHChainableBlocks.h in Headers */,
+				5964E322DADA6FB61E042D7D63FE41CA /* JHKeyframeAnimation.h in Headers */,
+				D320DA6CFE6C52625D4DED8837F81AA2 /* JHKeyframeAnimationFunctions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72706C35977450EC7C41D6CD6C64D1F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B4479276799FEA42860CB6BE28827B0 /* Pods-JungleLife-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB2DD1653557B02E52CFD0D55F434977 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7584EA475179148D03302C89A2FB56DE /* ViewAnimator-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7C4227551D8743254222AAE251CF4082 /* Pods-JungleLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D5DB752B135C70B35088C20F800AE1B /* Build configuration list for PBXNativeTarget "Pods-JungleLife" */;
+			buildPhases = (
+				A72706C35977450EC7C41D6CD6C64D1F /* Headers */,
+				5B9623FC8E9CED975F40E661872CB388 /* Sources */,
+				2512BC3059E986920165F0AAC50844BD /* Frameworks */,
+				41742CD8484CCBB74939C17CB328E069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B45F38C68A9D192E9479F3976623FE6A /* PBXTargetDependency */,
+				994697730F515F623B622F696CC5D8D3 /* PBXTargetDependency */,
+			);
+			name = "Pods-JungleLife";
+			productName = Pods_JungleLife;
+			productReference = 6B48A61C1FDDEBAFFC3AA87380B0E2FC /* Pods-JungleLife */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E4888FDDC3F64FCCEB978BBA804931F /* ChainableAnimations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 192CBC2389CBB47F7DE9DE622A4454AA /* Build configuration list for PBXNativeTarget "ChainableAnimations" */;
+			buildPhases = (
+				5DEBF754604E46769A6636FA8DA21F5E /* Headers */,
+				B20CA80CA7DDD9893CA8AB9FDC253C13 /* Sources */,
+				8E9A509A8301ED19189D8D73547C995D /* Frameworks */,
+				222025422BDFCCD9C7C42A59F12B8C8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChainableAnimations;
+			productName = ChainableAnimations;
+			productReference = 0DAD1A3FF07DE611967361C3A94A05E9 /* ChainableAnimations */;
+			productType = "com.apple.product-type.framework";
+		};
+		91BFC2827E7E6E2B51AB2CFF58AC6317 /* ViewAnimator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DABEEAA2A28E5F058F0712D408628C7E /* Build configuration list for PBXNativeTarget "ViewAnimator" */;
+			buildPhases = (
+				FB2DD1653557B02E52CFD0D55F434977 /* Headers */,
+				F8F135695AF5988E0B2CDB8C9C816A42 /* Sources */,
+				D274A002279D57AE54F2B5EFAB82ACFF /* Frameworks */,
+				D8E5CD939146BED9FD20263070E21C38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViewAnimator;
+			productName = ViewAnimator;
+			productReference = A76921F7329D552AD6FA723972B6337A /* ViewAnimator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = CA1C7537B1569D887D8F58F0F7AB25FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E4888FDDC3F64FCCEB978BBA804931F /* ChainableAnimations */,
+				7C4227551D8743254222AAE251CF4082 /* Pods-JungleLife */,
+				91BFC2827E7E6E2B51AB2CFF58AC6317 /* ViewAnimator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		222025422BDFCCD9C7C42A59F12B8C8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41742CD8484CCBB74939C17CB328E069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E5CD939146BED9FD20263070E21C38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B9623FC8E9CED975F40E661872CB388 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAE59570C4B31A69A93C5A645175004C /* Pods-JungleLife-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B20CA80CA7DDD9893CA8AB9FDC253C13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12AD321469AFA25D49FCA36683BF2A67 /* ChainableAnimations-dummy.m in Sources */,
+				87028C46D7E272DB5EFB8BFB3C559E62 /* ChainableAnimator.swift in Sources */,
+				30DB257B937DB63DB603D036DCF56A0F /* JHAnimationChainLink.m in Sources */,
+				4735694D9DBFD8FFCAF80BE7F692877E /* JHChainableAnimator.m in Sources */,
+				B21203B049601C4B093818D9EE739CD5 /* JHKeyframeAnimation.m in Sources */,
+				97F55F7F9218C6694004E88A485E5225 /* JHKeyframeAnimationFunctions.c in Sources */,
+				856EC0E2CBFBE3C0A8BF69EC38AD0732 /* UIView+ChainableAnimator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F135695AF5988E0B2CDB8C9C816A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41C6E82E3B1D2C8747806AA8BCC9D82A /* Animation.swift in Sources */,
+				2D79FD7A7D5C7736D27A5FC64E943B31 /* AnimationType.swift in Sources */,
+				4C02F49469A2547D9C61D73EB9F62AD6 /* Direction.swift in Sources */,
+				CF887A561111421859D699AECE3BA4A7 /* UICollectionView + ViewAnimator.swift in Sources */,
+				C2B32C066763FE5F3EF1BDCF0759E5E8 /* UITableView + ViewAnimator.swift in Sources */,
+				B3AA97940D99E03E184C3B59B3B3757F /* Utilities.swift in Sources */,
+				FF0258C07C1C7DB81A35F63AC7E7376E /* ViewAnimator.swift in Sources */,
+				99EAEA82E98994089FB9DEE5A0500154 /* ViewAnimator-dummy.m in Sources */,
+				8D5A58BAC3170B8FD6E4397D45B5890D /* ViewAnimatorConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		994697730F515F623B622F696CC5D8D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ViewAnimator;
+			target = 91BFC2827E7E6E2B51AB2CFF58AC6317 /* ViewAnimator */;
+			targetProxy = AF6213BDC1F878EE8D4A949490F564A1 /* PBXContainerItemProxy */;
+		};
+		B45F38C68A9D192E9479F3976623FE6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ChainableAnimations;
+			target = 7E4888FDDC3F64FCCEB978BBA804931F /* ChainableAnimations */;
+			targetProxy = ECE7CC81D79B0510AED82157DA99E97D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0082FC00BCCBFCAA63AA5C98EA587C17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		04BFAD7A0E6F4B5D5B3FCC21296A73A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBCC1B11C62B4DB954A298F6ED7D3385 /* ChainableAnimations.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ChainableAnimations/ChainableAnimations-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChainableAnimations/ChainableAnimations-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ChainableAnimations/ChainableAnimations.modulemap";
+				PRODUCT_MODULE_NAME = ChainableAnimations;
+				PRODUCT_NAME = ChainableAnimations;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0BB549A0C618B335D8FC825B9FF573B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ED29D6FEACE04EE0869E28D8B78AC83 /* ChainableAnimations.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ChainableAnimations/ChainableAnimations-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChainableAnimations/ChainableAnimations-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ChainableAnimations/ChainableAnimations.modulemap";
+				PRODUCT_MODULE_NAME = ChainableAnimations;
+				PRODUCT_NAME = ChainableAnimations;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		201BF46B3B56D528152A935C328567B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 862046AF1B1C5A52B5AB85447044D686 /* Pods-JungleLife.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JungleLife/Pods-JungleLife-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JungleLife/Pods-JungleLife.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4DCF1E055CF10161002512F5A6FEC586 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6376BDF3E437937AB13158BCFF54CDE /* Pods-JungleLife.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JungleLife/Pods-JungleLife-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JungleLife/Pods-JungleLife.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8AB168A9D88B4B3CE689A9804DBD8578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC8EE7D058438291050CD8B07AEF44BB /* ViewAnimator.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ViewAnimator/ViewAnimator-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
+				PRODUCT_MODULE_NAME = ViewAnimator;
+				PRODUCT_NAME = ViewAnimator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D36C6CECD35D46CB939D465CF4459098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0EC61047401EEFE0B329CD09DA67D2C /* ViewAnimator.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ViewAnimator/ViewAnimator-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
+				PRODUCT_MODULE_NAME = ViewAnimator;
+				PRODUCT_NAME = ViewAnimator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E5B12AB88A4F6C443C963D290ECB2428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		192CBC2389CBB47F7DE9DE622A4454AA /* Build configuration list for PBXNativeTarget "ChainableAnimations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BB549A0C618B335D8FC825B9FF573B5 /* Debug */,
+				04BFAD7A0E6F4B5D5B3FCC21296A73A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D5DB752B135C70B35088C20F800AE1B /* Build configuration list for PBXNativeTarget "Pods-JungleLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				201BF46B3B56D528152A935C328567B7 /* Debug */,
+				4DCF1E055CF10161002512F5A6FEC586 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0082FC00BCCBFCAA63AA5C98EA587C17 /* Debug */,
+				E5B12AB88A4F6C443C963D290ECB2428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DABEEAA2A28E5F058F0712D408628C7E /* Build configuration list for PBXNativeTarget "ViewAnimator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AB168A9D88B4B3CE689A9804DBD8578 /* Debug */,
+				D36C6CECD35D46CB939D465CF4459098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

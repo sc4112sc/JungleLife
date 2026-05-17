@@ -112,6 +112,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     
     func sendNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: ["myid"])
+        
         let content = UNMutableNotificationContent()
         content.title = "Jungle Life"
         content.body = "快來使用英文能力擊敗獵人吧！"
@@ -122,13 +125,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         date.hour = 12
         
         
-        let imageURL:URL = Bundle.main.url(forResource: "Crow1", withExtension: "png")!
-        let attachment = try! UNNotificationAttachment(identifier: "image", url: imageURL, options: nil)
-        content.attachments = [attachment]
+        if let imageURL = Bundle.main.url(forResource: "Crow1", withExtension: "png"),
+           let attachment = try? UNNotificationAttachment(identifier: "image", url: imageURL, options: nil) {
+            content.attachments = [attachment]
+        }
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
         let request = UNNotificationRequest(identifier: "myid", content: content, trigger: trigger)
-        let center = UNUserNotificationCenter.current()
         center.add(request, withCompletionHandler: nil)
     }
     
@@ -138,4 +141,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
 }
-

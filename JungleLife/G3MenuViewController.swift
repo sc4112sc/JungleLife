@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 class G3MenuViewController: UIViewController {
 
-    var audioPlayer: AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var blurEffect: UIView!
     @IBOutlet var myView: UIView!
@@ -18,24 +18,18 @@ class G3MenuViewController: UIViewController {
     @IBOutlet weak var g3Image: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        prepareAudio()
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        let url = Bundle.main.url(forResource: "game3M", withExtension: "mp3")
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            audioPlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-        audioPlayer.numberOfLoops = -1
-        audioPlayer.play()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        audioPlayer?.play()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        audioPlayer.stop()
+        super.viewDidDisappear(animated)
+        audioPlayer?.stop()
     }
     
     @IBAction func calStart(_ sender: UIButton) {
@@ -74,50 +68,41 @@ class G3MenuViewController: UIViewController {
         g3Image.image = UIImage(named: "g3_hard")
     }
     @IBAction func calHome(_ sender: UIButton) {
-        
-        //音樂暫停
-        if audioPlayer != nil {
-            if audioPlayer.isPlaying {
-                audioPlayer.stop()
-            }
-        }
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
-        present(vc, animated: true, completion: nil)
+        stopAudio()
+        dismissToMenu()
     }
     @IBAction func goG1Easy(_ sender: UIButton) {
-        //音樂暫停
-        if audioPlayer != nil {
-            if audioPlayer.isPlaying {
-                audioPlayer.stop()
-            }
-        }
-
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
-        vc.gameName = "g3Easy"
-        present(vc, animated: true, completion: nil)
+        presentGame(named: "g3Easy")
     }
     @IBAction func goG1Medium(_ sender: UIButton) {
-        //音樂暫停
-        if audioPlayer != nil {
-            if audioPlayer.isPlaying {
-                audioPlayer.stop()
-            }
-        }
-
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
-        vc.gameName = "g3Medium"
-        present(vc, animated: true, completion: nil)
+        presentGame(named: "g3Medium")
     }
     @IBAction func goG1Hard(_ sender: UIButton) {
-        //音樂暫停
-        if audioPlayer != nil {
-            if audioPlayer.isPlaying {
-                audioPlayer.stop()
-            }
-        }
+        presentGame(named: "g3Hard")
+    }
 
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as! Game1ViewController
-        vc.gameName = "g3Hard"
+    private func prepareAudio() {
+        guard let url = Bundle.main.url(forResource: "game3M", withExtension: "mp3") else { return }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1
+            audioPlayer?.prepareToPlay()
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
+    }
+    
+    private func stopAudio() {
+        if audioPlayer?.isPlaying == true {
+            audioPlayer?.stop()
+        }
+    }
+    
+    private func presentGame(named gameName: String) {
+        guard presentedViewController == nil else { return }
+        stopAudio()
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "game1") as? Game1ViewController else { return }
+        vc.gameName = gameName
         present(vc, animated: true, completion: nil)
     }
     /*

@@ -1,0 +1,6 @@
+framework module Pods_JungleLife {
+  umbrella header "Pods-JungleLife-umbrella.h"
+
+  export *
+  module * { export * }
+}

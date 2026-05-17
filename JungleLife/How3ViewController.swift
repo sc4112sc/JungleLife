@@ -17,7 +17,7 @@ class How3ViewController: UIViewController {
     }
     
     @IBAction func calHome(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismissCurrentPage()
     }
     
     /*

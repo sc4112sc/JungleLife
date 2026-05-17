@@ -15,7 +15,9 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     
     //CoreData
     var context:NSManagedObjectContext!
-    let appDel = UIApplication.shared.delegate as! AppDelegate
+    var appDel: AppDelegate? {
+        UIApplication.shared.delegate as? AppDelegate
+    }
     
     var myData:[(name:String,score:String,id:String,level:String)] = []
     
@@ -25,7 +27,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     var idHave = false
     var isBest = false
     
-    var audioPlayer: AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer?
     
     var myLevel = ""
     var lastScore = ""
@@ -38,6 +40,8 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     var myId = ""
     
     var deleteId = ""
+    var hasNavigated = false
+    var isSubmittingScore = false
     
     var reduceCount = 0
     var winOrNot = false
@@ -47,121 +51,51 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var vEffect: UIView!
     @IBOutlet var myView: UIView!
     @IBOutlet weak var textField1: UITextField!
+    
+    var currentScore: Int {
+        return (myCount * 1000) + ((10 - reduceCount) * 1000) + max(0, 600 - myTime)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = Bundle.main.url(forResource: "winM", withExtension: "mp3")
+        guard let url = Bundle.main.url(forResource: "winM", withExtension: "mp3") else { return }
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            audioPlayer.prepareToPlay()
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.prepareToPlay()
         } catch {
             print("Error:", error.localizedDescription)
         }
-        audioPlayer.numberOfLoops = -1
-        audioPlayer.play()
+        audioPlayer?.numberOfLoops = -1
+        audioPlayer?.play()
         //CoreData
         
+        guard let appDel else { return }
         context = appDel.persistentContainer.viewContext
+        textField1.delegate = self
         
         
         if winOrNot == true {
             winBg.image = UIImage(named: "winBg")
             timeLabel.text = String(myTime)
-            scoreLabel.text = String((myCount*1000)+((10-reduceCount)*1000)+(600-myTime))
         } else {
             winBg.image = UIImage(named: "loseBg")
             timeLabel.text = String(myTime)
-            scoreLabel.text = String((myCount*1000)+((10-reduceCount)*1000)+(600-myTime))
         }
+        scoreLabel.text = String(currentScore)
         
        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        audioPlayer.stop()
+        super.viewDidDisappear(animated)
+        audioPlayer?.stop()
     }
     override func viewDidAppear(_ animated: Bool) {
-        //先清空 否則會堆疊
-        myData = []
-        myJsonData = []
-        switch gameName {
-        case "Game1":
-            let allItems = try! context.fetch(MyScore.fetchRequest())
-            
-            for item in allItems as! [MyScore]
-            {
-                
-                myData.append((item.name!,item.score!,item.id!,item.level!))
-                
-            }
-            
-            checkLevel()
-            
-            //json
-            json(str: "https://sheetdb.io/api/v1/ammj39o4i2wja")
-            
-            break
-            
-            
-        case "Game2":
-            let allItems = try! context.fetch(MyScore2.fetchRequest())
-            
-            for item in allItems as! [MyScore2]
-            {
-                
-                myData.append((item.name!,item.score!,item.id!,item.level!))
-                
-            }
-            
-            checkLevel()
-            
-            //json
-            json(str: "https://sheetdb.io/api/v1/doe7udumc9qsh")
-            
-            break
-            
-        case "Game3":
-            let allItems = try! context.fetch(MyScore3.fetchRequest())
-            
-            for item in allItems as! [MyScore3]
-            {
-                
-                myData.append((item.name!,item.score!,item.id!,item.level!))
-                
-            }
-            
-            checkLevel()
-            
-            //json
-            json(str: "https://sheetdb.io/api/v1/yidip89pry1u5")
-            
-            break
-            
-        default:
-            
-            
-            break
-            
-        }
-        
-        
-        
-        
-        myData = myData.sorted(by: {$0.score > $1.score})
-        
-        if myData.count == 0 {
-            lastScore = "0"
-        } else if myData.count < 10{
-            lastScore = (myData.last?.score)!
-        } else {
-            lastScore = myData[9].score
-        }
-        
-        
-        
-        
- 
+        super.viewDidAppear(animated)
+        audioPlayer?.play()
+        reloadLeaderboardData()
     }
     
     struct Information {
@@ -172,84 +106,47 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     }
     
     func update() {
-       
-        
-        
-        switch myLevel {
-        case "Eazy":
-            myJsonData = myJsonData.filter({ (arg0) -> Bool in
-                
-                let (_, _, _, level) = arg0
-                return level == "Easy"
-            })
-            break
-        case "Medium":
-            myJsonData = myJsonData.filter({ (arg0) -> Bool in
-                
-                let (_, _, _, level) = arg0
-                return level == "Medium"
-            })
-            break
-        case "Hard":
-            myJsonData = myJsonData.filter({ (arg0) -> Bool in
-                
-                let (_, _, _, level) = arg0
-                return level == "Hard"
-            })
-            break
-        default:
-            
-            break
-            
-        }
-        
-        myJsonData = myJsonData.sorted(by: {$0.score > $1.score})
-        
+        myJsonData = filteredScores(myJsonData)
+        myJsonData = myJsonData.sorted(by: { numericScore(for: $0.score) > numericScore(for: $1.score) })
     }
     
     func json(str: String) {
         //json
-        let urlStr = str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        let url = URL(string: urlStr!)
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        guard let urlStr = str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+              let url = URL(string: urlStr) else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("error:", error)
+                return
+            }
             if let data = data, let content = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String: Any]]{ // 因為資料的Json的格式為陣列（Array）包物件（Object），所以[[String: Any]]
-                
-                
-                
-                
+                var remoteData:[(name:String,score:String,id:String,level:String)] = []
                 for p in content {
-                    
-                    let name = p["Name"] as! String
-                    let score = p["Score"] as! String
-                    let id = p["Id"] as! String
-                    let level = p["Level"] as! String
+                    guard let name = p["Name"] as? String,
+                          let score = p["Score"] as? String,
+                          let id = p["Id"] as? String,
+                          let level = p["Level"] as? String else { continue }
                     let information = Information(name: name, score: score, id: id, level: level)
-                    
-                    
-                    self.myJsonData.append((information.name, information.score, information.id, information.level))
-                    
+                    remoteData.append((information.name, information.score, information.id, information.level))
                 }
                 
                 DispatchQueue.main.async {  // UI的更新必須在Main thread
-                    
+                    self.myJsonData = remoteData
                     self.update()
-                    
                 }
             }
-            
-            
-            
         }
         
         task.resume() // 開始在背景下載資料
     }
     
     @IBAction func calHome(_ sender: UIButton) {
+        guard !hasNavigated else { return }
         
         if winOrNot == true {
             
             if myData.count >= 10 {
-                if (Int(scoreLabel.text!)! > Int(lastScore)!) {
+                if currentScore > localThresholdScore() {
                     
                     vEffect.frame = view.frame
                     view.addSubview(vEffect)
@@ -264,8 +161,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
                     myView.center = view.center
                     view.addSubview(myView)
                 } else {
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
-                    present(vc, animated: true, completion: nil)
+                    navigateToMenu()
                 }
             } else {
                 vEffect.frame = view.frame
@@ -283,15 +179,16 @@ class WinViewController: UIViewController,UITextFieldDelegate {
             }
             
         } else {
-            
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
-            present(vc, animated: true, completion: nil)
+            navigateToMenu()
         }
        
     }
     
     @IBAction func calSend(_ sender: UIButton) {
-        myName = textField1.text!
+        guard !isSubmittingScore else { return }
+        isSubmittingScore = true
+        sender.isEnabled = false
+        myName = (textField1.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
         myId = String(arc4random_uniform(10000)) + scoreLabel.text!
         
         switch gameName {
@@ -304,13 +201,19 @@ class WinViewController: UIViewController,UITextFieldDelegate {
                 let fetchRepuest:NSFetchRequest<MyScore>=MyScore.fetchRequest()
                 let predicate = NSPredicate(format: "id = '\(deleteId)'")
                 fetchRepuest.predicate = predicate
-                let allusers = try! context.fetch(fetchRepuest)
-                context.delete(allusers[0])
-                appDel.saveContext()
+                do {
+                    let allusers = try context.fetch(fetchRepuest)
+                    if let user = allusers.first {
+                        context.delete(user)
+                        appDel?.saveContext()
+                    }
+                } catch {
+                    print("Error:", error.localizedDescription)
+                }
             }
             
             //CoreData取得表單列表
-            let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore", into: context) as! MyScore
+            guard let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore", into: context) as? MyScore else { return }
             
             
             
@@ -323,7 +226,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
             user.score = scoreLabel.text
             user.id = myId
             user.level = myLevel
-            appDel.saveContext()
+            appDel?.saveContext()
             
             //post
             postJson(str: "https://sheetdb.io/api/v1/ammj39o4i2wja")
@@ -336,12 +239,18 @@ class WinViewController: UIViewController,UITextFieldDelegate {
                 let fetchRepuest:NSFetchRequest<MyScore2>=MyScore2.fetchRequest()
                 let predicate=NSPredicate(format: "id = '\(deleteId)'")
                 fetchRepuest.predicate=predicate
-                let allusers = try! context.fetch(fetchRepuest)
-                context.delete(allusers[0])
-                appDel.saveContext()
+                do {
+                    let allusers = try context.fetch(fetchRepuest)
+                    if let user = allusers.first {
+                        context.delete(user)
+                        appDel?.saveContext()
+                    }
+                } catch {
+                    print("Error:", error.localizedDescription)
+                }
             }
             //CoreData取得表單列表
-            let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore2", into: context) as! MyScore2
+            guard let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore2", into: context) as? MyScore2 else { return }
             
             if myName != ""
             {
@@ -352,7 +261,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
             user.score = scoreLabel.text
             user.id = myId
             user.level = myLevel
-            appDel.saveContext()
+            appDel?.saveContext()
             
             //post
             postJson(str: "https://sheetdb.io/api/v1/doe7udumc9qsh")
@@ -365,12 +274,18 @@ class WinViewController: UIViewController,UITextFieldDelegate {
                 let fetchRepuest:NSFetchRequest<MyScore3>=MyScore3.fetchRequest()
                 let predicate=NSPredicate(format: "id = '\(deleteId)'")
                 fetchRepuest.predicate=predicate
-                let allusers = try! context.fetch(fetchRepuest)
-                context.delete(allusers[0])
-                appDel.saveContext()
+                do {
+                    let allusers = try context.fetch(fetchRepuest)
+                    if let user = allusers.first {
+                        context.delete(user)
+                        appDel?.saveContext()
+                    }
+                } catch {
+                    print("Error:", error.localizedDescription)
+                }
             }
             //CoreData取得表單列表
-            let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore3", into: context) as! MyScore3
+            guard let user = NSEntityDescription.insertNewObject(forEntityName: "MyScore3", into: context) as? MyScore3 else { return }
             
             if myName != ""
             {
@@ -381,7 +296,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
             user.score = scoreLabel.text
             user.id = myId
             user.level = myLevel
-            appDel.saveContext()
+            appDel?.saveContext()
             
             //post
             postJson(str: "https://sheetdb.io/api/v1/yidip89pry1u5")
@@ -393,107 +308,31 @@ class WinViewController: UIViewController,UITextFieldDelegate {
         
         
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
-        present(vc, animated: true, completion: nil)
+        navigateToMenu()
     }
     
     
     
     func checkLevel() {
-        
-        switch myLevel {
-        case "Eazy":
-            myData = myData.filter({ (arg0) -> Bool in
-                
-                let (_, _, _, level) = arg0
-                return level == "Easy"
-            })
-            break
-        case "Medium":
-            myData = myData.filter({ (arg0) -> Bool in
-                
-                let (_, _, _, level) = arg0
-                return level == "Medium"
-            })
-            break
-        case "Hard":
-            myData = myData.filter({ (arg0) -> Bool in
-                
-                let (_, _, _, level) = arg0
-                return level == "Hard"
-            })
-            break
-        default:
-            
-            break
-            
-        }
+        myData = filteredScores(myData)
     }
     
     
     func reloadMyData() {
         //先清空 否則會堆疊
         myData = []
-        switch gameName {
-        case "Game1":
-            let allItems = try! context.fetch(MyScore.fetchRequest())
-            
-            for item in allItems as! [MyScore]
-            {
-                
-                myData.append((item.name!,item.score!,item.id!,item.level!))
-                
-            }
-            
-            checkLevel()
-            
-            
-            break
-            
-            
-        case "Game2":
-            let allItems = try! context.fetch(MyScore2.fetchRequest())
-            
-            for item in allItems as! [MyScore2]
-            {
-                
-                myData.append((item.name!,item.score!,item.id!,item.level!))
-                
-            }
-            
-            checkLevel()
-            
-            
-            break
-            
-        case "Game3":
-            let allItems = try! context.fetch(MyScore3.fetchRequest())
-            
-            for item in allItems as! [MyScore3]
-            {
-                
-                myData.append((item.name!,item.score!,item.id!,item.level!))
-                
-            }
-            
-            checkLevel()
-            
-            break
-            
-        default:
-            
-            
-            break
-            
-        }
-
-        myData = myData.sorted(by: {$0.score > $1.score})
+        loadLocalScores()
+        myData = filteredScores(myData)
+        myData = myData.sorted(by: { numericScore(for: $0.score) > numericScore(for: $1.score) })
     }
     
     func postJson(str: String) {
+        tmpId = ""
+        idHave = false
+        isBest = false
        
         //先抓舊id
-        if myData.count != 0 || myJsonData.count != 0 {
+        if !myData.isEmpty && !myJsonData.isEmpty {
             for item in myJsonData {
                 if item.id == myData[0].id {
                     tmpId = item.id
@@ -507,7 +346,7 @@ class WinViewController: UIViewController,UITextFieldDelegate {
         
         //重新載入
         reloadMyData()
-        if myData[0].id == myId {
+        if let bestLocalId = myData.first?.id, bestLocalId == myId {
             isBest = true
         }
         
@@ -602,12 +441,107 @@ class WinViewController: UIViewController,UITextFieldDelegate {
     }
     //限制長度為10
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let currentCharacterCount = textField.text?.characters.count ?? 0
+        let currentCharacterCount = textField.text?.count ?? 0
         if (range.length + range.location > currentCharacterCount){
             return false
         }
-        let newLength = currentCharacterCount + string.characters.count - range.length
+        let newLength = currentCharacterCount + string.count - range.length
         return newLength <= 10
+    }
+    
+    private func reloadLeaderboardData() {
+        myData = []
+        myJsonData = []
+        loadLocalScores()
+        myData = filteredScores(myData)
+        myData = myData.sorted(by: { numericScore(for: $0.score) > numericScore(for: $1.score) })
+        lastScore = String(localThresholdScore())
+        if let endpoint = endpointURLString() {
+            json(str: endpoint)
+        }
+    }
+    
+    private func endpointURLString() -> String? {
+        switch gameName {
+        case "Game1":
+            return "https://sheetdb.io/api/v1/ammj39o4i2wja"
+        case "Game2":
+            return "https://sheetdb.io/api/v1/doe7udumc9qsh"
+        case "Game3":
+            return "https://sheetdb.io/api/v1/yidip89pry1u5"
+        default:
+            return nil
+        }
+    }
+    
+    private func filteredScores(_ scores: [(name:String,score:String,id:String,level:String)]) -> [(name:String,score:String,id:String,level:String)] {
+        let targetLevel: String
+        switch myLevel {
+        case "Eazy":
+            targetLevel = "Easy"
+        case "Medium":
+            targetLevel = "Medium"
+        case "Hard":
+            targetLevel = "Hard"
+        default:
+            return scores
+        }
+        return scores.filter { $0.level == targetLevel }
+    }
+    
+    private func numericScore(for score: String) -> Int {
+        return Int(score) ?? 0
+    }
+    
+    private func localThresholdScore() -> Int {
+        if myData.isEmpty {
+            return 0
+        } else if myData.count < 10 {
+            return numericScore(for: myData.last?.score ?? "0")
+        } else {
+            return numericScore(for: myData[9].score)
+        }
+    }
+    
+    private func loadLocalScores() {
+        switch gameName {
+        case "Game1":
+            do {
+                let allItems = try context.fetch(MyScore.fetchRequest())
+                for item in allItems {
+                    myData.append((item.name ?? "No name", item.score ?? "0", item.id ?? "", item.level ?? ""))
+                }
+            } catch {
+                print("Error:", error.localizedDescription)
+            }
+        case "Game2":
+            do {
+                let allItems = try context.fetch(MyScore2.fetchRequest())
+                for item in allItems {
+                    myData.append((item.name ?? "No name", item.score ?? "0", item.id ?? "", item.level ?? ""))
+                }
+            } catch {
+                print("Error:", error.localizedDescription)
+            }
+        case "Game3":
+            do {
+                let allItems = try context.fetch(MyScore3.fetchRequest())
+                for item in allItems {
+                    myData.append((item.name ?? "No name", item.score ?? "0", item.id ?? "", item.level ?? ""))
+                }
+            } catch {
+                print("Error:", error.localizedDescription)
+            }
+        default:
+            break
+        }
+    }
+    
+    private func navigateToMenu() {
+        guard !hasNavigated else { return }
+        hasNavigated = true
+        audioPlayer?.stop()
+        dismissToMenu()
     }
     /*
     // MARK: - Navigation

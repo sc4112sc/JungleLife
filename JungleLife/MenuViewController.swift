@@ -14,7 +14,9 @@ import ChainableAnimations
 
 class MenuViewController: UIViewController {
 
-    var audioPlayer: AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer?
+    var loadingTimer: Timer?
+    var hasAnimatedButtons = false
     
     @IBOutlet weak var btn1: UIButton!
     @IBOutlet weak var btn2: UIButton!
@@ -39,6 +41,7 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         //nav
         self.launchedOnceView.frame = UIScreen.main.bounds
@@ -53,7 +56,7 @@ class MenuViewController: UIViewController {
         }
         
         //偵測
-        var alreadyLaunchedOnce = isAppAlreadyLaunchedOnce()
+        let alreadyLaunchedOnce = isAppAlreadyLaunchedOnce()
         
         if alreadyLaunchedOnce == false {
             
@@ -79,64 +82,21 @@ class MenuViewController: UIViewController {
         
         self.myView3.frame = UIScreen.main.bounds
         
-        let url = Bundle.main.url(forResource: "homeM", withExtension: "mp3")
+        guard let url = Bundle.main.url(forResource: "homeM", withExtension: "mp3") else { return }
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            audioPlayer.prepareToPlay()
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.prepareToPlay()
         } catch {
             print("Error:", error.localizedDescription)
         }
-        audioPlayer.numberOfLoops = -1
-        audioPlayer.play()
+        audioPlayer?.numberOfLoops = -1
+        audioPlayer?.play()
         
         
         //按鈕動畫
-        
-        let btnAnimator = ChainableAnimator(view: btn1)
-        btnAnimator.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let btnAnimator2 = ChainableAnimator(view: self.btn2)
-            btnAnimator2.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            let btnAnimator3 = ChainableAnimator(view: self.btn3)
-            btnAnimator3.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            let btnAnimator4 = ChainableAnimator(view: self.btn4)
-            btnAnimator4.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let btnAnimator5 = ChainableAnimator(view: self.btn5)
-            btnAnimator5.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            let btnAnimator6 = ChainableAnimator(view: self.btn6)
-            btnAnimator6.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            let btnAnimator = ChainableAnimator(view: self.btn1)
-            btnAnimator.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-            let btnAnimator2 = ChainableAnimator(view: self.btn2)
-            btnAnimator2.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-            let btnAnimator3 = ChainableAnimator(view: self.btn3)
-            btnAnimator3.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
-            let btnAnimator4 = ChainableAnimator(view: self.btn4)
-            btnAnimator4.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            let btnAnimator5 = ChainableAnimator(view: self.btn5)
-            btnAnimator5.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) {
-            let btnAnimator6 = ChainableAnimator(view: self.btn6)
-            btnAnimator6.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 1.0).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 1)
+        if !hasAnimatedButtons {
+            animateMenuButtons()
+            hasAnimatedButtons = true
         }
         
 
@@ -145,7 +105,10 @@ class MenuViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        audioPlayer.stop()
+        super.viewDidDisappear(animated)
+        loadingTimer?.invalidate()
+        loadingTimer = nil
+        audioPlayer?.stop()
     }
     
    
@@ -180,71 +143,40 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func calS1(_ sender: UIButton) {
-        
         imageIndex = 0
         resourceNames = "Story1"
-        
-        myView3.center = view.center
-        view.addSubview(myView3)
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:
-            #selector(calImage(sender:)), userInfo: self, repeats: true)
+        startLoadingTransition(selector: #selector(calImage(_:)))
     }
     
     @IBAction func calS2(_ sender: UIButton) {
-        
         imageIndex = 0
         resourceNames = "Story2"
-        
-        myView3.center = view.center
-        view.addSubview(myView3)
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:
-            #selector(calImage(sender:)), userInfo: self, repeats: true)
-        
-        
+        startLoadingTransition(selector: #selector(calImage(_:)))
     }
     
     @IBAction func calS3(_ sender: UIButton) {
-        
         imageIndex = 0
         resourceNames = "Story3"
-        
-        myView3.center = view.center
-        view.addSubview(myView3)
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:
-            #selector(calImage(sender:)), userInfo: self, repeats: true)
+        startLoadingTransition(selector: #selector(calImage(_:)))
     }
     
     @IBAction func calG1(_ sender: UIButton) {
-        
-        myView3.center = view.center
-        view.addSubview(myView3)
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:
-            #selector(calImageG1(sender:)), userInfo: self, repeats: true)
-        
+        startLoadingTransition(selector: #selector(calImageG1(_:)))
     }
     
     @IBAction func calG2(_ sender: UIButton) {
-        myView3.center = view.center
-        view.addSubview(myView3)
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:
-            #selector(calImageG2(sender:)), userInfo: self, repeats: true)
+        startLoadingTransition(selector: #selector(calImageG2(_:)))
     }
     
     @IBAction func calG3(_ sender: UIButton) {
-        myView3.center = view.center
-        view.addSubview(myView3)
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:
-            #selector(calImageG3(sender:)), userInfo: self, repeats: true)
+        startLoadingTransition(selector: #selector(calImageG3(_:)))
     }
     
     
     func playVideo(resource:String,type:String) {
+        if audioPlayer?.isPlaying == true {
+            audioPlayer?.stop()
+        }
         
         let filePath = Bundle.main.path(forResource: resource, ofType: type)
         let videoURL = URL(fileURLWithPath: filePath!)
@@ -288,13 +220,13 @@ class MenuViewController: UIViewController {
     
     var resourceNames = ""
     
-    @objc func calImage(sender:AnyObject) {
+    @objc func calImage(_ timer: Timer) {
         
         loadImage.image = myImages[imageIndex]
         imageIndex = imageIndex + 1
         if imageIndex == 20 {
             imageIndex = 0
-            sender.invalidate()//把時間清空
+            finishLoadingTransition(timer)
 
             playVideo(resource: resourceNames, type: "mp4")
             myView3.removeFromSuperview()
@@ -306,22 +238,20 @@ class MenuViewController: UIViewController {
         
     }
     
-    @objc func calImageG1(sender:AnyObject) {
+    @objc func calImageG1(_ timer: Timer) {
         
         loadImage.image = myImages[imageIndex]
         imageIndex = imageIndex + 1
         if imageIndex == 20 {
             imageIndex = 0
-            sender.invalidate()//把時間清空
+            finishLoadingTransition(timer)
             
             //音樂暫停
-            if audioPlayer != nil {
-                if audioPlayer.isPlaying {
-                    audioPlayer.stop()
-                }
+            if audioPlayer?.isPlaying == true {
+                audioPlayer?.stop()
             }
             
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "g1Menu") as! G1MenuViewController
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "g1Menu") as? G1MenuViewController else { return }
             present(vc, animated: true, completion: nil)
             
             myView3.removeFromSuperview()
@@ -330,22 +260,20 @@ class MenuViewController: UIViewController {
         
     }
     
-    @objc func calImageG2(sender:AnyObject) {
+    @objc func calImageG2(_ timer: Timer) {
         
         loadImage.image = myImages[imageIndex]
         imageIndex = imageIndex + 1
         if imageIndex == 20 {
             imageIndex = 0
-            sender.invalidate()//把時間清空
+            finishLoadingTransition(timer)
             
             //音樂暫停
-            if audioPlayer != nil {
-                if audioPlayer.isPlaying {
-                    audioPlayer.stop()
-                }
+            if audioPlayer?.isPlaying == true {
+                audioPlayer?.stop()
             }
             
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "g2Menu") as! G2MenuViewController
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "g2Menu") as? G2MenuViewController else { return }
             present(vc, animated: true, completion: nil)
             
             myView3.removeFromSuperview()
@@ -354,22 +282,20 @@ class MenuViewController: UIViewController {
         
     }
     
-    @objc func calImageG3(sender:AnyObject) {
+    @objc func calImageG3(_ timer: Timer) {
         
         loadImage.image = myImages[imageIndex]
         imageIndex = imageIndex + 1
         if imageIndex == 20 {
             imageIndex = 0
-            sender.invalidate()//把時間清空
+            finishLoadingTransition(timer)
             
             //音樂暫停
-            if audioPlayer != nil {
-                if audioPlayer.isPlaying {
-                    audioPlayer.stop()
-                }
+            if audioPlayer?.isPlaying == true {
+                audioPlayer?.stop()
             }
             
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "g3Menu") as! G3MenuViewController
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "g3Menu") as? G3MenuViewController else { return }
             present(vc, animated: true, completion: nil)
             
             myView3.removeFromSuperview()
@@ -379,8 +305,8 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func calHelper(_ sender: UIButton) {
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "myTab") as! MyTabViewController
+        guard presentedViewController == nil else { return }
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "myTab") as? MyTabViewController else { return }
         present(vc, animated: true, completion: nil)
     }
     
@@ -412,17 +338,16 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func calWord(_ sender: UIButton) {
-        //音樂暫停
-        if audioPlayer != nil {
-            if audioPlayer.isPlaying {
-                audioPlayer.stop()
-            }
+        guard presentedViewController == nil else { return }
+        if audioPlayer?.isPlaying == true {
+            audioPlayer?.stop()
         }
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "word") as! WordViewController
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "word") as? WordViewController else { return }
         present(vc, animated: true, completion: nil)
     }
     @IBAction func calRanking(_ sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabScore") as! TabScoreViewController
+        guard presentedViewController == nil else { return }
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabScore") as? TabScoreViewController else { return }
         present(vc, animated: true, completion: nil)
     }
     
@@ -518,7 +443,7 @@ class MenuViewController: UIViewController {
     //nav
     func pageTurning() {
         
-        var picNumber = "nav" + String(pageControl.currentPage + 1) + ".jpg"
+        let picNumber = "nav" + String(pageControl.currentPage + 1) + ".jpg"
         tempImageView.image = UIImage(named: picNumber)
         
         if tempImageView.tag == 0 {
@@ -554,6 +479,28 @@ class MenuViewController: UIViewController {
 
        
         UIView.commitAnimations()
+    }
+    
+    private func animateMenuButtons() {
+        let buttons = [btn1, btn2, btn3, btn4, btn5, btn6].compactMap { $0 }
+        for (index, button) in buttons.enumerated() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + (Double(index) * 0.18)) {
+                let animator = ChainableAnimator(view: button)
+                animator.make(backgroundColor: #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)).thenAfter(t: 0.4).make(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)).animate(t: 0.45)
+            }
+        }
+    }
+    
+    private func startLoadingTransition(selector: Selector) {
+        guard loadingTimer == nil else { return }
+        myView3.center = view.center
+        view.addSubview(myView3)
+        loadingTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: selector, userInfo: nil, repeats: true)
+    }
+    
+    private func finishLoadingTransition(_ timer: Timer) {
+        timer.invalidate()
+        loadingTimer = nil
     }
     
     /*

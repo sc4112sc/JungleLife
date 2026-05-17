@@ -8,25 +8,25 @@
 
 import UIKit
 import AVFoundation
-//import AudioToolbox
+import AudioToolbox
 
 class Game1ViewController: UIViewController {
     
     //
-    var timer:Timer! = nil
+    var timer: Timer? = nil
     
     let time: Double = 0.3
     
     var flakeImage: UIImage!
     //
     
-    var audioPlayer: AVAudioPlayer!
-    var boyAudioPlayer: AVAudioPlayer!
-    var hunterAudioPlayer: AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer?
+    var boyAudioPlayer: AVAudioPlayer?
+    var hunterAudioPlayer: AVAudioPlayer?
     
-    var mytimer:Timer!
-    var mytimer2:Timer!
-    var mytimer3:Timer!
+    var mytimer: Timer?
+    var mytimer2: Timer?
+    var mytimer3: Timer?
     
     var myLevel = ""
     var winOrNot = false
@@ -43,6 +43,7 @@ class Game1ViewController: UIViewController {
     var fiveAns = [String]()
     var question = ""
     var addIts = ""
+    var hasPresentedResult = false
     
     var boyAry = [UIImage(named: "boy1"),UIImage(named: "boy2"),UIImage(named: "boy3")]
     var hunterAry = [UIImage(named: "hunter1"),UIImage(named: "hunter2"),UIImage(named: "hunter3")]
@@ -90,22 +91,27 @@ class Game1ViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        audioPlayer.stop()
+        super.viewDidDisappear(animated)
+        stopAllTimers()
+        audioPlayer?.stop()
+        boyAudioPlayer?.stop()
+        hunterAudioPlayer?.stop()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        let url = Bundle.main.url(forResource: "gameNow", withExtension: "mp3")
+        guard let url = Bundle.main.url(forResource: "gameNow", withExtension: "mp3") else { return }
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            audioPlayer.prepareToPlay()
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.prepareToPlay()
         } catch {
             print("Error:", error.localizedDescription)
         }
-        audioPlayer.numberOfLoops = -1
-        audioPlayer.play()
+        audioPlayer?.numberOfLoops = -1
+        audioPlayer?.play()
+        prepareEffectPlayers()
         
         //判斷哪一關
         switch gameName {
@@ -159,37 +165,25 @@ class Game1ViewController: UIViewController {
             break
         }
         //動畫1
-        if mytimer == nil {
-            mytimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(calImageBoy), userInfo: nil, repeats: true)
-            
-            mytimer.fire()
-        }else{
-            mytimer.invalidate()
-        }
+        mytimer?.invalidate()
+        mytimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(calImageBoy), userInfo: nil, repeats: true)
+        mytimer?.fire()
         
 
         //
         
         //動畫2
-        if mytimer2 == nil {
-            mytimer2 = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(calImageHunter), userInfo: nil, repeats: true)
-            
-            mytimer2.fire()
-        }else{
-            mytimer2.invalidate()
-        }
+        mytimer2?.invalidate()
+        mytimer2 = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(calImageHunter), userInfo: nil, repeats: true)
+        mytimer2?.fire()
         
 
         //
         
         //計時器
-        if mytimer3 == nil {
-            mytimer3 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(calTime), userInfo: nil, repeats: true)
-            
-            mytimer3.fire()
-        } else {
-            mytimer3.invalidate()
-        }
+        mytimer3?.invalidate()
+        mytimer3 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(calTime), userInfo: nil, repeats: true)
+        mytimer3?.fire()
         
 
         //第一題
@@ -202,14 +196,10 @@ class Game1ViewController: UIViewController {
         //飛行動畫
         flakeImage = UIImage(named: "Eagle1.png")
         
-        if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector:
-                #selector(self.onTimer), userInfo: nil, repeats: true)
-            
-            timer.fire()
-        } else {
-            timer.invalidate()
-        }
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector:
+            #selector(self.onTimer), userInfo: nil, repeats: true)
+        timer?.fire()
         
         
         
@@ -290,6 +280,7 @@ class Game1ViewController: UIViewController {
     
     //答對要做的所有事
     func correctA() {
+        guard !hasPresentedResult else { return }
         //1 爆炸動畫
         ans1.isEnabled = false
         ans2.isEnabled = false
@@ -297,7 +288,7 @@ class Game1ViewController: UIViewController {
         ans4.isEnabled = false
         ans5.isEnabled = false
         
-        boomImg.animationImages = (boomImgsLeft as! [UIImage])
+        boomImg.animationImages = boomImgsLeft.compactMap { $0 }
         boomImg.animationDuration = 0.9
         boomImg.animationRepeatCount = 1
         boomImg.startAnimating()
@@ -329,6 +320,7 @@ class Game1ViewController: UIViewController {
     
     //答錯要做的所有事
     func errorA() {
+        guard !hasPresentedResult else { return }
         //1 爆炸動畫
         ans1.isEnabled = false
         ans2.isEnabled = false
@@ -336,7 +328,7 @@ class Game1ViewController: UIViewController {
         ans4.isEnabled = false
         ans5.isEnabled = false
         
-        boomImg.animationImages = (boomImgsRight as! [UIImage])
+        boomImg.animationImages = boomImgsRight.compactMap { $0 }
         boomImg.animationDuration = 0.9
         boomImg.animationRepeatCount = 1
         boomImg.startAnimating()
@@ -360,14 +352,15 @@ class Game1ViewController: UIViewController {
     }
     
     @objc func calWin() {
+        guard !hasPresentedResult else { return }
+        hasPresentedResult = true
+        stopAllTimers()
         //音樂暫停
-        if audioPlayer != nil {
-            if audioPlayer.isPlaying {
-                audioPlayer.stop()
-            }
+        if audioPlayer?.isPlaying == true {
+            audioPlayer?.stop()
         }
 
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as! WinViewController
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as? WinViewController else { return }
         vc.myCount = boyCount
         vc.myTime = timeCount
         vc.reduceCount = hunterCount
@@ -417,35 +410,33 @@ class Game1ViewController: UIViewController {
         }
     }
     @IBAction func calBack(_ sender: UIButton) {
-                //音樂暫停
-        if audioPlayer != nil {
-            if audioPlayer.isPlaying {
-                audioPlayer.stop()
-            }
+        stopAllTimers()
+        if audioPlayer?.isPlaying == true {
+            audioPlayer?.stop()
         }
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
-        present(vc, animated: true, completion: nil)
+        dismissToMenu()
     }
     
     
-    var imageIndex=0
+    var boyImageIndex = 0
+    var hunterImageIndex = 0
     
     @objc func calImageBoy() {
         
-        boyImg.image=boyAry[imageIndex]
-        imageIndex=imageIndex+1
-        if imageIndex==3{
-            imageIndex=0
+        boyImg.image = boyAry[boyImageIndex]
+        boyImageIndex += 1
+        if boyImageIndex == boyAry.count {
+            boyImageIndex = 0
         }
         
     }
     
     @objc func calImageHunter() {
         
-        hunterImg.image=hunterAry[imageIndex]
-        imageIndex=imageIndex+1
-        if imageIndex==3{
-            imageIndex=0
+        hunterImg.image = hunterAry[hunterImageIndex]
+        hunterImageIndex += 1
+        if hunterImageIndex == hunterAry.count {
+            hunterImageIndex = 0
         }
         
     }
@@ -458,15 +449,8 @@ class Game1ViewController: UIViewController {
         ans5.isEnabled = true
         
         //4 叫聲
-        let url2 = Bundle.main.url(forResource: "hunterOh", withExtension: "wav")
-        do {
-            hunterAudioPlayer = try AVAudioPlayer(contentsOf: url2!)
-            hunterAudioPlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-        
-        hunterAudioPlayer.play()
+        hunterAudioPlayer?.currentTime = 0
+        hunterAudioPlayer?.play()
         //震動
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
@@ -479,15 +463,8 @@ class Game1ViewController: UIViewController {
         ans5.isEnabled = true
         
         //4 叫聲
-        let url3 = Bundle.main.url(forResource: "boyOh", withExtension: "wav")
-        do {
-            boyAudioPlayer = try AVAudioPlayer(contentsOf: url3!)
-            boyAudioPlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-        
-        boyAudioPlayer.play()
+        boyAudioPlayer?.currentTime = 0
+        boyAudioPlayer?.play()
         //震動
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
@@ -495,14 +472,14 @@ class Game1ViewController: UIViewController {
      @objc func calTime() {
         timeCount += 1
         if timeCount > 600{
-            //音樂暫停
-            if audioPlayer != nil {
-                if audioPlayer.isPlaying {
-                    audioPlayer.stop()
-                }
+            guard !hasPresentedResult else { return }
+            hasPresentedResult = true
+            stopAllTimers()
+            if audioPlayer?.isPlaying == true {
+                audioPlayer?.stop()
             }
 
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as! WinViewController
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "win") as? WinViewController else { return }
             vc.myCount = boyCount
             vc.reduceCount = hunterCount
             vc.myTime = timeCount
@@ -546,6 +523,38 @@ class Game1ViewController: UIViewController {
         
         
         
+    }
+
+    private func prepareEffectPlayers() {
+        if let hunterURL = Bundle.main.url(forResource: "hunterOh", withExtension: "wav") {
+            do {
+                hunterAudioPlayer = try AVAudioPlayer(contentsOf: hunterURL)
+                hunterAudioPlayer?.prepareToPlay()
+            } catch {
+                print("Error:", error.localizedDescription)
+            }
+        }
+        
+        if let boyURL = Bundle.main.url(forResource: "boyOh", withExtension: "wav") {
+            do {
+                boyAudioPlayer = try AVAudioPlayer(contentsOf: boyURL)
+                boyAudioPlayer?.prepareToPlay()
+            } catch {
+                print("Error:", error.localizedDescription)
+            }
+        }
+    }
+    
+    private func stopAllTimers() {
+        timer?.invalidate()
+        timer = nil
+        mytimer?.invalidate()
+        mytimer = nil
+        mytimer2?.invalidate()
+        mytimer2 = nil
+        mytimer3?.invalidate()
+        mytimer3 = nil
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
     }
     /*
     // MARK: - Navigation

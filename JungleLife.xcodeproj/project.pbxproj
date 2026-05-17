@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ABBA9782FB9B0E500DBED87 /* NavigationRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBA9772FB9B0E500DBED87 /* NavigationRouting.swift */; };
 		0AD08D9B2A1BB07E0047D91C /* boyOh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D942A1BB07A0047D91C /* boyOh.wav */; };
 		0AD08D9C2A1BB07E0047D91C /* Story3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D952A1BB07B0047D91C /* Story3.mp4 */; };
 		0AD08D9D2A1BB07E0047D91C /* Story1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD08D962A1BB07C0047D91C /* Story1.mp4 */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ABBA9772FB9B0E500DBED87 /* NavigationRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouting.swift; sourceTree = "<group>"; };
 		0AD08D942A1BB07A0047D91C /* boyOh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boyOh.wav; sourceTree = "<group>"; };
 		0AD08D952A1BB07B0047D91C /* Story3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Story3.mp4; sourceTree = "<group>"; };
 		0AD08D962A1BB07C0047D91C /* Story1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Story1.mp4; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				A17ABBCC21F39E54003A0C05 /* Ranking3ViewController.swift */,
 				A1E60F0D2211BEBC000B19CD /* ResultTVC.swift */,
 				A128D00922205472000609A9 /* LandscapeAVPlayerController.swift */,
+				0ABBA9772FB9B0E500DBED87 /* NavigationRouting.swift */,
 			);
 			path = JungleLife;
 			sourceTree = "<group>";
@@ -327,9 +330,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JungleLife/Pods-JungleLife-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JungleLife/Pods-JungleLife-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,6 +355,7 @@
 				A1EAA6D021DBB1B700BB1129 /* ViewController.swift in Sources */,
 				A1E60F0E2211BEBC000B19CD /* ResultTVC.swift in Sources */,
 				A1E66C9C21EDF9B2002CB888 /* WordViewController.swift in Sources */,
+				0ABBA9782FB9B0E500DBED87 /* NavigationRouting.swift in Sources */,
 				A17ABBD321F39F98003A0C05 /* MyScore3+CoreDataProperties.swift in Sources */,
 				A1E576A421F0EAB200216231 /* How3ViewController.swift in Sources */,
 				A1E576A621F0EAC600216231 /* How4ViewController.swift in Sources */,

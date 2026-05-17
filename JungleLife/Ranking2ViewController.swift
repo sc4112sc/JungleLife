@@ -13,7 +13,9 @@ import ViewAnimator
 class Ranking2ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     //core data
-    var appDel = UIApplication.shared.delegate as! AppDelegate
+    var appDel: AppDelegate? {
+        UIApplication.shared.delegate as? AppDelegate
+    }
     var context : NSManagedObjectContext!
     
     var myData:[(name:String,score:String,level:String,id:String)] = []
@@ -194,94 +196,52 @@ class Ranking2ViewController: UIViewController,UITableViewDelegate,UITableViewDa
             return level == "Hard"
         })
         
-        myJsonData1 = myJsonData1.sorted(by: {$0.score > $1.score})
-        myJsonData2 = myJsonData2.sorted(by: {$0.score > $1.score})
-        myJsonData3 = myJsonData3.sorted(by: {$0.score > $1.score})
+        myJsonData1 = myJsonData1.sorted(by: { numericScore(for: $0.score) > numericScore(for: $1.score) })
+        myJsonData2 = myJsonData2.sorted(by: { numericScore(for: $0.score) > numericScore(for: $1.score) })
+        myJsonData3 = myJsonData3.sorted(by: { numericScore(for: $0.score) > numericScore(for: $1.score) })
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        
-        
+        super.viewWillAppear(animated)
         myData = []
         
+        guard let appDel else { return }
         context = appDel.persistentContainer.viewContext
-        
-        let allItems = try! context.fetch(MyScore2.fetchRequest())
-        
-        for item in allItems as! [MyScore2]
-        {
-            
-            myData.append((item.name!,item.score!,item.level!,item.id!))
-            
+        do {
+            let allItems = try context.fetch(MyScore2.fetchRequest())
+            for item in allItems {
+                myData.append((item.name ?? "No name", item.score ?? "0", item.level ?? "", item.id ?? ""))
+            }
+        } catch {
+            print("Error:", error.localizedDescription)
         }
-        
-//        //
-//        myJsonData = []
-//        let url = URL(string: "https://sheetdb.io/api/v1/doe7udumc9qsh")
-//
-//        do {
-//            let data = try Data(contentsOf: url!)
-//            let jsonObj = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
-//
-//            for p in jsonObj {
-//                myJsonData.append((p["Name"] as! String,p["Score"] as! String,p["Id"] as! String,p["Level"] as! String))
-//            }
-//
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-        
-        //
+
         myJsonData = []
         let urlStr = "https://sheetdb.io/api/v1/doe7udumc9qsh".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        let url = URL(string: urlStr!)
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        guard let safeURLStr = urlStr, let url = URL(string: safeURLStr) else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("error:", error)
+                return
+            }
             if let data = data, let content = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String: Any]]{ // 因為資料的Json的格式為陣列（Array）包物件（Object），所以[[String: Any]]
-                
-                
-                
-                
+                var remoteData:[(name:String,score:String,id:String,level:String)] = []
                 for p in content {
-                    
-                    let name = p["Name"] as! String
-                    let score = p["Score"] as! String
-                    let id = p["Id"] as! String
-                    let level = p["Level"] as! String
+                    guard let name = p["Name"] as? String,
+                          let score = p["Score"] as? String,
+                          let id = p["Id"] as? String,
+                          let level = p["Level"] as? String else { continue }
                     let information = Information(name: name, score: score, id: id, level: level)
-                    
-                    
-                    self.myJsonData.append((information.name, information.score, information.id, information.level))
-                    
+                    remoteData.append((information.name, information.score, information.id, information.level))
                 }
                 
                 DispatchQueue.main.async {  // UI的更新必須在Main thread
-                    if self.mySeg.selectedSegmentIndex == 0 {
-                        if self.myData.count == 0 {
-                            
-                            self.noText.isHidden = false
-                        } else {
-                            
-                            self.noText.isHidden = true
-                        }
-                    }else{
-
-                        if self.myJsonData.count == 0 {
-                            
-                            self.noText.isHidden = false
-                        } else {
-                            
-                            self.noText.isHidden = true
-                        }
-                    }
+                    self.myJsonData = remoteData
                     self.update()
-                    //重新載入
                     self.myTableView.reloadData()
+                    self.updateEmptyState()
                 }
             }
-            
-            
-            
         }
         
         task.resume() // 開始在背景下載資料
@@ -291,55 +251,14 @@ class Ranking2ViewController: UIViewController,UITableViewDelegate,UITableViewDa
     let animations = AnimationType.from(direction: .left, offset: 30.0)
     
     override func viewDidAppear(_ animated: Bool) {
-        //先清空 否則會堆疊
+        super.viewDidAppear(animated)
         noText.isHidden = true
 
-       
-        myData1 = []
-        myData2 = []
-        myData3 = []
-        
-
-        
-  
-        myData1 = myData.filter({ (arg0) -> Bool in
-            
-            let (_, _, level, _) = arg0
-            return level == "Easy"
-        })
-        
-        myData2 = myData.filter({ (arg0) -> Bool in
-            
-            let (_, _, level, _) = arg0
-            return level == "Medium"
-        })
-        
-        myData3 = myData.filter({ (arg0) -> Bool in
-            
-            let (_, _, level, _) = arg0
-            return level == "Hard"
-        })
-        
-        myData1 = myData1.sorted(by: {$0.score > $1.score})
-        myData2 = myData2.sorted(by: {$0.score > $1.score})
-        myData3 = myData3.sorted(by: {$0.score > $1.score})
-        
-
-        
-        //重新載入
+        rebuildLocalSections()
         mySeg.selectedSegmentIndex = 0
         rankStatus = false
         myTableView.reloadData()
-        
-        if mySeg.selectedSegmentIndex == 0 {
-            if myData.count == 0 {
-                
-                noText.isHidden = false
-            } else {
-                
-                noText.isHidden = true
-            }
-        }
+        updateEmptyState()
         
         UIView.animate(views: myTableView.visibleCells,
                        animations: [animations],
@@ -351,32 +270,31 @@ class Ranking2ViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBAction func changeRK(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            if myData.count == 0 {
-                
-                noText.isHidden = false
-            } else {
-                
-                noText.isHidden = true
-            }
-            
             rankStatus = false
             myTableView.reloadData()
         } else {
-            if myJsonData.count == 0 {
-                
-                noText.isHidden = false
-            } else {
-                
-                noText.isHidden = true
-            }
-            
             rankStatus = true
             myTableView.reloadData()
         }
+        updateEmptyState()
     }
     
     @IBAction func calBack(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        dismissCurrentPage()
+    }
+
+    private func numericScore(for score: String) -> Int {
+        return Int(score) ?? 0
+    }
+
+    private func rebuildLocalSections() {
+        myData1 = myData.filter { $0.level == "Easy" }.sorted { numericScore(for: $0.score) > numericScore(for: $1.score) }
+        myData2 = myData.filter { $0.level == "Medium" }.sorted { numericScore(for: $0.score) > numericScore(for: $1.score) }
+        myData3 = myData.filter { $0.level == "Hard" }.sorted { numericScore(for: $0.score) > numericScore(for: $1.score) }
+    }
+
+    private func updateEmptyState() {
+        noText.isHidden = !(rankStatus ? myJsonData.isEmpty : myData.isEmpty)
     }
     
     

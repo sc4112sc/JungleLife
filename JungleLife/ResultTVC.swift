@@ -10,14 +10,17 @@ import UIKit
 import AVFoundation
 
 class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,UITableViewDelegate {
-    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var appDelegate: AppDelegate? {
+        UIApplication.shared.delegate as? AppDelegate
+    }
     var filterList = [String]()
     var filterList2 = [String]()
+    var voicePlayer: AVAudioPlayer?
+    var voiceURLs = [String: URL]()
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        cacheVoiceURLs()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,8 +36,7 @@ class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return filterList.count ?? 0
+        return filterList.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,7 +45,7 @@ class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //1
-        var voiceBtn = UIButton()
+        let voiceBtn = UIButton()
         voiceBtn.setImage(UIImage(named: "voice.png"), for: UIControl.State.normal)
         voiceBtn.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
         voiceBtn.addTarget(self, action: #selector(self.voiceBtn(_:)), for: .touchUpInside)
@@ -57,6 +59,7 @@ class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,
         cell.backgroundColor = #colorLiteral(red: 0.7568627596, green: 0.5755516863, blue: 0.5688795421, alpha: 1)
         cell.accessoryView = voiceBtn
         voiceBtn.tag = indexPath.row
+        cell.selectionStyle = .none
         
 
         return cell
@@ -110,14 +113,17 @@ class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,
 
     func updateSearchResults(for searchController: UISearchController) {
         filterList2 = []
-        if let searchText = searchController.searchBar.text{
+        if let searchText = searchController.searchBar.text,
+           let appDelegate {
             filterList = appDelegate.list1.filter({ (string) -> Bool in
                 return string.range(of: searchText) != nil
             })
             
             for i in filterList{
                 let indexOfA = appDelegate.list1.firstIndex(of: i)
-                filterList2.append(appDelegate.list2[indexOfA!])
+                if let indexOfA {
+                    filterList2.append(appDelegate.list2[indexOfA])
+                }
             }
             
             myTableView.reloadData()
@@ -127,26 +133,33 @@ class ResultTVC: UIViewController,UISearchResultsUpdating,UITableViewDataSource,
     
     
     
-    var voicePlayer: AVAudioPlayer!
     var word = ""
     
     @objc func voiceBtn(_ sender: UIButton){
         //voice
         
         word = filterList[sender.tag]
-        
-        
-        let url2 = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3")
+        playVoice(for: word)
+    }
+
+    private func cacheVoiceURLs() {
+        appDelegate?.list1.forEach { word in
+            if let url = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3") {
+                voiceURLs[word] = url
+            }
+        }
+    }
+
+    private func playVoice(for word: String) {
+        guard let url = voiceURLs[word] else { return }
         do {
-            voicePlayer = try AVAudioPlayer(contentsOf: url2!)
-            voicePlayer.prepareToPlay()
+            voicePlayer?.stop()
+            voicePlayer = try AVAudioPlayer(contentsOf: url)
+            voicePlayer?.prepareToPlay()
+            voicePlayer?.play()
         } catch {
             print("Error:", error.localizedDescription)
         }
-        
-        voicePlayer.play()
-        
-        
     }
     
 }

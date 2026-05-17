@@ -23,6 +23,8 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var searchControl:UISearchController!
     
     @IBOutlet weak var myTableView: UITableView!
+    var voicePlayer: AVAudioPlayer?
+    var voiceURLs = [String: URL]()
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -42,18 +44,18 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //1
-        var voiceBtn = UIButton()
+        let voiceBtn = UIButton()
         voiceBtn.setImage(UIImage(named: "voice.png"), for: UIControl.State.normal)
         voiceBtn.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
         voiceBtn.addTarget(self, action: #selector(self.voiceBtn(_:)), for: .touchUpInside)
         //2
-        var voiceBtn2 = UIButton()
+        let voiceBtn2 = UIButton()
         voiceBtn2.setImage(UIImage(named: "voice.png"), for: UIControl.State.normal)
         voiceBtn2.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
         voiceBtn2.addTarget(self, action: #selector(self.voiceBtn2(_:)), for: .touchUpInside)
         
         //3
-        var voiceBtn3 = UIButton()
+        let voiceBtn3 = UIButton()
         voiceBtn3.setImage(UIImage(named: "voice.png"), for: UIControl.State.normal)
         voiceBtn3.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
         voiceBtn3.addTarget(self, action: #selector(self.voiceBtn3(_:)), for: .touchUpInside)
@@ -83,6 +85,7 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             voiceBtn3.tag = indexPath.row
         }
         
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -101,8 +104,8 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             sender.title = "Done"
             if let vc = storyboard?.instantiateViewController(withIdentifier: "result") as? ResultTVC {
                 searchControl = UISearchController(searchResultsController: vc)
-                searchControl.searchResultsUpdater = vc as? UISearchResultsUpdating
-                searchControl.dimsBackgroundDuringPresentation = false
+                searchControl.searchResultsUpdater = vc
+                searchControl.obscuresBackgroundDuringPresentation = false
                 myTableView.tableHeaderView = searchControl.searchBar
             }
         } else {
@@ -158,8 +161,7 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-  
+        cacheVoiceURLs()
         
         // Do any additional setup after loading the view.
     }
@@ -172,68 +174,44 @@ class WordViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     @IBAction func calBack(_ sender: UIBarButtonItem) {
-
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! MenuViewController
-        present(vc, animated: true, completion: nil)
-    
+        dismissCurrentPage()
     }
     
-    var voicePlayer: AVAudioPlayer!
     var word = ""
     
     @objc func voiceBtn(_ sender: UIButton){
-        //voice
-        
         word = g1Words[sender.tag]
-        
-        
-        let url2 = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3")
-        do {
-            voicePlayer = try AVAudioPlayer(contentsOf: url2!)
-            voicePlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-        
-        voicePlayer.play()
-        
-        
+        playVoice(for: word)
     }
     
     @objc func voiceBtn2(_ sender: UIButton){
-        //voice
-        
         word = g2Words[sender.tag]
-        
-        let url2 = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3")
-        do {
-            voicePlayer = try AVAudioPlayer(contentsOf: url2!)
-            voicePlayer.prepareToPlay()
-        } catch {
-            print("Error:", error.localizedDescription)
-        }
-        
-        voicePlayer.play()
-        
-        
+        playVoice(for: word)
     }
     
     @objc func voiceBtn3(_ sender: UIButton){
-        //voice
-        
         word = g3Words[sender.tag]
-        
-        let url2 = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3")
+        playVoice(for: word)
+    }
+
+    private func cacheVoiceURLs() {
+        (g1Words + g2Words + g3Words).forEach { word in
+            if let url = Bundle.main.url(forResource: "voice1/\(word)", withExtension: "mp3") {
+                voiceURLs[word] = url
+            }
+        }
+    }
+    
+    private func playVoice(for word: String) {
+        guard let url = voiceURLs[word] else { return }
         do {
-            voicePlayer = try AVAudioPlayer(contentsOf: url2!)
-            voicePlayer.prepareToPlay()
+            voicePlayer?.stop()
+            voicePlayer = try AVAudioPlayer(contentsOf: url)
+            voicePlayer?.prepareToPlay()
+            voicePlayer?.play()
         } catch {
             print("Error:", error.localizedDescription)
         }
-        
-        voicePlayer.play()
-        
-        
     }
     /*
     // MARK: - Navigation
